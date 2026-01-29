@@ -34,8 +34,14 @@ button:hover {
 bande{
     text-align: center;
     float:center;
-    color: var(--rouge);
+    background-color: var(--rouge);
+    border:1px;
 }
+
+header{
+    background-color:var(--rouge);
+}
+
 @keyframes zoom {
     from {
         transform: scale(1);
@@ -43,5 +49,26 @@ bande{
     to {
         transform: scale(1.1);
     }
+}
+
+.center {
+    height: 100vh;
+    display: grid;
+    place-items: center;
+}
+
+h2>div{
+    font-size: 64px;
+    font-style: normal
+}
+
+body>main{
+    display: grid;
+    grid-template-areas:
+        "header header"
+        "left center"
+        "left footer";
+    grid-template-rows:50 auto 50;
+    grid-template-columns: 50 auto;
 }
 
