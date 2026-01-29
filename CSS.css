@@ -1,5 +1,5 @@
 :root{
-    --turquoise: #256657;
+    --turquoise: #03fcba;
     --rouge: #F74343;
     --beige: #CCA39B;
     --noir: #120A0A;
@@ -31,7 +31,9 @@ a:visited{
 button:hover {
     animation: zoom 0.3s ease-in-out forwards;
 }
-a{
+bande{
+    text-align: center;
+    float:center;
     color: var(--rouge);
 }
 @keyframes zoom {
