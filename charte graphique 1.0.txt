@@ -1,0 +1,7 @@
+couleur des fonds: beige CCA39B
+couleur des polices: noir 120A0A
+couleurs liens (visités ou non): rouge F74343, turquoise 256657
+titres: bleu 0E21A1
+paragraphes: orange F7A30F
+bordure de formulaire: rouge F74343
+taille du texte : 8px
