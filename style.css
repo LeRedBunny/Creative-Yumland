@@ -1,0 +1,106 @@
+:root{
+    --turquoise: #03fcba;
+    --rouge: #550000;
+    --link: #c854eb;
+    --visitedlink: #9a2dbb;
+    --bleu: #0E21A1;
+    --textcolor: white;
+}
+
+/*couleur des fonds: beige CCA39B
+couleur des polices: noir 120A0A
+couleurs liens (visités ou non): rouge F74343, turquoise 256657
+titres: bleu 0E21A1
+paragraphes: orange F7A30F
+bordure de formulaire: rouge F74343
+taille du texte : 8px*/
+
+
+p {
+    color: var(--textcolor);
+}
+
+h1 {
+    color: var(--textcolor);
+    margin-left: 100px;
+}
+
+a {
+    color: var(--link);
+}
+
+a:visited{
+    color: var(--visitedlink);
+}
+
+
+button:hover {
+    animation: zoom 0.3s ease-in-out forwards;
+}
+
+header{
+    background-color: var(--rouge);
+}
+
+@keyframes zoom {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.1);
+    }
+}
+
+.center {
+    height: 100vh;
+    display: grid;
+    place-items: center;
+}
+
+h2>div{
+    font-size: 64px;
+    font-style: normal
+}
+
+body>main{
+    display: grid;
+    grid-template-areas:
+        "header header"
+        "left main"
+        "left footer";
+    grid-template-rows: 50 auto 50;
+    grid-template-columns: 50 auto;
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+}
+
+
+/* Sections */
+
+header {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    background-color: black;
+    
+    color: white;
+    text-align: center;
+    width: 100vw;
+    height: 100px;
+}
+
+header div {
+    margin: auto;
+}
+
+main {
+    grid-area: "main";
+    background-image: url("background.png");
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+}
+
+
