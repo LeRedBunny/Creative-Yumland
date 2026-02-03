@@ -31,10 +31,13 @@ a:visited{
 button:hover {
     animation: zoom 0.3s ease-in-out forwards;
 }
-bande{
+
+.image{
     text-align: center;
     float:center;
-    background-color: var(--rouge);
+    background-image: url(magma.jpeg);
+    background-size: cover;
+    background-position: center;
     border:1px;
 }
 
@@ -71,4 +74,5 @@ body>main{
     grid-template-rows:50 auto 50;
     grid-template-columns: 50 auto;
 }
+
 
