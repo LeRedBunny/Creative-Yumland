@@ -1,12 +1,14 @@
 
 .container{
-    display:flex;
-    gap: 10px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,2fr));
+    gap: 20px;
+    max-width: 900px;
+    margin: auto;
 }
 
 .box{
-    text-align:center;
-    color:black;
+    position: relative;
     background-image: url(magma.jpeg);
     background-size: cover;
     background-repeat:no-repeat;
@@ -15,20 +17,39 @@
     height: 200px;
     display: inline-block;
     border:2px solid red;
+    border-radius: 15px;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end ;
 }
 
-[plat="1"]{
+.box>span{
+    width:100%;
+    padding: 15px;
+    color:black;
+    text-align:center;
+    font-size: 1.4rem;
+    font-weight:bold;
+    background:linear-gradient(transparent, rgba(0,0,0,0.7));
+}
+
+.box:hover{
+    transform: scale(1.03);
+    transition:0.3s;
+}
+
+box[plat="1"]{
     background-image: url(bouchee.jpg);
 }
 
-[plat="2"]{
+box[plat="2"]{
     background-image: url(Savouroche.webp);
 }
 
-[plat="3"]{
+box[plat="3"]{
     background-image: url(pommedor.jpeg);
 }
 
-[plat="4"]{
+box[plat="4"]{
     background-image: url(icon.png);
 }
