@@ -18,3 +18,11 @@ Participants: tous (durée effective, 4h 30)
 
 Compte-rendu:
 Page web d'accueil pourvue d'un arrière plan. Page d'inscription et de connexion faites par Maxime quasiment finies. Carte des plats en cours.
+
+
+15 février:
+Session solo
+Participant: Grégoire
+Durée: 1 heure
+Travail sur la page web de carte. Affichage carré des plats, réactifs à la taille de la page.
+Reste à adapter au type de média.
