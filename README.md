@@ -43,3 +43,9 @@ Session solo
 Participant: Grégoire
 Durée: 1 heure et demi
 Travail sur la bande d'affichage du menu. Avancement de la page profil.
+
+Session solo
+Participant: Alexi
+Durée: 1h30
+Tests de style sur la page index.
+
