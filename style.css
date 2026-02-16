@@ -15,6 +15,17 @@ bordure de paragraphes: bleu-vert #03fcba
 bordure de formulaire: rouge #550000
 taille du texte : 8px*/
 
+header{
+    position: sticky;
+    top: 0;
+    background-color: var(--rouge);
+    align-items: center;
+    width: 100%;
+}
+
+header>div{
+    text-align: center;
+}
 
 p {
     color: var(--textcolor);
@@ -38,9 +49,6 @@ button:hover {
     animation: zoom 0.3s ease-in-out forwards;
 }
 
-header{
-    background-color: var(--rouge);
-}
 
 @keyframes zoom {
     from {
