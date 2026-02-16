@@ -37,3 +37,9 @@ Participant: Grégoire
 Durée: 1 heure
 Travail sur la page web de carte. Affichage carré des plats, réactifs à la taille de la page.
 Reste à adapter au type de média.
+
+16 février:
+Session solo
+Participant: Grégoire
+Durée: 1 heure et demi
+Travail sur la bande d'affichage du menu. Avancement de la page profil.
