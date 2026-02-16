@@ -1,38 +1,30 @@
 :root{
+
+    /* Color */
     --turquoise: #03fcba;
-    --rouge: #550000;
+    --red: #550000;
     --link: #c854eb;
     --visitedlink: #9a2dbb;
-    --bleu: #0E21A1;
-    --textcolor: white;
+    --blue: #0E21A1;
+    --text: white;
+
+    --header-background: rgba(21, 30, 34, 0.7);
+    --left-background: rgba(54, 77, 87, 0.7);
 }
 
-/*couleur des fonds: noir, ou arrière-plan
-couleur des polices: blanc/noir en fonction des besoins
-couleurs liens (visités ou non): magenta #9a2dbb, rose #c854eb
-titres: bleu 0E21A1
-bordure de paragraphes: bleu-vert #03fcba
-bordure de formulaire: rouge #550000
-taille du texte : 8px*/
 
-header{
-    position: sticky;
-    top: 0;
-    background-color: var(--rouge);
-    align-items: center;
-    width: 100%;
-}
+
 
 header>div{
     text-align: center;
 }
 
 p {
-    color: var(--textcolor);
+    color: var(--text);
 }
 
 h1 {
-    color: var(--textcolor);
+    color: var(--text);
     margin-left: 100px;
 }
 
@@ -74,8 +66,8 @@ body>main{
     display: grid;
     grid-template-areas:
         "header header"
-        "left main"
-        "left footer";
+        "leftside section"
+        "leftside footer";
     grid-template-rows: 50 auto 50;
     grid-template-columns: 50 auto;
 }
@@ -83,6 +75,8 @@ body>main{
 body {
     margin: 0px;
     padding: 0px;
+    background-image: url("../images/background.png");
+    background-size: cover;
 }
 
 
@@ -91,8 +85,10 @@ body {
 header {
     display: grid;
     grid-template-columns: auto 1fr;
-    background-color: black;
-    
+    grid-area: header;
+    background-color: var(--header-background);
+    position: sticky;
+    top: 0;
     color: white;
     text-align: center;
     width: 100vw;
@@ -103,12 +99,23 @@ header div {
     margin: auto;
 }
 
-main {
-    grid-area: "main";
-    background-image: url("background.png");
-    background-size: cover;
-    height: 100vh;
-    width: 100vw;
+
+leftside {
+    display: grid;
+    grid-template-columns: auto;
+    grid-area: leftside;
+    background-color: var(--left-background);
+
+    max-width: 300px;
+    height: 200px;
+
+    text-align: center;
+}
+
+
+
+section {
+    grid-area: section;
 }
 
 
