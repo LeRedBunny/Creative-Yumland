@@ -1,0 +1,107 @@
+:root{
+    --turquoise: #03fcba;
+    --red: #550000;
+    --link: #c854eb;
+    --visitedlink: #9a2dbb;
+    --blue: #0E21A1;
+    --textcolor: white;
+}
+
+
+header{
+    position: sticky;
+    top: 0;
+    background-color: var(--rouge);
+    align-items: center;
+    width: 100%;
+}
+
+header>div{
+    text-align: center;
+}
+
+p {
+    color: var(--textcolor);
+}
+
+h1 {
+    color: var(--textcolor);
+    margin-left: 100px;
+}
+
+a {
+    color: var(--link);
+}
+
+a:visited{
+    color: var(--visitedlink);
+}
+
+
+button:hover {
+    animation: zoom 0.3s ease-in-out forwards;
+}
+
+
+@keyframes zoom {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.1);
+    }
+}
+
+.center {
+    height: 100vh;
+    display: grid;
+    place-items: center;
+}
+
+h2>div{
+    font-size: 64px;
+    font-style: normal
+}
+
+body>main{
+    display: grid;
+    grid-template-areas:
+        "header header"
+        "left main"
+        "left footer";
+    grid-template-rows: 50 auto 50;
+    grid-template-columns: 50 auto;
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+}
+
+
+/* Sections */
+
+header {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    background-color: black;
+    
+    color: white;
+    text-align: center;
+    width: 100vw;
+    height: 100px;
+}
+
+header div {
+    margin: auto;
+}
+
+main {
+    grid-area: "main";
+    background-image: url("../images/background.png");
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+}
+
+
