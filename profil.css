@@ -1,0 +1,66 @@
+
+.commandes{
+  font-family:monospace;
+  display:grid;
+  grid-template-areas:
+    "header header header"
+    "left center right";
+}
+
+.c1{
+  padding:auto;
+  grid-area: left;
+}
+.c2{
+  grid-area: right;
+  padding:auto;
+}
+
+commandes .header{
+  grid-area: header;
+}
+
+.admin h3{
+  justify-content:center;
+}
+
+body.normal {
+  font-family: Arial, sans-serif;
+  background-image: url("../images/background.png");
+  background-size: cover;
+}
+
+.profil {
+  width: 600px;
+  margin: 40px auto;
+  background: var(--header-background);
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.bloc {
+  margin-bottom: 30px;
+}
+
+h3 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header{  /* gère la bande de header*/
+  text-align:center;
+}
+
+
+.toggle-edit {
+  display: none; /* Cache la checkbox */
+}
+
+
+.edit-btn {
+  cursor: pointer;
+  color: #3498db;
+}
+
+
