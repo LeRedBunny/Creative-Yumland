@@ -49,3 +49,9 @@ Participant: Alexi
 Durée: 1h30
 Tests de style sur la page index.
 
+17 février:
+Session solo
+Participant: Grégoire
+Durée: 2 heures
+Création de la page de commandes et d'admin.
+Création du contenu de la première et du style de la deuxième.
