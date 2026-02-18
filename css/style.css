@@ -3,12 +3,16 @@
     /* Color */
     --turquoise: #03fcba;
     --red: #550000;
+
     --link: #c854eb;
     --visitedlink: #9a2dbb;
+    --linkhover: #e680ec;
+
     --blue: #0E21A1;
     --text: white;
 
     --header-background: rgba(21, 30, 34, 0.7);
+    --header-border: rgba(21, 30, 34, 0.9);
     --left-background: rgba(54, 77, 87, 0.7);
 }
 
@@ -25,15 +29,21 @@ p {
 
 h1 {
     color: var(--text);
-    margin-left: 100px;
+    margin-left: 2vw;
 }
+
 
 a {
     color: var(--link);
+    text-decoration: none;
 }
 
-a:visited{
+a:visited {
     color: var(--visitedlink);
+}
+
+a:hover {
+    color: var(--linkhover);
 }
 
 
@@ -59,15 +69,15 @@ button:hover {
 
 h2>div{
     font-size: 64px;
-    font-style: normal
+    font-style: normal;
 }
 
 body>main{
     display: grid;
     grid-template-areas:
         "header header"
-        "leftside section"
-        "leftside footer";
+        "aside-left section"
+        "aside-left footer";
     grid-template-rows: 50 auto 50;
     grid-template-columns: 50 auto;
 }
@@ -75,8 +85,9 @@ body>main{
 body {
     margin: 0px;
     padding: 0px;
+
     background-image: url("../images/background.png");
-    background-size: cover;
+    background-size: auto 100%;
 }
 
 
@@ -86,13 +97,19 @@ header {
     display: grid;
     grid-template-columns: auto 1fr;
     grid-area: header;
+
     background-color: var(--header-background);
+
     position: sticky;
     top: 0;
-    color: white;
+
+    color: var(--text);
     text-align: center;
+
     width: 100vw;
     height: 100px;
+
+    border-bottom: 2px solid var(--header-border);
 }
 
 header div {
@@ -100,14 +117,19 @@ header div {
 }
 
 
-leftside {
+aside.left {
     display: grid;
     grid-template-columns: auto;
-    grid-area: leftside;
+    grid-area: aside-left;
+
     background-color: var(--left-background);
 
-    max-width: 300px;
-    height: 200px;
+    position: sticky;
+    top: 100px;
+
+    min-width: 200px;
+    max-width: 15vw;
+    height: 150vh;
 
     text-align: center;
 }
@@ -115,6 +137,8 @@ leftside {
 
 
 section {
+    display: grid;
+    grid-template-columns: auto;
     grid-area: section;
 }
 
