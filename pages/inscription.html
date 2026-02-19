@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscription</title>
+    <link rel="stylesheet" href="../css/inscription.css">
+
+</head>
+<body>
+    <form name="Inscription" method="post" action="#">
+        <fieldset>
+            <h2>Inscription</h2>
+            <br>
+            <div class="div1">
+                <input type="text" id="pfname" required>
+                <label for="pfname">Nom</label>
+            </div>
+            <br>
+            <div class="div1">
+                <input type="text" id="pname" required>
+                <label for="pname">Prénom</label>
+            </div>
+            <br>
+            <div class="div1">
+                <input type="email" id="pEmail" required>
+                <label for="pEmail">Email</label>
+            </div>
+            <br>
+            <div class="div1">
+                <input type="password" id="ppassword" required>
+                <label for="ppassword">Mot de passe</label>
+            </div>
+            <br>
+            <div class="div1">
+                <input type="tel" id="tel" name="tel" pattern="[0-9]{10}" required>
+                <label for="tel">Téléphone</label>
+            </div>
+            <br><br>
+            <button type="submit" class="login">Creer un compte</button>
+            <button type="reset" class="login">Effacer</button>
+            <br><br>
+            Vous avez déjà un compte ?  
+            <a href="connexion.html">Cliquer ici</a>
+
+        </fieldset>
+
+
+
+    </form>
+</body>
+</html>
