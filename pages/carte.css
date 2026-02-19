@@ -1,0 +1,110 @@
+header{
+    position: sticky;
+    top: 0;
+    align-items: center;
+    background-color:var(--header-background);
+}
+
+:root{
+
+    /* Color */
+    --turquoise: #03fcba;
+    --red: #550000;
+    --link: #c854eb;
+    --visitedlink: #9a2dbb;
+    --blue: #0E21A1;
+    --text: white;
+
+    --header-background: rgba(21, 30, 34, 0.7);
+    --left-background: rgba(54, 77, 87, 0.7);
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+    background-image: url("../images/background.png");
+    background-size: cover;
+    color: var(--text);
+}
+
+header>div{
+    text-align: center;
+}
+
+.container{
+    /*display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,2fr));
+    gap: 20px;
+    max-width: 900px;
+    margin: auto;*/
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 95%;
+}
+.box{
+    width: 250px;
+    aspect-ratio: 1 / 1;
+    text-align: center;
+    object-fit: cover;
+    margin: 50px;
+    font-size: 50px;
+    font-weight: bold;
+}
+/*.box{
+    position: relative;
+    display: inline-block;
+    border:2px solid red;
+    border-radius: 15px;
+    overflow: hidden;
+    width: calc(30% - 20px);
+    aspect-ratio: 1 / 1;
+    gap: 20px;
+    display: flex;
+    align-items: flex-end ;
+}
+
+.box>span{
+    width:100%;
+    padding: 15px;
+    color:black;
+    text-align:center;
+    font-size: 1.4rem;
+    font-weight:bold;
+    background:linear-gradient(transparent, rgba(0,0,0,0.7));
+}*/
+
+.box:hover{
+    transform: scale(1.03);
+    transition:0.3s;
+}
+
+.box[plat]{
+    background-size: cover;
+    background-repeat:no-repeat;
+    background-position: center;
+}
+.box[plat="1"]{
+    background-image: url(../images/bouchee.jpg);
+}
+
+.box[plat="2"]{
+    background-image: url(../images/Savouroche.webp);
+}
+
+.box[plat="3"]{
+    background-image: url(../images/pommedor.jpeg);
+}
+
+.box[plat="4"]{
+    background-image: url(../images/icon.png);
+}
+
+.box[plat="5"]{
+    background-image: url(../images/Oeufs_arcaniques.png);
+}
+
+.box[plat="6"]{
+    background-image: url(../images/Encrusted_Heart.png);
+}
