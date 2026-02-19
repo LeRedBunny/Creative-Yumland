@@ -1,36 +1,56 @@
-:root{
+:root {
+
+    /* Sizes */
+
+    --header-height: clamp(40px, 10vh, 100px);
+    --left-width: clamp(50px, 25vw, 200px);
+    --footer-height: clamp(20px, 5vh, 50px);
+
+    --text-size: 8px;
+
 
     /* Color */
-    --turquoise: #03fcba;
-    --red: #550000;
 
     --link: #c854eb;
     --visitedlink: #9a2dbb;
     --linkhover: #e680ec;
 
-    --blue: #0E21A1;
     --text: white;
 
     --header-background: rgba(21, 30, 34, 0.7);
     --header-border: rgba(21, 30, 34, 0.9);
     --left-background: rgba(54, 77, 87, 0.7);
     --left-border: rgba(54, 77, 87, 0.9);
+
 }
 
 
 
 
-header>div{
-    text-align: center;
+@keyframes zoom {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.1);
+    }
 }
 
-p {
-    color: var(--text);
-}
---left-border
-h1 {
-    color: var(--text);
-    margin-left: 2vw;
+
+
+    /* Main */
+
+body {
+	color: var(--text);
+	text-align: center;
+	font-size: 16px;
+
+	padding: 0px;
+	margin: 0px;
+
+    background-image: url("../images/background.png");
+    background-size: auto 100vh;
+
 }
 
 
@@ -53,51 +73,26 @@ button:hover {
 }
 
 
-@keyframes zoom {
-    from {
-        transform: scale(1);
-    }
-    to {
-        transform: scale(1.1);
-    }
-}
 
-.center {
-    height: 100vh;
-    display: grid;
-    place-items: center;
-}
 
-h2>div{
-    font-size: 64px;
-    font-style: normal;
-}
+    /* Grid */
 
-body>main{
-    display: grid;
-    grid-template-areas:
-        "header header"
-        "aside-left section"
-        "aside-left footer";
-    grid-template-rows: 50 1fr 50;
-    grid-template-columns: 50 auto;
-}
-
-body {
-    margin: 0px;
-    padding: 0px;
-
-    background-image: url("../images/background.png");
-    background-size: auto 100%;
+body>main {
+	display: grid;
+	grid-template-areas:
+		"header header"
+		"left-aside section "
+		"footer footer";
+	grid-template-rows: 50px auto 50px;
+	grid-template-columns: 50px auto;
 }
 
 
-/* Sections */
+main>header {
+	grid-area: header;
 
-header {
     display: grid;
     grid-template-columns: auto 1fr auto;
-    grid-area: header;
 
     background-color: var(--header-background);
 
@@ -108,18 +103,53 @@ header {
     text-align: center;
 
     width: 100vw;
-    height: 100px;
+    height: 70px;
 
     border-bottom: 2px solid var(--header-border);
 }
 
-header h1 {
+main>header h1 {
     padding-left: 1vw;
 }
 
-header div {
+main>header div {
     margin: auto;
 }
+
+
+
+main>aside.left {
+    grid-area: left-aside;
+
+    border-right: 2px solid var(--left-border);
+
+    background-color: var(--left-background);
+
+    position: sticky;
+    top: var(--header-height);
+
+    width: var(--left-width);
+    height: clamp(100px, 50vh, 100vw);
+
+    text-align: center;
+}
+
+
+main>section {
+	grid-area: section;
+}
+
+
+main>footer {
+	grid-area: footer;
+    
+    height: var(--footer-height);
+}
+
+
+
+
+    /* User Dropdown Menu */
 
 button.user {
     margin-right: 1vw;
@@ -127,46 +157,28 @@ button.user {
     border: none;
 }
 
-/* button.user:?? {
-    background-color: #c854eb;
-} */
-
 button.user img {
     width: 3vw;
     min-width: 50px;
 }
 
 
-aside.left {
-    display: grid;  
-    grid-area: aside-left;
-
-    border-right: 2px solid var(--left-border);
-
-    background-color: var(--left-background);
-
-    position: sticky;
-    top: 100px;
-
-    min-width: 200px;
-    max-width: 15vw;
-    height: 150vh;
-
-    text-align: center;
+button.user:hover + .user-dropdown {
+  display: contents;
 }
 
 
-
-section {
-    display: grid;
-    grid-area: section;
+.user-dropdown {
+    display: none;
+    position: relative;
 
     color: var(--text);
+
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
 }
 
 
-footer {
-    display: grid;
-    height: 110px;
-    
-}
+
+
+
