@@ -3,6 +3,7 @@ header{
     top: 0;
     align-items: center;
     background-color:var(--header-background);
+    text-align: center;
 }
 
 :root{
@@ -27,9 +28,6 @@ body {
     color: var(--text);
 }
 
-header>div{
-    text-align: center;
-}
 
 .container{
     /*display: grid;

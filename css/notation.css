@@ -1,0 +1,64 @@
+header{
+    position: sticky;
+    top: 0;
+    align-items: center;
+    background-color:var(--header-background);
+    text-align: center;
+}
+
+:root{
+
+    /* Color */
+    --turquoise: #03fcba;
+    --red: #550000;
+    --link: #c854eb;
+    --visitedlink: #9a2dbb;
+    --blue: #0E21A1;
+    --text: white;
+
+    --header-background: rgba(21, 30, 34, 0.7);
+    --left-background: rgba(54, 77, 87, 0.7);
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+    background-image: url("../images/background.png");
+    background-size: cover;
+    color: var(--text);
+}
+
+h2{
+    padding: 50px;
+    text-align: center;
+}
+
+label.star:before {
+  margin: 5px;
+  font-size: 1.25em;
+  font-family: FontAwesome;
+  display: inline-block;
+  content: "★";
+}
+
+.rating input{
+    display: none;
+}
+
+/*sélectionne les label se trouvant après les boutons*/
+.rating>input:checked~label,
+
+/* sélectionne les input où on hover */
+
+.rating:not(:checked)>label:hover,
+
+/* affecte les label après les balises sélectionnées précedemment*/
+
+.rating:not(:checked)>label:hover~label {
+  color: white;
+}
+
+label.star{
+    color:var(--turquoise);
+}
+
