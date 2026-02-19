@@ -2,6 +2,29 @@ header{
     position: sticky;
     top: 0;
     align-items: center;
+    background-color:var(--header-background);
+}
+
+:root{
+
+    /* Color */
+    --turquoise: #03fcba;
+    --red: #550000;
+    --link: #c854eb;
+    --visitedlink: #9a2dbb;
+    --blue: #0E21A1;
+    --text: white;
+
+    --header-background: rgba(21, 30, 34, 0.7);
+    --left-background: rgba(54, 77, 87, 0.7);
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+    background-image: url("../images/background.png");
+    background-size: cover;
+    color: var(--text);
 }
 
 header>div{
@@ -63,25 +86,25 @@ header>div{
     background-position: center;
 }
 .box[plat="1"]{
-    background-image: url(bouchee.jpg);
+    background-image: url(../images/bouchee.jpg);
 }
 
 .box[plat="2"]{
-    background-image: url(Savouroche.webp);
+    background-image: url(../images/Savouroche.webp);
 }
 
 .box[plat="3"]{
-    background-image: url(pommedor.jpeg);
+    background-image: url(../images/pommedor.jpeg);
 }
 
 .box[plat="4"]{
-    background-image: url(icon.png);
+    background-image: url(../images/icon.png);
 }
 
 .box[plat="5"]{
-    background-image: url(Oeufs_arcaniques.png);
+    background-image: url(../images/Oeufs_arcaniques.png);
 }
 
 .box[plat="6"]{
-    background-image: url(Encrusted_Heart.png);
+    background-image: url(../images/Encrusted_Heart.png);
 }
