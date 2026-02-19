@@ -14,9 +14,41 @@
 
 .header{  /* gère la bande de header*/
   text-align:center;
+  background-color: var(--header-background);
+  padding: 10px;
 }
 
-body{
+.content{
+    padding-top: 100px;
+    font-family:monospace;
+    display:grid;
+    grid-template-areas:
+        "content-left content-right";
+    grid-template-columns: repeat(auto);
+}
+
+/**{
+    border: 1px black solid;
+}*/
+
+.c1{
+    padding:50px;
+    grid-area: content-left;
+}
+.c2{
+    grid-area: content-right;
+    padding:50px;
+}
+
+commandes .header{
+  grid-area: header;
+}
+
+.admin h3{
+  justify-content:center;
+}
+
+body {
   font-family: Arial, sans-serif;
   background-image: url("../images/background.png");
   background-size: cover;
@@ -33,7 +65,6 @@ body{
 
 .bloc {
   margin-bottom: 30px;
-  background-color: var(--red);
 }
 
 h3 {
@@ -41,3 +72,8 @@ h3 {
   justify-content: space-between;
   align-items: center;
 }
+
+
+
+
+
