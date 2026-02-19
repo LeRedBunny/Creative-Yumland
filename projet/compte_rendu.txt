@@ -48,3 +48,13 @@ Session solo
 Participant: Alexi
 Durée: 1h
 Page index + organisation.
+
+19 février:
+Paticipants: Alexi, Grégoire
+Durée: 1 heure
+Mise en forme de la page commandes
+Ajout d'un bouton d'accès au profil.
+Nettoyage de fichiers brouillon.
+
+
+
