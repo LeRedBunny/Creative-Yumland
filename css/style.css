@@ -14,6 +14,7 @@
     --header-background: rgba(21, 30, 34, 0.7);
     --header-border: rgba(21, 30, 34, 0.9);
     --left-background: rgba(54, 77, 87, 0.7);
+    --left-border: rgba(54, 77, 87, 0.9);
 }
 
 
@@ -26,7 +27,7 @@ header>div{
 p {
     color: var(--text);
 }
-
+--left-border
 h1 {
     color: var(--text);
     margin-left: 2vw;
@@ -78,7 +79,7 @@ body>main{
         "header header"
         "aside-left section"
         "aside-left footer";
-    grid-template-rows: 50 auto 50;
+    grid-template-rows: 50 1fr 50;
     grid-template-columns: 50 auto;
 }
 
@@ -95,7 +96,7 @@ body {
 
 header {
     display: grid;
-    grid-template-columns: auto 1fr;
+    grid-template-columns: auto 1fr auto;
     grid-area: header;
 
     background-color: var(--header-background);
@@ -112,15 +113,35 @@ header {
     border-bottom: 2px solid var(--header-border);
 }
 
+header h1 {
+    padding-left: 1vw;
+}
+
 header div {
     margin: auto;
 }
 
+button.user {
+    margin-right: 1vw;
+    border-radius: 20px;
+    border: none;
+}
+
+/* button.user:?? {
+    background-color: #c854eb;
+} */
+
+button.user img {
+    width: 3vw;
+    min-width: 50px;
+}
+
 
 aside.left {
-    display: grid;
-    grid-template-columns: auto;
+    display: grid;  
     grid-area: aside-left;
+
+    border-right: 2px solid var(--left-border);
 
     background-color: var(--left-background);
 
@@ -138,8 +159,14 @@ aside.left {
 
 section {
     display: grid;
-    grid-template-columns: auto;
     grid-area: section;
+
+    color: var(--text);
 }
 
 
+footer {
+    display: grid;
+    height: 110px;
+    
+}
