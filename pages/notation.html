@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Le Bistroche-Notation</title>
+    <link rel="stylesheet" href="../css/notation.css">
+    <!--bibliothèque d'icones-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <header>
+        <div> <h1> Le Bistroche </h1> </div> <br/>
+        <div>
+            <a href="carte.html">Commander</a>
+            <span> | </span>
+            <a href="connexion.html">Se connecter</a>
+            <span> | </span>
+            <a href="inscription.html">S'inscrire</a>
+        </div>
+    </header>
+    <h2>Notez votre commande!</h2>
+    <form action="notation.html" method="POST">
+        <ul>
+            <li>
+                <label for="numcom">Numéro de commande:</label>
+                <input type="text" name="numcom"/>
+            </li>
+            <li class="rating">
+                <input type="radio" id="1star" name="rating" value="1" />
+                <label class="star" for="1star" title="1 star"></label>
+                <input type="radio" id="2star" name="rating" value="2" />
+                <label class="star" for="2star" title="2 star"></label>
+                <input type="radio" id="3star" name="rating" value="3" />
+                <label class="star" for="3star" title="3 star"></label>
+                <input type="radio" id="4star" name="rating" value="4" />
+                <label class="star" for="4star" title="4 star"></label>
+                <input type="radio" id="5star" name="rating" value="5" />
+                <label class="star" for="5star" title="5 star"></label>
+            </li>
+        </ul>
+    </form>
+
+</body>
+</html>
