@@ -20,26 +20,31 @@
         </div>
     </header>
     <h2>Notez votre commande!</h2>
-    <form action="notation.html" method="POST">
-        <ul>
-            <li>
-                <label for="numcom">Numéro de commande:</label>
-                <input type="text" name="numcom"/>
-            </li>
-            <li class="rating">
+    <div class="body">
+        <form action="notation.html" method="POST">
+            <div>
+                    <input type="text" name="numcom" placeholder="Numéro de commande"/>
+            </div>
+            <div class="rating">
                 <input type="radio" id="1star" name="rating" value="1" />
-                <label class="star" for="1star" title="1 star"></label>
+                <label class="star" for="1star" title="1 star">★</label>
                 <input type="radio" id="2star" name="rating" value="2" />
-                <label class="star" for="2star" title="2 star"></label>
+                <label class="star" for="2star" title="2 star">★</label>
                 <input type="radio" id="3star" name="rating" value="3" />
-                <label class="star" for="3star" title="3 star"></label>
+                <label class="star" for="3star" title="3 star">★</label>
                 <input type="radio" id="4star" name="rating" value="4" />
-                <label class="star" for="4star" title="4 star"></label>
+                <label class="star" for="4star" title="4 star">★</label>
                 <input type="radio" id="5star" name="rating" value="5" />
-                <label class="star" for="5star" title="5 star"></label>
-            </li>
-        </ul>
-    </form>
+                <label class="star" for="5star" title="5 star">★</label>
+            </div>
+            <div>
+                <textarea name="comment" placeholder="Commentaires" rows="5" cols="50"></textarea>
+            </div>
+            <div>
+                <input type="submit" value="Envoyer"/>
+            </div>
+        </form>
+    </div>
 
 </body>
 </html>
