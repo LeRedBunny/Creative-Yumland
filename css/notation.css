@@ -33,32 +33,39 @@ h2{
     text-align: center;
 }
 
-label.star:before {
+.body{
+    background-color:black;
+    margin:auto;
+    width:70%;
+
+}
+form{
+    display:block;
+    text-align:center;
+}
+
+form>div{
+    padding: 50px 0;
+}
+
+label.star {
   margin: 5px;
   font-size: 1.25em;
   font-family: FontAwesome;
-  display: inline-block;
-  content: "★";
+  /*display: inline-block;*/
+  cursor:pointer;
 }
 
 .rating input{
     display: none;
 }
 
-/*sélectionne les label se trouvant après les boutons*/
-.rating>input:checked~label,
-
-/* sélectionne les input où on hover */
-
-.rating:not(:checked)>label:hover,
-
-/* affecte les label après les balises sélectionnées précedemment*/
-
-.rating:not(:checked)>label:hover~label {
-  color: white;
+.rating input:checked~label:not(.rating input:checked+label){
+    color:white;
 }
 
+
 label.star{
-    color:var(--turquoise);
+    color:blue;
 }
 
