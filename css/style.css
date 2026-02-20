@@ -17,8 +17,8 @@
     --visitedlink: #9a2dbb;
     --linkhover: #e680ec;
 
-    --main-text-color: rgb(233, 252, 255);
-    --footer-text-color: rgb(27, 27, 110);
+    --main-text-color: rgb(212, 249, 255);
+    --footer-text-color: rgb(34, 34, 135);
 
     --header-background: rgba(21, 30, 34, 0.7);
     --header-border: rgba(21, 30, 34, 0.9);
@@ -56,18 +56,8 @@ body {
 }
 
 a {
-    color: var(--link);
     text-decoration: none;
 }
-
-a:visited {
-    color: var(--visitedlink);
-}
-
-a:hover {
-    color: var(--linkhover);
-}
-
 
 button:hover {
     animation: zoom 0.3s ease-in-out forwards;
@@ -118,6 +108,21 @@ main>header div {
     font-size: 16px;
 }
 
+main>header a {
+    color: var(--link);
+}
+
+main>header a:visited {
+    color: var(--visitedlink);
+}
+
+main>header a:hover {
+    color: var(--linkhover);
+}
+
+
+
+
 
 
 main>aside.left {
@@ -164,6 +169,23 @@ main>footer {
 }
 
 main>footer>div {
-    margin-top: 1vh;
+    margin-top: 2vh;
 }
 
+main>footer a {
+    color: var(--footer-text-color);
+}
+
+
+
+@media screen and (max-width: 700px) {
+
+    main>aside.left {
+        display: none;
+    }
+
+    main>section>h1 {
+        font-size: 26px;
+    }
+
+}
