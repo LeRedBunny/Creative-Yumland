@@ -56,5 +56,9 @@ Mise en forme de la page commandes
 Ajout d'un bouton d'accès au profil.
 Nettoyage de fichiers brouillon.
 
+20 février:
+Participants: Grégoire
+Durée: 1 heure
+Création de la page notation, ajout d'un système d'étoile pour la notation.
 
 
