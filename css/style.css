@@ -13,6 +13,8 @@
 
     /* Color */
 
+    --logo-color: rgb(212, 249, 255);
+
     --link: #c854eb;
     --visitedlink: #9a2dbb;
     --linkhover: #e680ec;
@@ -63,6 +65,9 @@ button:hover {
     animation: zoom 0.3s ease-in-out forwards;
 }
 
+#logo {
+    color: var(--logo-color);
+}
 
 
     /* Grid */
@@ -146,9 +151,9 @@ main>aside.left {
 }
 
 
+
 main>section {
 	grid-area: section;
-
 
 }
 
