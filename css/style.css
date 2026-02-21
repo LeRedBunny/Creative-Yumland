@@ -18,9 +18,10 @@
     --link: #c854eb;
     --visitedlink: #9a2dbb;
     --linkhover: #e680ec;
+    --footer-link-color: rgb(107, 74, 163);
 
     --main-text-color: rgb(212, 249, 255);
-    --footer-text-color: rgb(34, 34, 135);
+    --footer-text-color: rgb(31, 31, 126);
 
     --header-background: rgba(21, 30, 34, 0.7);
     --header-border: rgba(21, 30, 34, 0.9);
@@ -61,13 +62,31 @@ a {
     text-decoration: none;
 }
 
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
 button:hover {
     animation: zoom 0.3s ease-in-out forwards;
+    background-color: var(--visitedlink);
 }
 
 #logo {
     color: var(--logo-color);
 }
+
+button{
+    background-color: var(--footer-link-color);
+    color: white;             
+    padding: 5px 10px;       
+    border: none;              
+    border-radius: 10px;        
+    cursor: pointer;         
+    font-size: 16px;
+}
+
+
 
 
     /* Grid */
@@ -135,6 +154,8 @@ main>aside.left {
 
     margin-left: 1vw;
     
+    color: var(--footer-text-color);
+
     border-left: 2px solid var(--left-border);
     border-right: 2px solid var(--left-border);
 
@@ -178,7 +199,7 @@ main>footer>div {
 }
 
 main>footer a {
-    color: var(--footer-text-color);
+    color: var(--footer-link-color);
 }
 
 
