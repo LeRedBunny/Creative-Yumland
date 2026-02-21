@@ -1,25 +1,8 @@
-:root{
-
-    /* Color */
-    --turquoise: #03fcba;
-    --red: #550000;
-    --link: #c854eb;
-    --visitedlink: #9a2dbb;
-    --blue: #0E21A1;
-    --text: white;
-
-    --header-background: rgba(21, 30, 34, 0.7);
-    --left-background: rgba(54, 77, 87, 0.7);
-}
-
-.header{  /* gère la bande de header*/
-  text-align:center;
-  background-color: var(--header-background);
-  padding: 10px;
-}
+@import "style.css";
 
 .content{
-    padding-top: 100px;
+    padding-top: 10vh;
+    padding-bottom: 15vh;
     font-family:monospace;
     display:grid;
     grid-template-areas:
@@ -52,11 +35,21 @@ commandes .header{
   border-top-style: double;
 }
 
-body {
-  font-family: Arial, sans-serif;
-  background-image: url("../images/background.png");
-  background-size: cover;
-  color: var(--text);
+
+@media screen and (max-width: 700px) {
+    .content{
+      padding-top: 100px;
+      font-family:monospace;
+      display:grid;
+      grid-template-areas:
+          "content-left"
+          "content-right";
+      grid-template-rows: repeat(auto);
+    }
+
+    body {
+      background-size: cover;
+    }
 }
 
 
