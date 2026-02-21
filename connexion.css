@@ -1,71 +1,86 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Connexion</title>
-    <link rel="stylesheet" href="connexion.css">
-    <link rel="icon" href="../images/icon.png">
-</head>
-<body>
-    <main>
-        
-    <form name="connexion" method="post" action="#">
-    <fieldset>
-        <header>
+:root{
 
-                <div> 
-                    <a href="../index.html" id="logo"> 
-                        <h1> Le Bistroche </h1> 
-                    </a>
-                </div>
+    /* Color */
+    --turquoise: #03fcba;
+    --red: #550000;
 
-                <div>
-                    <a href="../index.html"> Accueil </a>
-                    <span> | </span>
-                    <a href="carte.html"> Carte </a>
-                    <span> | </span>
-                    <a href="connexion.html"> À propos </a>
-                </div>
+    --link: #c854eb;
+    --visitedlink: #9a2dbb;
+    --linkhover: #e680ec;
 
-                <div>
-                    <a href="inscription.html"> Inscription </a>
-                    <span> | </span>
-                    <a href="connexion.html"> Connexion </a>
-                </div>
-                    
-            </header>
+    --blue: #0E21A1;
+    --text: white;
 
-         <h2>Connexion</h2>
-            <div class="div1">
-                <input type="email" id="pEmail" required>
-                <label for="pEmail">Email</label>
-            </div>
-            <br>
-            <div class="div1">
-                <input type="password" id="ppassword" required>
-                <label for="ppassword">Mot de passe</label>
-            </div>
-            <br>
-            <button type="submit" class="login">Connexion</button>
-            <button type="reset" class="login">Effacer</button>
-            <br><br>
-    
-        Vous n'avez pas de compte ? 
-        <a href="inscription.html">Cliquer ici</a>
+    --header-background: rgba(21, 30, 34, 0.7);
+    --header-border: rgba(21, 30, 34, 0.9);
+    --left-background: rgba(54, 77, 87, 0.7);
+}
 
- <footer>
-                <div>
-                    <a href="carte.html"> Contact </a>
-                    <span> | </span>
-                    <a href="connexion.html"> Mentions légales </a>
-                    <span> | </span>
-                    <a href="notation.html"> Noter votre expérience </a>
-                </div>
-            </footer>
+body{
+    background-image:url(background.png);
+    background-repeat:repeat-x;
+}
 
-    </fieldset>
-    </form>
-    </main>
-</body>
-</html>
+a{
+    color:#c854eb;
+}
+
+a:visited{
+    color: #9a2dbb;
+}
+
+fieldset{
+   border-style: solid;
+    border-width: 15px;
+    background-color:grey;
+    border-radius: 15px;
+    width: 40%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+
+
+.div1{
+    position: relative;
+    width: 250px;
+    margin: 0 auto;
+    border-radius: 15px;
+}
+
+input {
+    width: 100%;
+    padding: 12px 10px;
+    border-radius: 20px;
+    border:none;
+    outline: none;
+}
+
+label{
+    position: absolute;
+    left: 10px;
+    top: 12px;
+    color: #777;
+    background: white;
+    padding: 0 4px;
+    transition: 0.3s;
+    pointer-events: none;
+    border-radius: 20px;
+}
+
+input:focus + label,
+input:valid + label {
+    top: -8px;
+    font-size: 12px;
+    color: #3498db;
+}
+
+button.login{
+      background-color:whitesmoke;
+    color:black;      
+    padding: 5px 10px;       
+    border: none;              
+    border-radius: 10px;        
+    cursor: pointer;         
+    font-size: 16px;
+}
