@@ -32,16 +32,6 @@ input {
 }
 
 
-label{
-    position: absolute;
-    left: 10px;
-    top: 12px;
-    color: #777;
-    background: white;
-    padding: 0 4px;
-    transition: 0.3s;   
-    border-radius: 20px;
-}
 
 input:focus + label,
 input:valid + label {

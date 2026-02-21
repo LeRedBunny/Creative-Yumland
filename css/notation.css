@@ -6,6 +6,11 @@ h2{
     text-align: center;
 }
 
+.rating {
+    
+    font-size: 30px;
+}
+
 label.star {
     position: relative;
     margin: 5px;
