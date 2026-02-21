@@ -1,36 +1,67 @@
 <!DOCTYPE html>
+
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Connexion</title>
-    <link rel="stylesheet" href="../css/connexion.css">
-</head>
-<body>
 
-    <form name="connexion" method="post" action="#">
-    <fieldset>
-         <h2>Connexion</h2>
-            <div class="div1">
-                <input type="email" id="pEmail" required>
-                <label for="pEmail">Email</label>
-            </div>
-            <br>
-            <div class="div1">
-                <input type="password" id="ppassword" required>
-                <label for="ppassword">Mot de passe</label>
-            </div>
-            <br>
-            <button type="submit" class="login">Connexion</button>
-            <button type="reset" class="login">Effacer</button>
-            <br><br>
-    
-        Vous n'avez pas de compte ? 
-        <a href="inscription.html">Cliquer ici</a>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Connexion</title>
+        <link rel="stylesheet" href="../css/connexion_inscription.css">
+        <link rel="icon" href="../images/icon.png">
+    </head>
+
+    <body>
+
+        <main>
+
+            <header>
+
+                <div> 
+                    <a href="../index.html" id="logo"> 
+                        <h1> Le Bistroche </h1> 
+                    </a>
+                </div>
+
+                <div>
+                    <a href="carte.html"> Carte </a>
+                    <span> | </span>
+                    <a href="connexion.html"> À propos </a>
+                </div>
+
+                <div>
+                    <a href="inscription.html"> Inscription </a>
+                    <span> | </span>
+                    <a href="connexion.html"> Connexion </a>
+                </div>
+                    
+            </header>
+
+            <section>
+                <form name="connexion" method="post" action="#">
+                    <fieldset>
+                        <h2>Connexion</h2>
+                            <div class="div1">
+                                <input type="email" id="pEmail" required>
+                                <label for="pEmail">Email</label>
+                            </div>
+                            <br>
+                            <div class="div1">
+                                <input type="password" id="ppassword" required>
+                                <label for="ppassword">Mot de passe</label>
+                            </div>
+                            <br>
+                            <button type="submit" class="login">Connexion</button>
+                            <button type="reset" class="login">Effacer</button>
+                            <br><br>
+                    
+                        Vous n'avez pas de compte ? 
+                        <a href="inscription.html">Cliquer ici</a>
 
 
 
-    </fieldset>
-    </form>
-</body>
+                    </fieldset>
+                </form>
+            </section>
+        </main>
+    </body>
 </html>
