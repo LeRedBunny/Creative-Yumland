@@ -3,6 +3,7 @@
 
 body {
     overflow: hidden;
+    overflow-y: auto;
 }
 
 fieldset{
@@ -22,6 +23,17 @@ fieldset{
     overflow-y:auto;
 }
 
+label{
+    position: absolute;
+    left: 10px;
+    top: 28px;
+    color: #777;
+    background: white;
+    padding: 0 4px;
+    transition: 0.3s;
+    pointer-events: none;
+    border-radius: 20px;
+}
 
 .div1{
     position: relative;
@@ -42,8 +54,8 @@ input {
 
 input:focus + label,
 input:valid + label {
-    top: -8px;
-    font-size: 18px;
+    top: -1px;
+    font-size: 14px;
     color: #3498db;
 }
 
@@ -68,6 +80,4 @@ form>div{
     }
 
 }
-
 */  
-
