@@ -20,7 +20,7 @@ fieldset{
     margin: 0 auto;
 
     margin-top: 20px;
-    overflow-y:scroll;
+    overflow-y:auto;
 }
 
 
@@ -69,4 +69,5 @@ form>div{
     }
 
 }
+
 */  
