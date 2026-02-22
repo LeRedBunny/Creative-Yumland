@@ -1,9 +1,15 @@
 
-Charte Graphique :
-  couleur des fonds: noir, ou arrière-plan
-  couleur des polices: blanc/noir en fonction des besoins
-  couleurs liens (visités ou non): magenta #9a2dbb, rose #c854eb
-  titres: bleu 0E21A1
-  bordure de paragraphes: bleu-vert #03fcba
-  bordure de formulaire: rouge #550000
-  taille du texte : 8px
+Charte Graphique 
+
+    Couleur du logo : rgb(212, 249, 255)
+
+    Liens : #c854eb
+    Liens visités : #9a2dbb
+    Liens survolés : #e680ec
+    Liens du footer : #6b4aa3
+
+    Texte: #d4f9ff
+    Texte du footer: #1f1f7e
+
+    Fond du header : #151e22
+    Fond de la bande gauche: #01fafa
