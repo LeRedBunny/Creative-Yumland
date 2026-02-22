@@ -3,6 +3,7 @@
 
 body {
     overflow: hidden;
+    overflow-y: auto;
 }
 
 fieldset{
@@ -19,6 +20,7 @@ fieldset{
     margin: 0 auto;
 
     margin-top: 20px;
+    overflow-y:scroll;
 }
 
 
@@ -46,6 +48,9 @@ input:valid + label {
     color: #3498db;
 }
 
+form{
+    overflow-y:auto;
+}
 form>div{
     padding: 3vh 0;
 }
