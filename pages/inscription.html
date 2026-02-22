@@ -41,64 +41,46 @@
             
             <section>
                 <fieldset>
-                    <form name="Inscription" method="post" action="#">
-                        <h2>Inscription</h2>
-                        <br>
-                        <div class="div1">
-                            <input type="text" id="pfname" placeholder="Nom" required>
-                        </div>
-                        <br>
-                        <div class="div1">
-                            <input type="text" id="pname" placeholder="Prénom" required>
-                        </div>
-                        <br>
-                        <div class="div1">
-                            <input type="email" id="pEmail"placeholder="Email" required>
-                        </div>
-                        <br>
-                        <div class="div1">
-                            <input type="password" id="ppassword" placeholder="Mot de passe" required>
-                        </div>
-                        <br>
-                        <div class="div1">
-                            <input type="tel" id="tel" name="tel" placeholder="Téléphone" pattern="[0-9]{10}" required>
-                        </div>
-    
-                        <br><br>
-                            
-                        <h3>Informations Complémentaires</h3>
-                        <br>
-                        <div class="div1">
-                            <label for="genre" class="lab2">Genre</label>
-                            <input type="radio" name="gender" value="Homme">Homme
-                            <input type="radio" name="gender" value="Femme">Femme
-                            <input type="radio" name="gender" value="Autre" checked>Autre
-                        </div>
-                        <br>
-    
-                        <div class="div1">
-                            <label for="roche" class="lab3">Quel est vôtre roche favorite ? </label>
-                            <select name="roche" size="3" multiple="multiple">
-                                <option value="A">Rubis</option>
-                                <option value="B">Saphir</option>
-                                <option value="C">Diamant</option>
-                                <option value="D">Améthiste</option>
-                                <option value="E">Emeraude</option>
-                            </select>
-                        </div>
-                        
-                        <br><br>
-                        <button type="submit" class="login">Creer un compte</button>
-                        <button type="reset" class="login">Effacer</button>
-                        <br><br>
-    
-    
-                        Vous avez déjà un compte ?  
-                        <a href="connexion.html">Cliquez ici</a>
-    
+                <form name="Inscription" method="post" action="#">
+                    <h2>Inscription</h2>
+                    <br>
+                    <div class="div1">
+                        <input type="text" id="pfname" required>
+                        <label for="pfname">Nom</label>
+                    </div>
+                    <br>
+                    <div class="div1">
+                        <input type="text" id="pname" required>
+                        <label for="pfname">Prénom</label>
+                    </div>
+                    <br>
+                    <div class="div1">
+                        <input type="email" id="pEmail" required>
+                        <label for="pfname">Email</label>
+                    </div>
+                    <br>
+                    <div class="div1">
+                        <input type="password" id="ppassword" required>
+                        <label for="pfname">Mot de passe</label>
+                    </div>
+                    <br>
+                    <div class="div1">
+                        <input type="tel" id="tel" name="tel" pattern="[0-9]{10}" required>
+                        <label for="pfname">Téléphone</label>
+                    </div>
                     
-                    </form>
-                </fieldset>
+                    <br><br>
+                    <button type="submit" class="login">Creer un compte</button>
+                    <button type="reset" class="login">Effacer</button>
+                    <br><br>
+
+
+                    Vous avez déjà un compte ?  
+                    <a href="connexion.html">Cliquez ici</a>
+
+                
+                </form>
+            </fieldset>
             </section>
 
             <footer>
@@ -112,6 +94,5 @@
         </main>
 
     </body>
-
 
 </html>
