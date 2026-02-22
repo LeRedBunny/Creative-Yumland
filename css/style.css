@@ -89,6 +89,9 @@ button{
 
 
 
+
+
+
     /* Grid */
 
 body>main {
@@ -122,6 +125,7 @@ main>header {
     border-bottom: var(--header-border-width) solid var(--header-border);
 }
 
+
 main>header h1 {
     padding-left: 2vw;
 }
@@ -143,9 +147,6 @@ main>header a:visited {
 main>header a:hover {
     color: var(--linkhover);
 }
-
-
-
 
 
 
@@ -175,7 +176,10 @@ main>aside.left {
 
 main>section {
 	grid-area: section;
-
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 section>h1 {
@@ -203,6 +207,8 @@ main>footer a {
 }
 
 
+
+    /* Other */
 
 @media screen and (max-width: 700px) {
 

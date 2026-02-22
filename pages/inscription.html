@@ -1,16 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inscription</title>
-    <link rel="stylesheet" href="inscription.css">
-    <link rel="icon" href="../images/icon.png">
 
-</head>
-<body>
-    <form name="Inscription" method="post" action="#">
-        <fieldset>
+<html lang="fr">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Inscription</title>
+        <link rel="stylesheet" href="../css/connexion_inscription_profil.css">
+        <link rel="icon" href="../images/icon.png">
+    </head>
+
+    <body>
+
+        <main>
+
             <header>
 
                 <div> 
@@ -24,7 +27,7 @@
                     <span> | </span>
                     <a href="carte.html"> Carte </a>
                     <span> | </span>
-                    <a href="connexion.html"> À propos </a>
+                    <a href="bistroche.html"> À propos </a>
                 </div>
 
                 <div>
@@ -34,74 +37,57 @@
                 </div>
                     
             </header>
-            <br>
-            <h2>Inscription</h2>
-            <br>
-            <div class="div1">
-                <input type="text" id="pfname" class="i1" required>
-                <label for="pfname" class="lab1">Nom</label>
-            </div>
-            <br>
-            <div class="div1">
-                <input type="text" id="pname" class="i1" required>
-                <label for="pname" class="lab1">Prénom</label>
-            </div>
-            <br>
-            <div class="div1">
-                <input type="email" id="pEmail" class="i1" required>
-                <label for="pEmail" class="lab1">Email</label>
-            </div>
-            <br>
-            <div class="div1">
-                <input type="password" id="ppassword" class="i1" required>
-                <label for="ppassword" class="lab1">Mot de passe</label>
-            </div>
-            <br>
-            <div class="div1">
-                <input type="tel" id="tel" name="tel" pattern="[0-9]{10}" class="i1" required>
-                <label for="tel" class="lab1">Téléphone</label>
-            </div>
-            <br>
-            <h3>Informations Complémentaires</h3>
-            <br>
-            <div class="div1">
-            <label for="genre" class="lab2">Genre</label>
-            <input type="radio" name="gender" value="Homme" checked>Homme
-            <input type="radio" name="gender" value="Femme">Femme
-            <input type="radio" name="gender" value="Autre">Autre
-            </div>
-            <br>
-            <div class="div1">
-            <label for="roche" class="lab3">Quels sont vôtre/vos roche.s <span> favorite.s ? (jusqu'a 3)</span></label>
-            <select name="roche" size="3" multiple="multiple">
-                <option value="A">Rubis</option>
-                <option value="B">Saphir</option>
-                <option value="C">Diamant</option>
-                <option value="D">Améthiste</option>
-                <option value="E">Emeraude</option>
-            </select>
-            </div>
-            <br><br>
-            <button type="submit" class="login">Creer un compte</button>
-            <button type="reset" class="login">Effacer</button>
-            <br><br>
-            Vous avez déjà un compte ?  
-            <a href="connexion.html">Cliquer ici</a>
+
+            
+            <section>
+
+                <form name="Inscription" method="post" action="#">
+                    <fieldset>
+                        <h2>Inscription</h2>
+                        <br>
+                        <div class="div1">
+                            <input type="text" id="pfname" placeholder="Nom" required>
+                        </div>
+                        <br>
+                        <div class="div1">
+                            <input type="text" id="pname" placeholder="Prénom" required>
+                        </div>
+                        <br>
+                        <div class="div1">
+                            <input type="email" id="pEmail"placeholder="Email" required>
+                        </div>
+                        <br>
+                        <div class="div1">
+                            <input type="password" id="ppassword" placeholder="Mot de passe" required>
+                        </div>
+                        <br>
+                        <div class="div1">
+                            <input type="tel" id="tel" name="tel" placeholder="Téléphone" pattern="[0-9]{10}" required>
+                        </div>
+                        <br><br>
+                        <button type="submit" class="login">Creer un compte</button>
+                        <button type="reset" class="login">Effacer</button>
+                        <br><br>
+
+
+                        Vous avez déjà un compte ?  
+                        <a href="connexion.html">Cliquez ici</a>
+
+                    </fieldset>
+                </form>
+
+            </section>
 
             <footer>
                 <div>
-                    <a href="carte.html"> Contact </a>
+                    <a href="mentions_legales.html"> Mentions légales </a>
                     <span> | </span>
-                    <a href="connexion.html"> Mentions légales </a>
-                    <span> | </span>
-                    <a href="notation.html"> Noter votre expérience </a>
+                    <a href="notation.html"> Notez votre expérience </a>
                 </div>
             </footer>
+            
+        </main>
 
-        </fieldset>
+    </body>
 
-
-
-    </form>
-</body>
 </html>
