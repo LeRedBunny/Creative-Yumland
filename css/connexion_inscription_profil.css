@@ -13,6 +13,8 @@ fieldset{
 
     text-align: center;
     margin: 0 auto;
+
+    margin-top: 20px;
 }
 
 
@@ -24,7 +26,7 @@ fieldset{
 }
 
 input {
-    width: 90%;
+    width: 90%; 
     padding: 12px 10px;
     border-radius: 20px;
     border:none;
@@ -43,3 +45,19 @@ input:valid + label {
 form>div{
     padding: 3vh 0;
 }
+
+
+
+/*
+@media screen and (max-height: 600px) {
+
+    fieldset>div {
+        padding: 5px 0;
+    }
+
+    fieldset>h2 {
+        margin-bottom: 1vh;
+    }
+
+}
+*/  

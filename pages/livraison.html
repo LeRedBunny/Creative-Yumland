@@ -1,59 +1,57 @@
 <!DOCTYPE html>
+
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Le Bistroche-Livraison</title>
-	<link rel="stylesheet" href="../css/livraison.css"/>
-    <link rel="icon" href="../images/icon.png">
-</head>
-<body>
-  
-  <main>
-        
-        <header>
 
-            <div> 
-                <a href="index.html" id="logo"> 
-                    <h1> Le Bistroche </h1> 
-                </a>
-            </div>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Livraison</title>
+        <link rel="icon" href="../images/icon.png">
+        <link rel="stylesheet" href="../css/connexion_inscription_profil.css">
+    </head>
 
-            <div>
-                <a href="pages/carte.html"> Carte </a>
-                <span> | </span>
-                <a href="pages/connexion.html"> À propos </a>
-            </div>
+    <body>
+        <main>
+            <header>
 
-            <div>
-                <a href="pages/inscription.html"> Inscription </a>
-                <span> | </span>
-                <a href="pages/connexion.html"> Connexion </a>
-            </div>
-            
-        </header>
-        <aside>
-                Utilisateur: Jeff Goupe
-        </aside>
-        <div class="core">
-            <h4>Commande(s) en cours:</h4>
-            <aside class="number">-Commande 1549:</aside>
-            <div class="data1">
-                <span class="adress">7 rue du clos, Conflans Ste-Honorine<a href="https://maps.google.com/maps?q=Paris" target="_blank"><img src="../images/arrow.png" alt="google" height="20"></a></span><br>
-                <span class="command">Coeur de Corail, Savouroche</span><br>
-                <span class="comment">Attenton au chien.</span>
-            </div>
-        </div>
+                <div> 
+                    <a href="../index.html" id="logo"> 
+                        <h1> Le Bistroche </h1> 
+                    </a>
+                </div>
 
+                <div>
+                    <a href="../index.html"> Accueil </a>
+                    <span> | </span>
+                    <a href="carte.html"> Carte </a>
+                    <span> | </span>
+                    <a href="connexion.html"> À propos </a>
+                </div>
 
-        <footer>
-            <div>
-                <a href="../pages/carte.html"> Contact </a>
-                <span> | </span>
-                <a href="../pages/connexion.html"> Mentions légales </a>
-            </div>
-        </footer>
-        
-    </main>
-</body>
+                <div>
+                    <a href="inscription.html"> Inscription </a>
+                    <span> | </span>
+                    <a href="connexion.html"> Connexion </a>
+                </div>
+                    
+            </header>
+
+            <section>
+                <fieldset>
+                    <form action="https://maps.google.com/maps?q=" method="get">
+
+                        <div>
+                            <input type="text" placeholder="Addresse"/>
+                        </div>
+
+                        <div>
+                            <input type="submit" formtarget="_blank" formaction="https://maps.google.com/maps?q="/>
+                        </div>
+
+                    </form>
+                </fieldset>
+            </section>
+        </main>
+    </body>
+
 </html>

@@ -1,37 +1,222 @@
-.header{
-    position: sticky;
-    top: 0;
-    text-align:center;
-}
+:root {
 
-li{
-    padding: 10px;
-}
-li>a{
-    text-decoration: none;
-    color: var(--turquoise);
-}
+    /* Sizes */
 
-:root{
+    --header-height: 70px; /*clamp(40px, 10vh, 100px);*/
+    --header-border-width: 2px;
+    --footer-height: 6.5vh;
+    --left-width: clamp(50px, 25vw, 200px);
+    --left-height: calc(100vh - var(--footer-height) - var(--header-height));
+
+    --text-size: 8px;
+
 
     /* Color */
-    --turquoise: #03fcba;
-    --red: #550000;
-    --link: #c854eb;
-    --visitedlink: #9a2dbb;
-    --blue: #0E21A1;
-    --text: white;
 
-    --header-background: rgba(21, 30, 34, 0.7);
-    --left-background: rgba(54, 77, 87, 0.7);
+    --logo-color: rgb(212, 249, 255);
+
+    --link: #d63245;
+    --visitedlink: #af2939;
+    --linkhover: #e7485a;
+    --footer-link-color: #d63245;
+
+    --main-text-color: rgb(212, 249, 255);
+    --footer-text-color: rgb(31, 31, 126);
+
+    --header-background: rgba(15, 4, 15, 0.7);
+    --header-border: rgba(21, 30, 34, 0.9);
+    --section-background: rgba(26, 2, 14, 0.5);
+
 }
 
+
+
+@keyframes zoom {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.1);
+    }
+}
+
+
+
+    /* Main */
+
 body {
-    margin: 0px;
-    padding: 0px;
-    background-color:black;
-    color:var(--turquoise);
-    background-image: url(../images/depths.png);
-    background-size: cover;
-    background-repeat: no-repeat;
+	color: var(--main-text-color);
+	text-align: center;
+	font-size: 16px;
+
+	padding: 0px;
+	margin: 0px;
+
+    background-image: url("../images/background2.png");
+    background-size: contain;
+
+}
+
+a {
+    color: var(--link);
+    text-decoration: none;
+}
+
+a:visited {
+    color: var(--visitedlink);
+}
+
+a:hover {
+    color: var(--linkhover);
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+button:hover {
+    animation: zoom 0.3s ease-in-out forwards;
+    background-color: var(--visitedlink);
+}
+
+#logo {
+    color: var(--logo-color);
+}
+
+
+button{
+    background-color: var(--footer-link-color);
+    color: white;             
+    padding: 5px 10px;       
+    border: none;              
+    border-radius: 10px;        
+    cursor: pointer;         
+    font-size: 16px;
+}
+
+
+
+
+
+
+
+    /* Grid */
+
+body>main {
+	display: grid;
+	grid-template-areas:
+		"header header"
+		"left-aside section "
+		"footer footer";
+	grid-template-rows: 50px auto 50px;
+	grid-template-columns: 50px auto;
+}
+
+
+main>header {
+	grid-area: header;
+
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+
+    background-color: var(--header-background);
+
+    position: sticky;
+    top: 0;
+
+    color: var(--main-text-color);
+    text-align: center;
+
+    width: 100vw;
+    height: var(--header-height);
+
+    border-bottom: var(--header-border-width) solid var(--header-border);
+}
+
+
+main>header h1 {
+    padding-left: 2vw;
+}
+
+main>header div {
+    margin: auto;
+    padding-right: 1vw;
+    font-size: 16px;
+}
+
+
+
+main>aside.left {
+    grid-area: left-aside;
+
+    margin-left: 1vw;
+    
+    color: var(--footer-text-color);
+
+    border-left: 2px solid var(--left-border);
+    border-right: 2px solid var(--left-border);
+
+    background-color: var(--left-background);
+
+    position: sticky;
+    top: calc(var(--header-height) + var(--header-border-width));
+
+    width: var(--left-width);
+    min-width: 180px;
+    height: var(--left-height);
+
+    text-align: center;
+}
+
+
+
+main>section {
+	grid-area: section;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+section>div {
+    margin-top: 10vh;
+    background-color: var(--section-background);
+    border-radius: 20px;
+    width: 50vw;
+    height: auto;
+}
+
+
+
+main>footer {
+	grid-area: footer;
+
+    position: fixed;
+    bottom: 0;
+
+    color: var(--footer-text-color);
+
+    width: 100vw;
+    height: var(--footer-height);
+}
+
+main>footer>div {
+    margin-top: 2vh;
+}
+
+
+
+    /* Other */
+
+@media screen and (max-width: 700px) {
+
+    main>aside.left {
+        display: none;
+    }
+
+    main>section>h1 {
+        font-size: 26px;
+    }
+
 }
