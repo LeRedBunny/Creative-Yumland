@@ -1,6 +1,10 @@
 @import "style.css";
 
 
+body {
+    overflow: hidden;
+}
+
 fieldset{
     border: none;
     background-color: var(--left-background);
