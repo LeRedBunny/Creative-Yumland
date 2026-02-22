@@ -3,7 +3,6 @@
 
 body {
     overflow: hidden;
-    overflow-y: auto;
 }
 
 fieldset{
@@ -80,4 +79,5 @@ form>div{
     }
 
 }
+
 */  
