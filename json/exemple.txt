@@ -1,11 +1,10 @@
-{
-    "Savouroche": {
+"Savouroche": {
     "image":"../images/Savouroche.webp",
     "prix":"36€",
     "pierres":{
         "0":"Ganolithe"
-    },
-    "description" : "Un gigot de Ganolithe, importé depuis la Montage de la Mort.",
+    }
+    "description":"Un gigot de Ganolithe, importé depuis la Montage de la Mort.",
     "mots_clefs":{
         "0":"Toxique",
         "1":"Solide",
@@ -15,18 +14,17 @@
 },
 "Bouchée de minerai": {
     "image":"../images/bouchee.jpg",
-    "prix":"17.50€",
+    "prix":"17.5€",
     "pierres":{
         "0":"Gravier",
         "1":"Grès",
         "2":"Calcaire",
         "3":"Terre domestique"
-    },
-    "description":"Un salade de pierres ordinaires",
+    }
+    "description":"Un gigot de Ganolithe, importé depuis la Montage de la Mort ",
     "mots_clefs":{
         "0":"Solide",
         "1":"Pas cher",
         "2":"Salé"
     }
-}
 }
