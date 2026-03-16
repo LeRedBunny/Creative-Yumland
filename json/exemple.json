@@ -1,5 +1,5 @@
 {
-    "Savouroche": {
+"Savouroche": {
     "image":"../images/Savouroche.webp",
     "prix":"36€",
     "pierres":{
@@ -10,7 +10,8 @@
         "0":"Toxique",
         "1":"Solide",
         "2":"Goron",
-        "3":"Sucré"
+        "3":"Sucré",
+        "4":"Viande"
     }
 },
 "Bouchée de minerai": {
@@ -22,11 +23,67 @@
         "2":"Calcaire",
         "3":"Terre domestique"
     },
-    "description":"Un salade de pierres ordinaires",
+    "description":"Une salade de pierres ordinaires",
     "mots_clefs":{
         "0":"Solide",
         "1":"Pas cher",
         "2":"Salé"
+    }
+},
+"Pomme d'or": {
+    "image":"../images/pommedor.jpeg",
+    "prix":"25.25€",
+    "pierres":{
+        "0":"Pomme",
+        "1":"Or",
+        "2":"Additifs accides"
+    },
+    "description":"Notre fameuse pomme d'or, enduite dans de l'or en fusion, avant d'arriver dans votre assiette.",
+    "mots_clefs":{
+        "0":"Solide",
+        "1":"Sucré",
+        "2":"Bon pour la santé"
+    }
+},
+"Glace à l'émeraude": {
+    "image":"../images/icon.jpeg",
+    "prix":"50€",
+    "pierres":{
+        "0":"Emeraude",
+        "1":"Calcaire"
+    },
+    "description":"Extraite directement des biomes de collines extrèmes, cette glace vous apporte une succulente émeraude sur un cône en calcaire.",
+    "mots_clefs":{
+        "0":"Solide",
+        "1":"Sucré"
+    }
+},
+"Oeufs arcaniques": {
+    "image":"../images/Oeufs_arcaniques.png",
+    "prix":"37€",
+    "pierres":{
+        "0":"Obsidienne",
+        "1":"Basalte",
+        "2":"Vidrite",
+        "3":"Minerai Pale"
+    },
+    "description":"Provenant des abisses, et cuisinés en omelette pour vous.",
+    "mots_clefs":{
+        "0":"Salé"
+    }
+},
+"Coeur de corail": {
+    "image":"../images/Encrusted_Heart.png",
+    "prix":"12€",
+    "pierres":{
+        "0":"Corail",
+        "1":"Sable"
+    },
+    "description":"Généreuse donnation de Kann, goutez à son courage et son pouvoir.",
+    "mots_clefs":{
+        "0":"Salé",
+        "1":"Pas cher",
+        "2":"Viande"
     }
 }
 }
