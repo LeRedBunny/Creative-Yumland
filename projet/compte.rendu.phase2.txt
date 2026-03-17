@@ -1,0 +1,4 @@
+Jeudi 12 Mars:
+Participants: Alexi, Grégoire
+Durée: 1/2 heure
+Ecriture du Json contenant les plats, lecture du projet
