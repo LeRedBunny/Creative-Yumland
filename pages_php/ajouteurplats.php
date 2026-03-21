@@ -7,7 +7,7 @@
         <meta name="viewport" content="width=*, initial-scale=1.0">
         <link rel="icon" href="../images/icon.png">
         <link rel="stylesheet" href="../css/carte.css">
-        <title> Carte </title>
+        <title> Créateur de carte</title>
     </head>
 
     <body>
@@ -38,25 +38,16 @@
             </header>
 
             <section>
-                <div class="container">
-                    <?php 
-                    $plat=json_decode(file_get_contents("carte.json"));
-                    foreach($plat as $nom_plat => $tab){
-                        //deux manières de faire " à l'intérieur de "_" : '' à l'intérieur, ou mettre un \ devant
-                        //imprime la div contenant un nouveau plat
-                        echo
-                            "<div class='box'>
-                                <img src=\"".$tab['src']."\"alt\"".$nom_plat."\" width='50' height='50'>
-                                <div>Bouchée de minerai</div>
-                            </div>";
-                    }
-                    
-                    
-                    
-                    ?>
-                    <div class="box">
+            <h4>Ajouter un plat?</h4>
+            <form action="inventaire_plats.php" method="POST">
+                <label for="nomdeplat"></label>
+                <input type="text" name="nomdeplat"/>
+                <label for="prix"></label>
+                <input type="text" name="prix"/>
+                <label for="nomdeplat"></label>
+                <input type="text" name="nomdeplat"/>
+            </form>
             </section>
-
         </main>
     </body>
 
