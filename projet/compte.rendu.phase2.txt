@@ -2,3 +2,8 @@ Jeudi 12 Mars:
 Participants: Alexi, Grégoire
 Durée: 1/2 heure
 Ecriture du Json contenant les plats, lecture du projet
+
+Samedi 21 mars:
+Participant: Grégoire
+Durée: 1 heure
+Création d'une page permettant d'ajouter des plats au fichier json pour élargir facilement la carte.
