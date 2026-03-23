@@ -37,9 +37,9 @@
 
             </header>
             
-            <? php  //récupération des données de POST, et ajout au JSON, puis écriture de ttes les données du json
+            <?php  //récupération des données de POST, et ajout au JSON, puis écriture de ttes les données du json
             
-            function cardinal($tab) : int{  //renvoire la quantité d'éléments initialisés d'un tableau
+            function cardinal($tab) : int{  //renvoie la quantité d'éléments initialisés d'un tableau
                 $return=0;
                 foreach($tab as $index => $value){
                     if(isset($tab[$index])){
@@ -49,7 +49,6 @@
                 return $return;
             }
                     
-                } 
             $caracplats=["image","prix","pierres","description","mots_clefs"];
             
                 //vérification des paramètres de POST
@@ -74,7 +73,7 @@
                         $carte[$_POST[$name]][$index]=$value;
                     }
                     //encodage dans le json
-                    file_put_contents("carte.json", json_encode($carte, JSON_PRETTY_PRINT);
+                    file_put_contents("../json/carte.json", json_encode($carte, JSON_PRETTY_PRINT));
                 }
             ?>
 
@@ -98,7 +97,7 @@
                 </div>
             </section>
 
-            <h4><a >Ajouter un plat?</a></h4>
+            <h4><a href="ajouteurplats.php">Ajouter un plat?</a></h4>
         </main>
     </body>
 
