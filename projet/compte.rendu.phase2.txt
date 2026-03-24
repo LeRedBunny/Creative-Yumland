@@ -7,3 +7,9 @@ Samedi 21 mars:
 Participant: Grégoire
 Durée: 1 heure
 Création d'une page permettant d'ajouter des plats au fichier json pour élargir facilement la carte.
+
+Mardi 24 mars
+Participants: Alexi, Grégoire
+Durée: 2 heures 30
+Création du système d'inscription
+Création du système d'affichage dynamique des plats, avec filtre
