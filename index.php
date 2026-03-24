@@ -1,0 +1,81 @@
+<?php session_start(); ?>
+<!DOCTYPE html>
+
+<html lang="fr">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Le Bistroche</title>
+        <link rel="stylesheet" href="css/style.css"/>
+        <link rel="icon" href="images/icon.png">
+    </head>
+
+    <body>
+
+        <main>
+
+
+            
+        
+            <header>
+
+                <div> 
+                    <a href="index.html" id="logo"> 
+                        <h1> Le Bistroche </h1> 
+                    </a>
+                </div>
+
+                <div>
+                    <a href="pages/carte.html"> Carte </a>
+                    <span> | </span>
+                    <a href="pages/bistroche.html"> À propos </a>
+                </div>
+
+                <?php
+
+                    if ($_SESSION['logged_in']) {
+                        echo "<div>
+                              <a href='pages_php/profil.php'> ".$_SESSION['name']." </a>
+                              <span> | </span>
+                              <a href='pages_php/connexion.php'> Se déconnecter </a>
+                              </div>";
+                    }
+                    else {
+                        echo "<div>
+                              <a href='pages_php/inscription.php'> Inscription </a>
+                              <span> | </span>
+                              <a href='pages_php/connexion.php'> Connexion </a>
+                              </div>";
+                    }
+                
+                ?>
+                
+            </header>
+
+
+            <aside class="left">
+                <form>
+                    <input type="text" name="search" placeholder="Chercher des plats" />
+                </form>
+            </aside>
+
+
+            <section>
+                <h1> Bienvenue dans la caverne... </h1>
+            </section>
+
+
+            <footer>
+                <div>
+                    <a href="pages/mentions_legales.html"> Mentions légales </a>
+                    <span> | </span>
+                    <a href="pages/notation.html"> Notez votre expérience </a>
+                </div>
+            </footer>
+        
+        </main>
+
+    </body>
+
+</html>
