@@ -1,0 +1,29 @@
+<? php
+le client clicke sur une commande:
+	envoi sur une page qui ajoute un cookie ou session?
+	session: session_start();
+	$_SESSION['panier'][x]=IDplat;
+	comment définir x? se fait automatiquement en ne précisant pas l'id
+	du coup: à chaque ajout de plat dans le panier, juste exécuter le code $_SESSION['panier'][]=IDplat;
+	à quel moment ajouter dans le panier?
+	ouvrir une nouvelle page, montrant le détail du plat, et demandant la quantité
+	description, ingrédients, prix, et un formulaire pour la quantité
+	bouton valider la commande
+	->retour sur la carte des plats et ajout du formulaire au tableau session ->$_SESSION['panier'][]['id']=IDplat; $_SESSION['panier'][]['qte']=quantité; 
+	
+	
+	
+	puis le client peut accéder à son panier via un bouton/lien
+		->la page de panier
+		-montre le contenu du tableau $_Session, nom de chaque commande, et la quantité (les commandes sont des boutons qui amènent sur la page de modif, comme la page de commande ->suppression?)
+		-prix total
+		-formulaire:
+			-adresse, avec pour valeur de base l'adresse dans le compte du client
+			-commentaire
+			-submit envoie sur une page qui remercie le commande, et qui convertit les données de la session dans le json, puis vide le tableau session
+		--à quelle étape se fait le paiement?
+
+
+
+	setcookie("panier","commande",time()+3600);
+
