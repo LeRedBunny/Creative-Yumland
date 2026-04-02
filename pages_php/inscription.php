@@ -16,7 +16,7 @@
 
         writeNewUser($newUser);
 
-        header("Location: init_session.php");
+        header("Location: init_session.php"); // changer ça
     }
 
 ?>
