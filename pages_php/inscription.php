@@ -1,12 +1,11 @@
 <?php 
     
+    require('user_json.php');
     session_start(); 
-
-    // Ecrire les données d'inscription
+    
 
     if ($_POST) {
 
-        // Initialiser les données de l'utilisateur
         $newUser = array();
         foreach($_POST as $key => $value) {
             $newUser[$key] = $value;
@@ -15,11 +14,7 @@
         $newUser['role'] = 'client';
         $newUser['favorite_rock'] = '?';
 
-        // Ajouter les informations au json
-        $data = json_decode(file_get_contents("../json/utilisateurs.json"));
-        $newUser['id'] = count($data);
-        $data[] = $newUser;
-        file_put_contents('../json/utilisateurs.json', json_encode($data, JSON_PRETTY_PRINT));
+        writeNewUser($newUser);
 
         header("Location: init_session.php");
     }

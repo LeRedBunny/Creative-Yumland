@@ -1,5 +1,25 @@
 <?php
+
+    require('user_json.php');
     session_start();
+
+
+    $profile = getUserProfile($_POST['email']);
+    $message = '';
+
+    if (!isset($profile)) {
+        $message = "Aucun compte n'est associé à cet email.";
+    } else {
+        $password = $_POST['password'];
+        
+        if (hash('sha256', $password) == $profile['password']) {
+            loadProfileIntoSession($profile);
+            header('Location: ../index.php');
+        } else {
+            $message = 'Mot de passe érroné.';
+        }
+    }
+
 ?>
 
 <!DOCTYPE html>
@@ -44,7 +64,7 @@
 
             <section>
                 <fieldset>
-                    <form name="connexion" method="post" action="#">
+                    <form name="connexion" method="post" action="connexion.php">
                         
                             <h2>Connexion</h2>
                                 <div class="div1">
@@ -53,8 +73,8 @@
                                 </div>
                                 <br>
                                 <div class="div1">
-                                    <input type="password" id="ppassword" required>
-                                    <label for="ppassword">Mot de passe</label>
+                                    <input type="password" id="password" required>
+                                    <label for="password">Mot de passe</label>
                                 </div>
                                 <br>
                                 <button type="submit" class="login">Connexion</button>
@@ -63,6 +83,9 @@
                         
                             Vous n'avez pas de compte ? 
                             <a href="inscription.html"> Cliquer ici </a>
+
+                            <?= $message ?>
+
                     </form>
                 </fieldset>
             </section>
