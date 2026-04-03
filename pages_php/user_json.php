@@ -7,13 +7,15 @@
         // Returns all profiles
 
         if (!file_exists(JSON_PATH)) {
-            echo "creating json file!";
             $file = fopen(JSON_PATH, 'w');
             fclose($file);
-            return array();
         }
 
-        return json_decode(file_get_contents(JSON_PATH), true);
+        $data = json_decode(file_get_contents(JSON_PATH), true);
+        if (!$data) {
+            return array();
+        }
+        return $data;
     }
 
 
@@ -23,7 +25,7 @@
         $data = getUserData();
 
         $profile = getUserProfile($newUser['email']);
-        if (isset($profile)) {
+        if ($profile) {
             return false;
         }
 
@@ -48,11 +50,22 @@
     }
 
 
-    function loadProfileIntoSession (array $profile) : void {
+    function logIn (array $profile) : void {
         // Loads some of the profile data into the current session
 
         $_SESSION['logged_in'] = true;
         $_SESSION['name'] = $profile['name'];
+        $_SESSION['email'] = $profile['email'];
+        $_SESSION['status'] = $profile['status'];
+    }
+
+    function logOut () : void {
+        // Removes user info from the session
+
+        $_SESSION['logged_in'] = false;
+        unset($_SESSION['name']);
+        unset($_SESSION['status']);
+        unset($_SESSION['email']);
     }
 
 ?>

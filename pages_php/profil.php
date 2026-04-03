@@ -1,5 +1,20 @@
-<!DOCTYPE html>
+<?php
 
+    require('user_json.php');
+    session_start();
+
+    if (!isset($_SESSION['logged_in']) || !$_SESSION['logged_in']) {
+        header('Location: ../index.php');
+    }
+
+    $profile = getUserProfile($_SESSION['email']);
+    if (!$profile) {
+        header('Location: ../index.php');
+    }
+
+?>
+
+<!DOCTYPE html>
 
 <html lang="fr">
     
@@ -51,19 +66,19 @@
                     <div>
                         <p>
                             <button><img src="../images/Pickaxe.png" alt="Modifier" height="20px"></button>
-                            <strong>Nom :</strong> Dupont
+                            <strong>Nom :</strong> <?= $profile['name'] ?>
                         </p>
                         <p>
                             <button><img src="../images/Pickaxe.png" alt="Modifier" height="20px"></button>
-                            <strong>Prénom :</strong> Antoine
+                            <strong>Prénom :</strong> <?= $profile['firstname'] ?>
                         </p>
                         <p>
                             <button><img src="../images/Pickaxe.png" alt="Modifier" height="20px"></button>
-                            <strong>Mail :</strong> Adupont@gmail.com
+                            <strong>Mail :</strong> <?= $profile['email'] ?>
                         </p>
                         <p>
                             <button><img src="../images/Pickaxe.png" alt="Modifier" height="20px"></button>
-                            <strong>Pierre préférée :</strong> Améthyste
+                            <strong>Pierre préférée :</strong> <?= $profile['favorite_rock'] ?>
                         </p>
                     </div>
 
@@ -71,15 +86,23 @@
                     <div class="bloc">
                         <h3>Commandes</h3>
                         <ul>
-                            <li>Commande #1345 - 12/04/2026</li>
-                            <li>Commande #904 - 05/01/2026</li>
+                            <?php
+                            
+                                if (empty($profile['order_history'])) {
+                                    echo "Aucune commande dans l'historique.";
+                                } else {
+                                    foreach($profile['order_history'] as $order) {
+                                        echo "<li> Commande #".$order['order_id']." - ".date($order['date'])."</li>";
+                                    }
+                                }
+
+                            ?>
                         </ul>
                     </div>
 
-                    <!-- Fidélité-->
                     <div class="bloc">
                         <h3>Compte fidélité</h3>
-                        <p>Points: 320</p>
+                        <p>Points: <?= $profile['fidelity_points'] ?> points </p>
                     </div>
                 
                 </fieldset>

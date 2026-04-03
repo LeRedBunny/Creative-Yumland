@@ -2,22 +2,26 @@
 
     require('user_json.php');
     session_start();
-
-
-    $profile = getUserProfile($_POST['email']);
+    
     $message = '';
 
-    if (!isset($profile)) {
-        $message = "Aucun compte n'est associé à cet email.";
-    } else {
-        $password = $_POST['password'];
-        
-        if (hash('sha256', $password) == $profile['password']) {
-            loadProfileIntoSession($profile);
-            header('Location: ../index.php');
+    if ($_POST) {
+
+        $profile = getUserProfile($_POST['email']);
+
+        if ($profile) {
+            $password = $_POST['password'];
+            
+            if (hash('sha256', $password) == $profile['password']) {
+                logIn($profile);
+                header('Location: ../index.php');
+            } else {
+                $message = 'Mot de passe erroné.';
+            }
         } else {
-            $message = 'Mot de passe érroné.';
+            $message = "Aucun compte n'est associé à cet email.";
         }
+
     }
 
 ?>
@@ -41,50 +45,53 @@
             <header>
 
                 <div> 
-                    <a href="../index.html" id="logo"> 
+                    <a href="../index.php" id="logo"> 
                         <h1> Le Bistroche </h1> 
                     </a>
                 </div>
 
                 <div>
-                    <a href="../index.html"> Accueil </a>
+                    <a href="../index.php"> Accueil </a>
                     <span> | </span>
-                    <a href="carte.html"> Carte </a>
+                    <a href="carte.php"> Carte </a>
                     <span> | </span>
-                    <a href="bistroche.html"> À propos </a>
+                    <a href="bistroche.php"> À propos </a>
                 </div>
 
                 <div>
-                    <a href="inscription.html"> Inscription </a>
+                    <a href="inscription.php"> Inscription </a>
                     <span> | </span>
-                    <a href="connexion.html"> Connexion </a>
+                    <a href="connexion.php"> Connexion </a>
                 </div>
                     
             </header>
 
             <section>
+                
+
                 <fieldset>
                     <form name="connexion" method="post" action="connexion.php">
                         
-                            <h2>Connexion</h2>
-                                <div class="div1">
-                                    <input type="email" id="pEmail" required>
-                                    <label for="pEmail">Email</label>
-                                </div>
-                                <br>
-                                <div class="div1">
-                                    <input type="password" id="password" required>
-                                    <label for="password">Mot de passe</label>
-                                </div>
-                                <br>
-                                <button type="submit" class="login">Connexion</button>
-                                <button type="reset" class="login">Effacer</button>
-                                <br><br>
+                        <h2>Connexion</h2>
                         
-                            Vous n'avez pas de compte ? 
-                            <a href="inscription.html"> Cliquer ici </a>
+                        <div class='error_message'> <?= $message ?> </div>
 
-                            <?= $message ?>
+                        <div class="div1">
+                            <input type="email" id="email" name='email' value="<?= isset($_POST['email']) ? $_POST['email'] : '' ?>" required>
+                            <label for="email">Email</label>
+                        </div>
+                        <br>
+                        <div class="div1">
+                            <input type="password" id="password" name='password' required>
+                            <label for="password">Mot de passe</label>
+                        </div>
+                        <br>
+                        <button type="submit" class="login">Connexion</button>
+                        <button type="reset" class="login">Effacer</button>
+                        <br><br>
+                
+                        Vous n'avez pas de compte ? 
+                        <a href="inscription.php"> Cliquer ici </a>
 
                     </form>
                 </fieldset>
@@ -92,9 +99,9 @@
 
             <footer>
                 <div>
-                    <a href="mentions_legales.html"> Mentions légales </a>
+                    <a href="mentions_legales.php"> Mentions légales </a>
                     <span> | </span>
-                    <a href="notation.html"> Notez votre expérience </a>
+                    <a href="notation.php"> Notez votre expérience </a>
                 </div>
             </footer>
             
