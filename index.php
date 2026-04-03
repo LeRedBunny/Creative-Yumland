@@ -30,24 +30,24 @@
             <header>
 
                 <div> 
-                    <a href="index.html" id="logo"> 
+                    <a href="index.php" id="logo"> 
                         <h1> Le Bistroche </h1> 
                     </a>
                 </div>
 
                 <div>
-                    <a href="pages/carte.html"> Carte </a>
+                    <a href="pages/carte.php"> Carte </a>
                     <span> | </span>
-                    <a href="pages/bistroche.html"> À propos </a>
+                    <a href="pages/bistroche.php"> À propos </a>
                 </div>
 
                 <?php
 
                     if ($_SESSION['logged_in']) {
                         echo "<div>
-                              <a href='pages_php/profil.php'> ".$_SESSION['name']." </a>
+                              <a href='pages_php/profil.php'> Profil </a>
                               <span> | </span>
-                              <a href='pages_php/connexion.php'> Se déconnecter </a>
+                              <a href='pages_php/deconnexion.php'> Se déconnecter </a>
                               </div>";
                     }
                     else {
@@ -77,9 +77,9 @@
 
             <footer>
                 <div>
-                    <a href="pages/mentions_legales.html"> Mentions légales </a>
+                    <a href="pages/mentions_legales.php"> Mentions légales </a>
                     <span> | </span>
-                    <a href="pages/notation.html"> Notez votre expérience </a>
+                    <a href="pages/notation.php"> Notez votre expérience </a>
                 </div>
             </footer>
         
