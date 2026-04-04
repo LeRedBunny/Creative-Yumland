@@ -1,6 +1,8 @@
 <?php 
     
     session_start(); 
+    
+    require('header.php');
 
     if (!isset($_SESSION['logged_in'])) {
         $_SESSION['logged_in'] = false;
@@ -24,8 +26,8 @@
 
         <main>
 
-            <?php 
-                require('header.php');
+            <?php
+                createHeader(array('Carte', 'À propos'));
             ?>
 
 
@@ -41,13 +43,9 @@
             </section>
 
 
-            <footer>
-                <div>
-                    <a href="mentions_legales.php"> Mentions légales </a>
-                    <span> | </span>
-                    <a href="notation.php"> Notez votre expérience </a>
-                </div>
-            </footer>
+            <?php
+                createFooter(array('Mentions légales', 'Notez votre expérience'));
+            ?>
         
         </main>
 

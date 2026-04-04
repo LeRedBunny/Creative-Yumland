@@ -1,10 +1,9 @@
 <?php
 
     require('user_json.php');
+    require('header.php');
     session_start();
     
-    $message = '';
-
     if ($_POST) {
 
         $profile = getUserProfile($_POST['email']);
@@ -42,29 +41,9 @@
 
         <main>
 
-            <header>
-
-                <div> 
-                    <a href="../index.php" id="logo"> 
-                        <h1> Le Bistroche </h1> 
-                    </a>
-                </div>
-
-                <div>
-                    <a href="../index.php"> Accueil </a>
-                    <span> | </span>
-                    <a href="carte.php"> Carte </a>
-                    <span> | </span>
-                    <a href="bistroche.php"> À propos </a>
-                </div>
-
-                <div>
-                    <a href="inscription.php"> Inscription </a>
-                    <span> | </span>
-                    <a href="connexion.php"> Connexion </a>
-                </div>
-                    
-            </header>
+            <?php
+                createHeader(array('Accueil', 'Carte', 'À propos'));
+            ?>
 
             <section>
                 
@@ -74,7 +53,11 @@
                         
                         <h2>Connexion</h2>
                         
-                        <div class='error_message'> <?= $message ?> </div>
+                        <?php
+                            if (isset($message)) {
+                                echo '<div class="error_message">'.$message.'</div>';
+                            }
+                        ?>
 
                         <div class="div1">
                             <input type="email" id="email" name='email' value="<?= isset($_POST['email']) ? $_POST['email'] : '' ?>" required>
@@ -97,14 +80,12 @@
                 </fieldset>
             </section>
 
-            <footer>
-                <div>
-                    <a href="mentions_legales.php"> Mentions légales </a>
-                    <span> | </span>
-                    <a href="notation.php"> Notez votre expérience </a>
-                </div>
-            </footer>
-            
+            <?php
+                createFooter(array('Mentions légales', 'Notez votre expérience'));
+            ?>
+
         </main>
+
     </body>
+
 </html>

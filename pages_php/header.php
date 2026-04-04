@@ -1,8 +1,17 @@
 <?php 
 
-    session_start();
+    define('PAGE_LINKS', array(
+        'Carte' => 'carte.php',
+        'Connexion' => 'connexion.php',
+        "À propos" => 'bistroche.php',
+        'Accueil' => 'index.php',
+        'Notez votre expérience' => 'notation.php',
+        'Mentions légales' => 'mentions_legales.php'
+    ));
 
-    function createHeader (array $links) : void {
+    function createHeader (array $pages) : void {
+        // Creates a page's header with links to the given pages
+
         echo '<header> 
                 <div> 
                     <a href="index.php" id="logo"> 
@@ -10,29 +19,37 @@
                     </a>
                 </div>';
         
-        echo '<div>';
-        foreach($centerLinks as $link) {
-            echo '<a href="carte.php"> Carte </a> <span> | </span>';
+        echo '<div> |';
+        foreach($pages as $page) {
+            echo '<a href="'.PAGE_LINKS[$page].'"> '.$page.' </a> <span> | </span>';
         }
         echo '</div>';
 
-            
-
-            if ($_SESSION['logged_in']) {
-                echo "<div>
-                        <a href='profil.php'> Profil </a>
-                        <span> | </span>
-                        <a href='econnexion.php'> Se déconnecter </a>
-                        </div>";
-            }
-            else {
-                echo "<div>
-                        <a href='inscription.php'> Inscription </a>
-                        <span> | </span>
-                        <a href='connexion.php'> Connexion </a>
-                        </div>";
-            }
+        if ($_SESSION['logged_in']) {
+            echo "<div>
+                    <a href='profil.php'> Profil </a>
+                    <span> | </span>
+                    <a href='econnexion.php'> Se déconnecter </a>
+                    </div>";
+        }
+        else {
+            echo "<div>
+                    <a href='inscription.php'> Inscription </a>
+                    <span> | </span>
+                    <a href='connexion.php'> Connexion </a>
+                    </div>";
+        }
             
         echo "</header>";
+    }
+
+    function createFooter (array $pages) : void {
+        // Creates a page's footer with links to the given pages
+
+        echo '<footer> <div> |';
+        foreach($pages as $page) {
+            echo '<a href="'.PAGE_LINKS[$page].'"> '.$page.' </a> <span> | </span>';
+        }
+        echo '</div> </footer>';
     }
 ?>

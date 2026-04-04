@@ -1,8 +1,8 @@
 <?php 
     
     require('user_json.php');
+    require('header.php');
     session_start();
-    
 
     if ($_POST) {
 
@@ -45,86 +45,67 @@
 
         <main>
 
-            <header>
-
-                <div> 
-                    <a href="../index.php" id="logo"> 
-                        <h1> Le Bistroche </h1> 
-                    </a>
-                </div>
-
-                <div>
-                    <a href="../index.php"> Accueil </a>
-                    <span> | </span>
-                    <a href="carte.php"> Carte </a>
-                    <span> | </span>
-                    <a href="bistroche.php"> À propos </a>
-                </div>
-
-                <div>
-                    <a href="inscription.php"> Inscription </a>
-                    <span> | </span>
-                    <a href="connexion.php"> Connexion </a>
-                </div>
+            <?php
+                createHeader(array('Accueil', 'Carte', 'À propos'));
+            ?>
                     
-            </header>
-
             
             <section>
                 <fieldset> 
 
-                <form name="Inscription" method="post" action="inscription.php">
+                    <form name="Inscription" method="post" action="inscription.php">
 
-                    <h2>Inscription</h2>
-                    <div class='error_message'> <?= $message ?> </div>
+                        <h2>Inscription</h2>
 
-                    <br>
-                    <div class="div1">
-                        <input type="text" id="nom" name="name" value="<?= isset($_POST['email']) ? $_POST['email'] : '' ?>" required>
-                        <label for="nom">Nom</label>
-                    </div>
-                    <br>
-                    <div class="div1">
-                        <input type="text" id="prenom" name="firstname" value="<?= isset($_POST['firstname']) ? $_POST['firstname'] : '' ?>" required>
-                        <label for="prenom">Prénom</label>
-                    </div>
-                    <br>
-                    <div class="div1">
-                        <input type="email" id="email" name="email" value="<?= isset($_POST['email']) ? $_POST['email'] : '' ?>" required>
-                        <label for="email">Email</label>
-                    </div>
-                    <br>
-                    <div class="div1">
-                        <input type="password" id="password" name="password" required>
-                        <label for="password">Mot de passe</label>
-                    </div>
-                    <br>
-                    <div class="div1">
-                        <input type="tel" id="tel" name="tel" pattern="[0-9]{10}" value="<?= isset($_POST['tel']) ? $_POST['tel'] : '' ?>" required>
-                        <label for="tel">Téléphone</label>
-                    </div>
+                        <?php
+                            if (isset($message)) {
+                                echo '<div class="error_message">'.$message.'</div>';
+                            }
+                        ?>
+
+                        <br>
+                        <div class="div1">
+                            <input type="text" id="nom" name="name" value="<?= isset($_POST['email']) ? $_POST['email'] : '' ?>" required>
+                            <label for="nom">Nom</label>
+                        </div>
+                        <br>
+                        <div class="div1">
+                            <input type="text" id="prenom" name="firstname" value="<?= isset($_POST['firstname']) ? $_POST['firstname'] : '' ?>" required>
+                            <label for="prenom">Prénom</label>
+                        </div>
+                        <br>
+                        <div class="div1">
+                            <input type="email" id="email" name="email" value="<?= isset($_POST['email']) ? $_POST['email'] : '' ?>" required>
+                            <label for="email">Email</label>
+                        </div>
+                        <br>
+                        <div class="div1">
+                            <input type="password" id="password" name="password" required>
+                            <label for="password">Mot de passe</label>
+                        </div>
+                        <br>
+                        <div class="div1">
+                            <input type="tel" id="tel" name="tel" pattern="[0-9]{10}" value="<?= isset($_POST['tel']) ? $_POST['tel'] : '' ?>" required>
+                            <label for="tel">Téléphone</label>
+                        </div>
+                        
+                        <br><br>
+                        <button type="submit" class="login">Creer un compte</button>
+                        <button type="reset" class="login">Effacer</button>
+                        <br><br>
+
+
+                        Vous avez déjà un compte ?  
+                        <a href="connexion.php">Cliquez ici</a>
+
                     
-                    <br><br>
-                    <button type="submit" class="login">Creer un compte</button>
-                    <button type="reset" class="login">Effacer</button>
-                    <br><br>
-
-
-                    Vous avez déjà un compte ?  
-                    <a href="connexion.php">Cliquez ici</a>
-
-                
-                </form>
-            </fieldset>
+                    </form>
+                </fieldset>
             </section>
 
-            <footer>
-                <div>
-                    <a href="mentions_legales.php"> Mentions légales </a>
-                    <span> | </span>
-                    <a href="notation.php"> Notez votre expérience </a>
-                </div>
-            </footer>
+            <?php
+                createFooter(array('Mentions légales', 'Notez votre expérience'));
+            ?>
             
         </main>
 
