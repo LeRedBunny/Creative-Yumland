@@ -32,7 +32,7 @@
         <main>
 
             <?php
-                createHeader(array('Carte', 'À propos'));
+                createHeader(array('Accueil', 'Carte', 'À propos'));
             ?>
 
             <section>
@@ -65,6 +65,9 @@
                         <p>
                             <strong>Pierre préférée :</strong> <?= $profile['favorite_rock'] ?>
                         </p>
+                        <p>
+                            <strong>Numéro de téléphone :</strong> <?= $profile['tel'] ?>
+                        </p>
                     </div>
 
                     <!--Commandes-->
@@ -88,6 +91,10 @@
                     <div class="bloc">
                         <h3>Compte fidélité</h3>
                         <p>Points: <?= $profile['fidelity_points'] ?> points </p>
+                    </div>
+
+                    <div>
+                        <a href='modifier_mdp.php'> <button> Modifier le mot de passe </button> </a>
                     </div>
                 
                 </fieldset>

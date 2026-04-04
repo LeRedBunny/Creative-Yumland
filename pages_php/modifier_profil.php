@@ -30,14 +30,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel='stylesheet' href='../css/connexion_inscription_profil.css'>
         <link rel="icon" href="../images/icon.png">
-        <title> Modifier </title>
+        <title> Modifier le profil </title>
     </head>
 
     <body>
         <main>
 
             <?php
-                createHeader(array('Carte', 'À propos'));
+                createHeader(array('Accueil', 'Carte', 'À propos'));
             ?>
 
 
@@ -78,10 +78,6 @@
                             </select>
                         </div>
                         <br>
-
-                        <div>
-                            <a href='modifier_mdp.php'> <button> Modifier le mot de passe </button> </a>
-                        </div>
 
                         <br>
 
