@@ -29,7 +29,7 @@
             echo "<div>
                     <a href='profil.php'> Profil </a>
                     <span> | </span>
-                    <a href='econnexion.php'> Se déconnecter </a>
+                    <a href='deconnexion.php'> Se déconnecter </a>
                     </div>";
         }
         else {

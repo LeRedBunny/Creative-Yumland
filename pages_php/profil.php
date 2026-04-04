@@ -1,6 +1,7 @@
 <?php
 
     require('user_json.php');
+    require('header.php');
     session_start();
 
     if (!isset($_SESSION['logged_in']) || !$_SESSION['logged_in']) {
@@ -30,28 +31,9 @@
         
         <main>
 
-            <header>
-
-                <div> 
-                    <a href="../index.html" id="logo"> 
-                        <h1> Le Bistroche </h1> 
-                    </a>
-                </div>
-
-                <div>
-                    <a href="carte.html"> Carte </a>
-                    <span> | </span>
-                    <a href="bistroche.html"> À propos </a>
-                </div>
-
-                <div>
-                    <a href="inscription.html"> Inscription </a>
-                    <span> | </span>
-                    <a href="connexion.html"> Connexion </a>
-                </div>
-                
-            </header>
-
+            <?php
+                createHeader(array('Carte', 'À propos'));
+            ?>
 
             <section>
 
@@ -109,13 +91,9 @@
                 
             </section>
 
-            <footer>
-                <div>
-                    <a href="mentions_legales.html"> Mentions légales </a>
-                    <span> | </span>
-                    <a href="notation.html"> Notez votre expérience </a>
-                </div>
-            </footer>
+            <?php
+                createFooter(array('Mentions légales', 'Notez votre expérience'));
+            ?>
 
         </main>
         

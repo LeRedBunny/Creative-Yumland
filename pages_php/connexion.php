@@ -13,7 +13,7 @@
             
             if (hash('sha256', $password) == $profile['password']) {
                 logIn($profile);
-                header('Location: ../index.php');
+                header('Location: index.php');
             } else {
                 $message = 'Mot de passe erroné.';
             }

@@ -20,7 +20,7 @@
         $message = '';
         if ($success) {
             logIn($newUser);
-            header("Location: ../index.php");
+            header("Location: index.php");
         } else {
             $message = 'Un utilisateur avec cet email existe déjà.';
         }
