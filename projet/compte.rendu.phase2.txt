@@ -1,25 +1,25 @@
 Jeudi 12 Mars:
-Participants: Alexi, Grégoire
-Durée: 1/2 heure
-Ecriture du Json contenant les plats, lecture du projet
+  Participants: Alexi, Grégoire
+  Durée: 1/2 heure
+  Ecriture du Json contenant les plats, lecture du projet
 
 Samedi 21 mars:
-Participant: Grégoire
-Durée: 1 heure
-Création d'une page permettant d'ajouter des plats au fichier json pour élargir facilement la carte.
+  Participant: Grégoire
+  Durée: 1 heure
+  Création d'une page permettant d'ajouter des plats au fichier json pour élargir facilement la carte.
 
 Mardi 24 mars
-Participants: Alexi, Grégoire
-Durée: 2 heures 30
-Création du système d'inscription
-Création du système d'affichage dynamique des plats, avec filtre
+  Participants: Alexi, Grégoire
+  Durée: 2 heures 30
+  Création du système d'inscription
+  Création du système d'affichage dynamique des plats, avec filtre
 
 Vendredi 3 avril
-Participants: Alexi, Grégoire
-Durée: 3heure, puis 30 minutes en plus pour Grégoire
-Total: 6h30
-Continuation du système de connexion et d'inscription.
-Création du système d'ajout au panier.
+  Participants: Alexi, Grégoire
+  Durée: 3heure, puis 30 minutes en plus pour Grégoire
+  Total: 6h30
+  Continuation du système de connexion et d'inscription.
+  Création du système d'ajout au panier.
 
 Samedi 4 avril
   Participant: Grégoire
