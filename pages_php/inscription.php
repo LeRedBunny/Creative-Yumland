@@ -13,7 +13,6 @@
         $newUser['password'] = hash('sha256', $newUser['password'], false);
         $newUser['status'] = 'client';
         $newUser['favorite_rock'] = 'Aucune';
-        $newUser['order_history'] = array();
         $newUser['fidelity_points'] = 0;
 
         $success = writeNewUser($newUser);

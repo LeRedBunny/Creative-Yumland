@@ -23,8 +23,13 @@
         foreach($pages as $page) {
             echo '<a href="'.PAGE_LINKS[$page].'"> '.$page.' </a> <span> | </span>';
         }
-        if ($_SESSION['logged_in'] && $_SESSION['status'] == 'admin') {
-            echo '<a href="admin.php"> Page administrateur </a> <span> | </span>';
+        if ($_SESSION['logged_in']) {
+            if ($_SESSION['status'] != 'client') {
+                echo '<a href="commandes.php"> Commandes </a> <span> | </span>';
+            }
+            if ($_SESSION['status'] == 'admin') {
+                echo '<a href="admin.php"> Page administrateur </a> <span> | </span>';
+            }
         }
         echo '</div>';
 

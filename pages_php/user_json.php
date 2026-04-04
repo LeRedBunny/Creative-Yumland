@@ -1,17 +1,17 @@
 <?php
 
-    define('JSON_PATH', '../json/utilisateurs.json');
+    define('USER_JSON_PATH', '../json/utilisateurs.json');
 
 
     function getUserData () : array {
         // Returns all profiles
 
-        if (!file_exists(JSON_PATH)) {
-            $file = fopen(JSON_PATH, 'w');
+        if (!file_exists(USER_JSON_PATH)) {
+            $file = fopen(USER_JSON_PATH, 'w');
             fclose($file);
         }
 
-        $data = json_decode(file_get_contents(JSON_PATH), true);
+        $data = json_decode(file_get_contents(USER_JSON_PATH), true);
         if (!$data) {
             return array();
         }
@@ -31,7 +31,7 @@
 
         $newUser['id'] = count($data);
         $data[] = $newUser;
-        file_put_contents(JSON_PATH, json_encode($data, JSON_PRETTY_PRINT));
+        file_put_contents(USER_JSON_PATH, json_encode($data, JSON_PRETTY_PRINT));
         return true;
     }
 
@@ -68,7 +68,7 @@
             return false;
         }
 
-        file_put_contents(JSON_PATH, json_encode($data, JSON_PRETTY_PRINT));
+        file_put_contents(USER_JSON_PATH, json_encode($data, JSON_PRETTY_PRINT));
         return true;
     }
 
@@ -105,6 +105,9 @@
         unset($_SESSION['name']);
         unset($_SESSION['status']);
         unset($_SESSION['email']);
+        if (isset($_SESSION['in_charge'])) {
+            unset($_SESSION['in_charge']);
+        }
     }
 
 ?>

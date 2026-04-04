@@ -1,6 +1,7 @@
 <?php 
 
     require('header.php');
+    require('user_json.php');
     session_start();
 
     if (!$_SESSION['logged_in'] || $_SESSION['status'] != 'admin') {
@@ -30,15 +31,33 @@
             <section>
                 <!--Liste des utilisateurs-->
                 <div>
+
                     <h1>Liste des clients</h1>
+
                     <ul>
-                        <li><a href="profil.html" target="_blank">Maxime Basto</a></li>
-                        <li><a href="profil.html" target="_blank">Alexi Toutou</a></li>
-                        <li><a href="profil.html" target="_blank">Grégoire Marie</a></li>
-                        <li><a href="profil.html" target="_blank">LuLu Yam</a></li>
-                        <li><a href="profil.html" target="_blank">Mark Fishback</a></li>
+
+                        <?php
+
+                            $STATUSES = array(
+                                'client' => 'Client',
+                                'admin' => 'Administrateur',
+                                'livreur' => 'Livreur',
+                                'cuisinier' => 'Cuisinier'
+                            );
+
+                            $users = getUserData();
+                            foreach($users as $user) {
+                                echo '<li>';
+                                echo 'Utilisateur #'.$user['id'].' - '.$user['firstname'].' '.$user['name'];
+                                echo ' - Statut : '.$STATUSES[$user['status']];
+                                echo '</li>';
+                            }
+                        
+                        ?>
                     </ul>
+
                 </div>
+
             </section>
 
         </main>

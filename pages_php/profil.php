@@ -1,6 +1,7 @@
 <?php
 
     require('user_json.php');
+    require('commandes_json.php');
     require('header.php');
     session_start();
 
@@ -76,11 +77,12 @@
                         <ul>
                             <?php
                             
-                                if (empty($profile['order_history'])) {
+                                $orders = getUserOrders($profile['id']);
+                                if (empty($orders)) {
                                     echo "Aucune commande dans l'historique.";
                                 } else {
-                                    foreach($profile['order_history'] as $order) {
-                                        echo "<li> Commande #".$order['order_id']." - ".date($order['date'])."</li>";
+                                    foreach($orders as $order) {
+                                        echo "<li> Commande #".$order['id']." - ".date($order['date'])."</li>";
                                     }
                                 }
 
