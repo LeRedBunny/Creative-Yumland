@@ -13,3 +13,15 @@ Participants: Alexi, Grégoire
 Durée: 2 heures 30
 Création du système d'inscription
 Création du système d'affichage dynamique des plats, avec filtre
+
+Vendredi 3 avril
+Participants: Alexi, Grégoire
+Durée: 3heure, puis 30 minutes en plus pour Grégoire
+Total: 6h30
+Continuation du système de connexion et d'inscription.
+Création du système d'ajout au panier.
+
+Samedi 4 avril
+Participant: Grégoire
+Durée: 5 heures et demi
+Tentative de lancer un fichier php sur son PC perso. Echec cuisant. ça vaut au moins 3 points bonus, franchement, je me suis donné beaucoup de mal pour finalement ne pas pouvoir tester le code.
