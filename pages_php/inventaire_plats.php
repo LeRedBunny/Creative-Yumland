@@ -1,3 +1,4 @@
+<?php session_start();?>
 <!DOCTYPE html>
 
 <html lang="fr">
@@ -14,7 +15,7 @@
         <?php
             $carte=json_decode(file_get_contents("../json/carte.json"),true);
             if($_GET["filtre"]!=""){
-                echo"filtre n'est pas nul";
+                //echo"filtre n'est pas nul";
                 $filtree;
                 $fit;
                 foreach($carte as $index => $value){
@@ -71,7 +72,7 @@
                     return $return;
                 }
                     
-                $caracplats=["image","prix","pierres","description","mots_clefs"];
+                $caracplats=["filename","image","prix","pierres","description","mots_clefs"];
             
                 //vérification des paramètres de POST
                 $belong;
@@ -115,8 +116,10 @@
                         //imprime la div contenant un nouveau plat
                         echo
                             "<div class='box'>
+                                <a href=\"plats/".$tab["filename"].".php\">
                                 <img src=\"".$tab['image']."\"alt=\"".$nom_plat."\" width='50' height='50'>
                                 <div>".$nom_plat."</div>
+                                </a>
                             </div>";
                     }
                     ?>
