@@ -5,12 +5,12 @@
     session_start();
 
     if (!isset($_SESSION['logged_in']) || !$_SESSION['logged_in']) {
-        header('Location: ../index.php');
+        header('Location: index.php');
     }
 
     $profile = getUserProfile($_SESSION['email']);
     if (!$profile) {
-        header('Location: ../index.php');
+        header('Location: index.php');
     }
 
 ?>
@@ -37,9 +37,16 @@
 
             <section>
 
-                <fieldset>
+                <fieldset>  
                     
-                    <h2>Mon Profil</h2>
+                    <h2> 
+                        <a href='modifier_profil.php'>
+                            <button>
+                                <img src="../images/Pickaxe.png" alt="Modifier" height="20px">
+                            </button>
+                        </a> 
+                        Mon Profil
+                    </h2>
 
 
                     <!-- Informations personnelles -->
@@ -47,19 +54,15 @@
 
                     <div>
                         <p>
-                            <button><img src="../images/Pickaxe.png" alt="Modifier" height="20px"></button>
                             <strong>Nom :</strong> <?= $profile['name'] ?>
                         </p>
                         <p>
-                            <button><img src="../images/Pickaxe.png" alt="Modifier" height="20px"></button>
                             <strong>Prénom :</strong> <?= $profile['firstname'] ?>
                         </p>
                         <p>
-                            <button><img src="../images/Pickaxe.png" alt="Modifier" height="20px"></button>
                             <strong>Mail :</strong> <?= $profile['email'] ?>
                         </p>
                         <p>
-                            <button><img src="../images/Pickaxe.png" alt="Modifier" height="20px"></button>
                             <strong>Pierre préférée :</strong> <?= $profile['favorite_rock'] ?>
                         </p>
                     </div>
@@ -98,4 +101,5 @@
         </main>
         
     </body>
+    
 </html>

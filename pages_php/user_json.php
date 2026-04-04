@@ -50,6 +50,45 @@
     }
 
 
+    function deleteUser (String $email) : bool {
+        // Deletes the user's profile, returns true if it was successful
+        
+        $data = getUserData();
+
+        $found = false;
+        foreach($data as $index => $user) {
+            if ($user['email'] == $email) {
+                unset($data[$index]);
+                $found = true;
+                break;
+            }
+        }
+
+        if (!$found) {
+            return false;
+        }
+
+        file_put_contents(JSON_PATH, json_encode($data, JSON_PRETTY_PRINT));
+        return true;
+    }
+
+
+    function updateUser (array $new_info) : bool {
+        // Updates the user's information, returns true if it was successful
+
+        $profile = getUserProfile($new_info['email']);
+        if (empty($profile)) {
+            return false;
+        }
+
+        $profile = array_merge($profile, $new_info);
+
+        deleteUser($profile['email']);
+        $success = writeNewUser($profile);
+        return $success;
+    }
+
+
     function logIn (array $profile) : void {
         // Loads some of the profile data into the current session
 
