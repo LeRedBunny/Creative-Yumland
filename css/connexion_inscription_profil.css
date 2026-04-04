@@ -66,6 +66,11 @@ form>div{
 }
 
 
+.error_message {
+    color: red;
+    font-style: italic;
+}
+
 
 /*
 @media screen and (max-height: 600px) {
