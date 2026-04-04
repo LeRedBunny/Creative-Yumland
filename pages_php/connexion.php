@@ -6,7 +6,7 @@
     
     if ($_POST) {
 
-        $profile = getUserProfile($_POST['email']);
+        $profile = getUserFromEmail($_POST['email']);
 
         if ($profile) {
             $password = $_POST['password'];

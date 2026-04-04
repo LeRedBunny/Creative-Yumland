@@ -8,7 +8,7 @@
         header('Location: index.php');
     }
 
-    $profile = getUserProfile($_SESSION['email']);
+    $profile = getUserProfile($_SESSION['user_id']);
     if (!$profile) {
         header('Location: index.php');
     }

@@ -19,25 +19,38 @@
     }
 
 
-    function writeNewUser (array $newUser) : bool {
-        // Writes the new user's data, returns true if done successfully
+    function writeNewUser (array $newUser) : int {
+        // Writes the new user's data, the id of the user
 
         $data = getUserData();
 
-        $profile = getUserProfile($newUser['email']);
+        $profile = getUserFromEmail($newUser['email']);
         if ($profile) {
-            return false;
+            return -1;
         }
 
         $newUser['id'] = count($data);
         $data[] = $newUser;
         file_put_contents(USER_JSON_PATH, json_encode($data, JSON_PRETTY_PRINT));
-        return true;
+        return $newUser['id'];
     }
 
 
-    function getUserProfile (String $email) : array {
-        // Returns the profile corresponding to the given email, returns an empty array if not found
+    function getUserProfile (int $id) : array {
+        // Returns the profile corresponding to the given id, returns an empty array if not found
+
+        $data = getUserData();
+        foreach ($data as $profile) {
+            if ($profile['id'] == $id) {
+                return $profile;
+            }
+        }
+
+        return array();
+    }
+
+    function getUserFromEmail (String $email) : array {
+        // Returns the profile corresponding to the given id, returns an empty array if not found
 
         $data = getUserData();
         foreach ($data as $profile) {
@@ -50,15 +63,15 @@
     }
 
 
-    function deleteUser (String $email) : bool {
-        // Deletes the user's profile, returns true if it was successful
-        
+    function updateUser (array $new_info) : bool {
+        // Updates the user's information, returns true if it was successful. $new_info must contain the id.
+
         $data = getUserData();
 
         $found = false;
-        foreach($data as $index => $user) {
-            if ($user['email'] == $email) {
-                unset($data[$index]);
+        foreach ($data as $index => $profile) {
+            if ($profile['id'] == $new_info['id']) {
+                $data[$index] = array_merge($profile, $new_info);
                 $found = true;
                 break;
             }
@@ -73,22 +86,6 @@
     }
 
 
-    function updateUser (array $new_info) : bool {
-        // Updates the user's information, returns true if it was successful
-
-        $profile = getUserProfile($new_info['email']);
-        if (empty($profile)) {
-            return false;
-        }
-
-        $profile = array_merge($profile, $new_info);
-
-        deleteUser($profile['email']);
-        $success = writeNewUser($profile);
-        return $success;
-    }
-
-
     function logIn (array $profile) : void {
         // Loads some of the profile data into the current session
 
@@ -96,6 +93,7 @@
         $_SESSION['name'] = $profile['name'];
         $_SESSION['email'] = $profile['email'];
         $_SESSION['status'] = $profile['status'];
+        $_SESSION['user_id'] = $profile['id'];
     }
 
     function logOut () : void {
@@ -105,6 +103,7 @@
         unset($_SESSION['name']);
         unset($_SESSION['status']);
         unset($_SESSION['email']);
+        unset($_SESSION['user_id']);
         if (isset($_SESSION['in_charge'])) {
             unset($_SESSION['in_charge']);
         }

@@ -15,9 +15,9 @@
         $newUser['favorite_rock'] = 'Aucune';
         $newUser['fidelity_points'] = 0;
 
-        $success = writeNewUser($newUser);
+        $newUser['id'] = writeNewUser($newUser);
         $message = '';
-        if ($success) {
+        if ($newUser['id'] != -1) {
             logIn($newUser);
             header("Location: index.php");
         } else {

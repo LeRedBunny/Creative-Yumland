@@ -13,8 +13,24 @@
     }
 
     if ($_POST) {
-        $_SESSION['in_charge'][] = $_POST['order'];
-        updateOrderStatus($_POST['order']);
+        
+        if (str_starts_with($_POST['order'], 'a') || str_starts_with($_POST['order'], 't')) {
+            // Bouton annuler/terminer
+
+            $id = intval(substr($_POST['order'], 1));
+
+            updateOrderStatus($id, str_starts_with($_POST['order'],'a') ? -1 : 1);
+
+            foreach($_SESSION['in_charge'] as $index => $order) {
+                if ($order == $id) {
+                    unset($_SESSION['in_charge'][$index]);
+                    break;
+                }
+            }
+        } else {
+            updateOrderStatus($_POST['order']);                 // Bouton prendre en charge
+            $_SESSION['in_charge'][] = $_POST['order'];
+        }
     }
 
 ?>
@@ -38,43 +54,69 @@
             <?php createHeader(array('Accueil', 'Carte', 'À propos')); ?>
 
             <section>
-                <!--Liste des utilisateurs-->
-                <div>
-                    <h1> Liste des commandes </h1>
-                    <ul>
-                        <?php
 
-                            $STATUSES = array('Payée', 'En préparation', 'Préparée', 'En livraison', 'Livrée');
+                <!--Liste des utilisateurs-->
+
+                <div>
+
+                    <h1> Liste des commandes </h1>
+
+                    <?php
+
+                        $STATUSES = array('Payée', 'En préparation', 'Préparée', 'En livraison', 'Livrée');
+                        $ORDER_TYPES = array(
+                            'emporter' => 'À emporter',
+                            'livraison' => 'Livraison',
+                            'sur place' => 'Sur place'
+                        );
+
+                        if ($_SESSION['status'] == 'admin') {
+                            $orders = getOrders();
+
+                            echo '<ul>';
+                            foreach($orders as $order) {
+                                echo '<li> Commande #'.$order['id'].' - '.$ORDER_TYPES[$order['type']].' - Statut : '.$STATUSES[$order['status']].'</li>';
+                            }
+                            echo '</ul>';
+                        } else {
+
+                            echo '<form method="post"> <h3> Commandes en cours </h3> <ul>';
+
+                            if (!$_SESSION['in_charge']) {
+                                echo 'Aucune commande en cours.';
+                            } else {
+                                foreach ($_SESSION['in_charge'] as $order) {
+                                    echo '<li> Commande #'.$order;
+                                    echo '<button type="submit" name="order" value="a'.$order.'"> Annuler  </input>';
+                                    echo '<button type="submit" name="order" value="t'.$order.'"> Terminé  </input>';
+                                    echo '</li>';
+
+                                    // Afficher l'adresse de livraison ou les plats selon le statut de l'utilisateur
+                                }
+                            }
+
+                            echo '</ul> <h3> Commandes à prendre en charge </h3> <ul>';
 
                             if ($_SESSION['status'] == 'livreur') {
-                                $orders = ordersByStatus('2', 'livraison');
-                            } elseif ($_SESSION['status'] == 'cuisinier') {
-                            $orders = ordersByStatus('0');
+                                $orders = getOrdersByStatus(2, 'livraison');
                             } else {
-                                $orders = getOrders();
+                                $orders = getOrdersByStatus(0);
                             }
 
-                            echo '<form method="post"';
-                            foreach($orders as $order) {
-                                echo '<li>';
-                                echo 'Commande #'.$order['id'];
-                                if ($_SESSION['status'] == 'admin') {
-                                    echo ' - Statut : '.$STATUSES[$order['status']];
-                                } else {
-                                    if (in_array($order['id'], $_SESSION['in_charge'])) {
-                                        echo '<button> Prise en charge </button>';
-                                    } else {
-                                        echo '<button type="submit" name="order" value="'.$order['id'].'"> Prendre en charge  </input>';
-                                    }
-                                }
-
+                            foreach ($orders as $order) {
+                                echo '<li> Commande #'.$order['id'];
+                                echo '<button type="submit" name="order" value="'.$order['id'].'"> Prendre en charge  </input>';
                                 echo '</li>';
                             }
-                            echo '</form>';
-                        
-                        ?>
-                    </ul>
+
+                            echo '</ul> </form>';
+
+                        }
+                    
+                    ?>
+
                 </div>
+
             </section>
 
         </main>

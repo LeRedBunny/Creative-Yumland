@@ -8,13 +8,13 @@
         header('Location: index.php');
     }
 
-    $profile = getUserProfile($_SESSION['email']);
+    $profile = getUserProfile($_SESSION['user_id']);
     if (!$profile) {
         header('Location: index.php');
     }
 
     if ($_POST) {
-        $_POST['email'] = $profile['email'];
+        $_POST['id'] = $profile['id'];
         updateUser($_POST);
         header('Location: profil.php');
     }

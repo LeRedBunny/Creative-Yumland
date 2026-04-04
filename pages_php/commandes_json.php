@@ -47,52 +47,7 @@
     }
 
 
-    function deleteOrder (int $order_id) : bool {
-        // Deletes the order, returns true if it was successful
-        
-        $data = getOrders();
-
-        $found = false;
-        foreach($data as $index => $order) {
-            if ($order['id'] == $order_id) {
-                unset($data[$index]);
-                $found = true;
-                break;
-            }
-        }
-
-        if (!$found) {
-            return false;
-        }
-
-        file_put_contents(ORDER_JSON_PATH, json_encode($data, JSON_PRETTY_PRINT));
-        return true;
-    }
-
-
-    function updateOrderStatus (int $order_id) : bool {
-        // Updates the status of the order, returns true if successful
-
-        $orders = getOrders();
-
-        $found = false;
-        foreach($orders as $order) {
-            if ($order['id'] == $order_id) {
-                $order['status']++;
-                $found = true;
-                break;
-            }
-        }
-
-        if (!$found) {
-            return false;
-        }
-
-        file_put_contents(ORDER_JSON_PATH, json_encode($orders, JSON_PRETTY_PRINT));
-        return true;
-    }
-
-    function ordersByStatus (int $status, String $type = '') : array {
+    function getOrdersByStatus (int $status, String $type = '') : array {
         // Returns all orders with the given status and type, if type == '' returns every order with given status
 
         $orders = getOrders();
@@ -106,6 +61,31 @@
 
         return $requested;
     }
+
+
+    function updateOrderStatus (String $id, int $change = 1) : bool {
+        // Updates the status of the order, returns true if successful
+        // If the order isn't being prepared/delivered, increments its status, else decrements it
+
+        $orders = getOrders();
+
+        $found = false;
+        foreach ($orders as $index => $order) {
+            if ($order['id'] == $id) {
+                $orders[$index]['status'] += $change;
+                $found = true;
+                break;
+            }
+        }
+
+        if (!$found) {
+            return false;
+        }
+
+        file_put_contents(ORDER_JSON_PATH, json_encode($orders, JSON_PRETTY_PRINT));
+        return true;
+    }
+
 
     function getUserOrders ($client_id) {
         // Returns all orders of the given client
