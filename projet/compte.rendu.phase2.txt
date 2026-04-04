@@ -22,6 +22,12 @@ Continuation du système de connexion et d'inscription.
 Création du système d'ajout au panier.
 
 Samedi 4 avril
-Participant: Grégoire
-Durée: 5 heures et demi
-Tentative de lancer un fichier php sur son PC perso. Echec cuisant. ça vaut au moins 3 points bonus, franchement, je me suis donné beaucoup de mal pour finalement ne pas pouvoir tester le code.
+  Participant: Grégoire
+  Durée: 5 heures et demi
+  Tentative de lancer un fichier php sur son PC perso. Echec cuisant. ça vaut au moins 3 points bonus, franchement, je me suis donné beaucoup de mal pour finalement ne pas pouvoir tester le code.
+
+  Participant: Alexi
+  Durée: 7h30
+  Fini les systèmes de connexion, d'inscription et de modification des comptes. Commencé et quasiment fini les systèmes de commandes pour les livreurs/cuisiniers et de gestion des utilisateurs par les admins.
+
+
