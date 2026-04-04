@@ -86,7 +86,10 @@ button{
     font-size: 16px;
 }
 
-
+.error_message {
+    color: red;
+    font-style: italic;
+}
 
 
 
