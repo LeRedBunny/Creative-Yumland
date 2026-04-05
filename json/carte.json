@@ -181,6 +181,23 @@
         "2":"pas cher"
     }
 },
+"Salade de gemmes": {
+    "filename":"salade",
+    "image":"../images/salade.png",
+    "prix":"60",
+    "pierres":{
+        "0":"Opale",
+        "1":"Topaze",
+        "2":"Ruby",
+        "3":"Saphire",
+        "4":"Diamand"
+    },
+    "description":"Un assortiment de pierres précieuses.",
+    "mots_clefs":{
+        "0":"Solide",
+        "1":"Premium"
+    }
+},
 "Menu Gourmet": {
     "filename":"gourmet",
     "name":"Menu Gourmet",
