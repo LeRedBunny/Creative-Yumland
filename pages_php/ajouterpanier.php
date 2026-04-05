@@ -6,6 +6,6 @@
             echo "$_POST"."[\"panier\"][".$index."]=".$tab."<br>";
         }
         $_SESSION["panier"][]=$_POST;
-        header("Location: panier.php");
+        header("Location: carte.php");
     ?>
 </html>
