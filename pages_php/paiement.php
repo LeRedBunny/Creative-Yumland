@@ -9,7 +9,7 @@
     $order = $_SESSION['panier'];
     $transaction = substr(str_shuffle("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"), 0, 12); //Identifiant généré aléatoirement
     $vendeur = "MI-4_G";
-    $retour = "http://localhost/Creative-Yumland-1/pages_php/verification.php";
+    $retour = "http://localhost/pages_php/verification.php";
     $api_key = getAPIKey($vendeur);
 
     // Vérif API key
