@@ -69,7 +69,7 @@
                                 echo '</td>';
 
                                 echo '<td> '.$dish_name.'</td>';
-                                echo '<td>'.$amount.' x '.$price.'€ </td>';
+                                echo '<td>'.$amount.' ✕ '.$price.'€ </td>';
                                 
                                 
 

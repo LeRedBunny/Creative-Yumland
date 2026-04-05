@@ -29,13 +29,15 @@
 
     // If the user wants to copy the order into their cart
     if ($_POST) {
+        echo 'hi';  
         foreach($order['contents'] as $name => $amount) {
             if (isset($_SESSION['panier'][$name])) {
-                $_SESSION['panier'][$name] += $_POST['amount'];
+                $_SESSION['panier'][$name] += $amount;
             } else {
-                $_SESSION['panier'][$name] = $_POST['amount'];
+                $_SESSION['panier'][$name] = $amount;
             }
         }
+        header('Location: panier.php');
     }
 
 ?>
@@ -68,6 +70,22 @@
                     <h3> <?= date('l jS \of F Y h:i:s A', $order['date']) ?> </h3>
                     <?= ($admin) ? '<h3> <a href="profil.php?id='.$order['client_id'].'"> Utilisateur #'.$order['client_id'].' </a> </h3>' : '' ?>
 
+                    <?php
+                    
+                    $price = 0;
+                    echo '<h3> Contenu : </h3> <ul>';
+                    foreach($order['contents'] as $dish => $amount) {
+                        echo '<li> <a href="plat.php?plat='.$dish.'"> '.$dish.'</a> ✕ '.$amount.' </li>';
+                        $price += getDish($dish)['prix'] * $amount;
+                    }
+                    echo '</ul>';
+                    echo 'Prix : '.$price.'€';
+
+                    if ($admin == false) {
+                        echo '<form method="post"> <input type="submit" id="submit" name="submit" value="Copier la commande"> </form>';
+                    }
+
+                    ?>
 
                 </fieldset>
                 
