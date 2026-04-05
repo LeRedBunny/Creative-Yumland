@@ -1,6 +1,27 @@
 <?php session_start();//session_destroy();
-    if($_SESSION['logged_in'] = false){
-        header("Location: connexion.php");
+
+    require('user_json.php');
+    require('header.php');
+    session_start();
+
+    if (!isset($_SESSION['logged_in']) || !$_SESSION['logged_in']) {
+        header('Location: index.php');
+    }
+
+    $profile = getUserProfile($_SESSION['email']);
+    if (!$profile) {
+        header('Location: index.php');
+    }
+
+    if($_POST["ajout.suppression"]=='-1'){
+        $array;
+        foreach($_SESSION["panier"] as $index => $value){
+            if($index != $_POST["numtab"]){
+                $array[]=$value;
+            }
+        }
+        $_SESSION["panier"]=$array;
+        unset($array);
     }
 ?>
 <!DOCTYPE html>
@@ -9,34 +30,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/panier.css">
 </head>
 <body>
      <main>
 
-            <header>
+            <?php
+                createHeader(array('Accueil', 'Carte', 'À propos'));
+            ?>
 
-                <div> 
-                    <a href="../index.html" id="logo"> 
-                        <h1> Le Bistroche </h1> 
-                    </a>
-                </div>
-
-                <div>
-                    <a href="../index.html"> Accueil </a>
-                    <span> | </span>
-                    <a href="bistroche.html"> À propos </a>
-                </div>
-
-                
-                <div>
-                    <a href="inscription.html"> Inscription </a>
-                    <span> | </span>
-                    <a href="connexion.html"> Connexion </a>
-                </div>
-
-            </header>
-    <h1>Panier</h1>
         <?php
         /*foreach($_SESSION["panier"] as $index => $tab){
             echo '$_SESSION'."[\"panier\"][".$index."]:<ol><br>";
@@ -44,15 +46,26 @@
                 echo "<li>"."$tab"."[".$id."]=".$value."</li>";
             }
             echo"</ol>";}*/
+            echo "<section>";
+            echo "<ul>";
+            echo "<li><h1>Panier</h1></li>";
             $prixtot=0;
             foreach($_SESSION["panier"] as $index => $tab){
-                echo "<fieldset> <ol>";
+                echo "<li><fieldset>";
+                echo "<form action=\"#\" method=\"POST\">
+                        <input type=\"hidden\" value=\"-1\" name=\"ajout.suppression\" id=\"a.s\"/>
+                        <input type=\"hidden\" value=\"".$index."\" name=\"numtab\" id=\"numtab\"/>
+                        <button type=\"submit\"><img src=\"../images/deletebutton.png\" alt=\"supprimer commande\" width=\"10\"></button>
+                    </form>";
+                echo "<ol>";
                     echo "<li>".$tab['name']."</li>";
                     echo "<li>Quantité:".$tab['amount']."</li>";
                     echo "<li>Prix:".$tab["prix"]."</li>";
-                echo"</ol></fieldset>";
+                echo"</ol></fieldset></li>";
                 $prixtot+=$tab["prix"]*$tab['amount'];
             }
+            echo "</ul>";
+            echo "</section>";
             echo"<div>Prix total: ".$prixtot." €</div>";
         ?>
         <form action="#" method="POST">

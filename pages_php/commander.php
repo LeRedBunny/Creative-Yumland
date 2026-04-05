@@ -56,6 +56,7 @@
                 <form action="ajouterpanier.php" method="POST">
                     <input type="hidden" value=<?php echo "\"".$nomplat."\"";?> name="name" id="name"/>
                     <input type="hidden" value=<?php echo "\"".$plat["prix"]."\"";?> name="prix" id="prix"/>
+                    <input type="hidden" value="1" name="ajout.suppression" id="a.s"/>
                     <label for="amount">Quantité</label>
                     <input type="number" value="1" min="1" max="99" name="amount" id="amount"/> <br>
                     <br>
