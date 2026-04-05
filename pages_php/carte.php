@@ -103,7 +103,7 @@
                         //imprime la div contenant un nouveau plat
                         echo
                             "<div class='box'>
-                                <a href=\"plats/".$tab["filename"].".php\">
+                                <a href='plat.php?plat=".$nom_plat."'>
                                 <img src=\"".$tab['image']."\"alt=\"".$nom_plat."\" width='50' height='50'>
                                 <div>".$nom_plat."</div>
                                 </a>

@@ -54,7 +54,7 @@
 
                     <form name="Inscription" method="post" action="inscription.php">
 
-                        <h2>Inscription</h2>
+                        <h1> Inscription </h1>
 
                         <?php
                             if (isset($message)) {
@@ -62,30 +62,59 @@
                             }
                         ?>
 
+
+
+                        <h3> Informations personnelles </h3>
+
                         <br>
                         <div class="div1">
                             <input type="text" id="nom" name="name" value="<?= isset($_POST['email']) ? $_POST['email'] : '' ?>" required>
                             <label for="nom">Nom</label>
                         </div>
                         <br>
+
                         <div class="div1">
                             <input type="text" id="prenom" name="firstname" value="<?= isset($_POST['firstname']) ? $_POST['firstname'] : '' ?>" required>
                             <label for="prenom">Prénom</label>
                         </div>
                         <br>
+
                         <div class="div1">
                             <input type="email" id="email" name="email" value="<?= isset($_POST['email']) ? $_POST['email'] : '' ?>" required>
                             <label for="email">Email</label>
                         </div>
                         <br>
+
                         <div class="div1">
                             <input type="password" id="password" name="password" required>
                             <label for="password">Mot de passe</label>
                         </div>
                         <br>
+
                         <div class="div1">
                             <input type="tel" id="tel" name="tel" pattern="[0-9]{10}" value="<?= isset($_POST['tel']) ? $_POST['tel'] : '' ?>" required>
                             <label for="tel">Téléphone</label>
+                        </div>
+
+
+
+                        <h3> Adresse </h3>
+
+                        <div class="div1">
+                            <input type="text" id="address" name="address" value="<?= isset($_POST['address']) ? $_POST['address'] : '' ?>" required>
+                            <label for="address"> Adresse </label>
+                        </div>
+                        <br>
+
+                        <div class="div1">
+                            <input type="text" id="city" name="city" value="<?= isset($_POST['city']) ? $_POST['city'] : '' ?>" required>
+                            <label for="city"> Ville </label>
+                        </div>
+                        <br>
+
+                        <div class="div1">
+                            <input type="number" id="code" name="code" pattern="[0-9]{5}" value="<?= isset($_POST['code']) ? $_POST['code'] : '' ?>" required>
+                            <label for="code"> Code postal </label>
                         </div>
                         
                         <br><br>

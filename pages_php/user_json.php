@@ -86,14 +86,27 @@
     }
 
 
+    function getAddress (String $address, int $code, String $city) {
+        // Formats the address
+        return $address.', '.$code.' '.$city;
+    }
+
+
     function logIn (array $profile) : void {
         // Loads some of the profile data into the current session
 
         $_SESSION['logged_in'] = true;
+
         $_SESSION['name'] = $profile['name'];
         $_SESSION['email'] = $profile['email'];
         $_SESSION['status'] = $profile['status'];
         $_SESSION['user_id'] = $profile['id'];
+
+        $_SESSION['address'] = $profile['address'];
+        $_SESSION['code'] = intval($profile['code']);
+        $_SESSION['city'] = $profile['city'];
+
+        $_SESSION['panier'] = array();
     }
 
     function logOut () : void {
@@ -104,6 +117,13 @@
         unset($_SESSION['status']);
         unset($_SESSION['email']);
         unset($_SESSION['user_id']);
+
+        unset($_SESSION['address']);
+        unset($_SESSION['code']);
+        unset($_SESSION['city']);
+
+        unset($_SESSION['panier']);
+
         if (isset($_SESSION['in_charge'])) {
             unset($_SESSION['in_charge']);
         }

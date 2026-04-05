@@ -64,6 +64,22 @@
                         </div>
                         <br>
 
+                        <div>
+                            <input type="text" id="address" name="address" placeholder='Adresse' value="<?= $profile['address'] ?>" required>
+                        </div>
+                        <br>
+
+                        <div>
+                            <input type="text" id="city" name="city" placeholder='Ville' value="<?= $profile['city'] ?>" required>
+                        </div>
+                        <br>
+
+                        <div>
+                            <input type='number' id='code' name='code' placeholder='Code postal' value='<?= $profile['code'] ?>' required>
+                        </div>
+                        <br>
+
+
                         <div> 
                             Pierre préférée :
                             <select name="favorite_rock" id="favorite_rock">
