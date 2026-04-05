@@ -30,6 +30,7 @@
         }
 
         $newUser['id'] = count($data);
+        $newUser['creation_date'] = time();
         $data[] = $newUser;
         file_put_contents(USER_JSON_PATH, json_encode($data, JSON_PRETTY_PRINT));
         return $newUser['id'];
@@ -96,6 +97,8 @@
         // Loads some of the profile data into the current session
 
         $_SESSION['logged_in'] = true;
+        $profile['last_login'] = time();
+        updateUser($profile);
 
         $_SESSION['name'] = $profile['name'];
         $_SESSION['email'] = $profile['email'];

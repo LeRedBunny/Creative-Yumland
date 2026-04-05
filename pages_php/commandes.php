@@ -75,7 +75,7 @@
 
                             echo '<ul>';
                             foreach($orders as $order) {
-                                echo '<li> Commande #'.$order['id'].' - '.$ORDER_TYPES[$order['type']].' - Statut : '.$STATUSES[$order['status']].'</li>';
+                                echo '<li> <a href="commande.php?order='.$order['id'].'"> Commande #'.$order['id'].' </a> - '.$ORDER_TYPES[$order['type']].' - Statut : '.$STATUSES[$order['status']].'</li>';
                             }
                             echo '</ul>';
                         } else {

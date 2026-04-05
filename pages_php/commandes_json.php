@@ -111,8 +111,21 @@
         }
 
         return $requested;
-
     }
+
+    function getOrder (int $order_id) : array {
+        // Returns the order, returns an empty array if not found
+
+        $orders = getOrders();
+        foreach ($orders as $order) {
+            if ($order['id'] == $order_id) {
+                return $order;
+            }
+        }
+
+        return array();
+    }
+
 
     function getDish (String $name) : array {
         // Returns a dish, returns an empty array if not found
