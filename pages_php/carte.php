@@ -7,7 +7,7 @@
     $carte = json_decode(file_get_contents("../json/carte.json"), true);
     if (isset($_GET['filtre']) && $_GET["filtre"]!=""){
         //echo"filtre n'est pas nul";
-        $filtree;
+        $filtree = array();
         $fit;
         foreach($carte as $index => $value){
             $fit=0;
@@ -99,16 +99,17 @@
                     <?php 
                     /*$plat=json_decode(file_get_contents("../json/carte.json"),true);*/
                     foreach($filtree as $nom_plat => $tab){
-                        //deux manières de faire " à l'intérieur de "_" : '' à l'intérieur, ou mettre un \ devant
-                        //imprime la div contenant un nouveau plat
-                        echo
-                            "<div class='box'>
-                                <a href=\"plat.php?plat=".$nom_plat." \">
-                                <img src=\"".$tab['image']."\"alt=\"".$nom_plat."\" width='50' height='50'>
-                                <div>".$nom_plat."</div>
-                                </a>
-                            </div>";
+                    //deux manières de faire " à l'intérieur de "_" : '' à l'intérieur, ou mettre un \ devant
+                    //imprime la div contenant un nouveau plat
+                    echo
+                        "<div class='box'>
+                            <a href=\"plat.php?plat=".$nom_plat." \">
+                            <img src=\"".$tab['image']."\"alt=\"".$nom_plat."\" width='50' height='50'>
+                            <div>".$nom_plat."</div>
+                            </a>
+                        </div>";
                     }
+                    
                     ?>
                 </div>
             </section>
