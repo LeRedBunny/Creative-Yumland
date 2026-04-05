@@ -32,10 +32,11 @@ Samedi 4 avril
 
 Dimanche 5 avril
   Participant : Grégoire
-  Durée: 1h30
+  Durée: 2h
   Améliorer le système de panier, avec l'option de supprimer des plats de la commande. Mise à jour des fichiers php gérant le panier avec les fonctions créées par Alexi.
   Création d'un CSS pour afficher correctement le panier.
   Modification et uniformisation des images pour un meilleur affichage.
+  Ajout de plats à la carte
 
   Participant: Alexi
   Durée 7h
