@@ -1,7 +1,7 @@
 {
 "Savouroche": {
     "filename":"savouroche",
-    "image":"../images/Savouroche.webp",
+    "image":"../images/savouroche.png",
     "prix":"36",
     "pierres":{
         "0":"Ganolithe"
@@ -50,7 +50,7 @@
 },
 "Glace à l'émeraude": {
     "filename":"glace",
-    "image":"../images/icon.png",
+    "image":"../images/glace.png",
     "prix":"50",
     "pierres":{
         "0":"Emeraude",
