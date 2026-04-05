@@ -21,7 +21,7 @@
         
         <main>
 
-            <?php createHeader(array('Accueil', 'À propos')); ?>
+            <?php createHeader(array('Accueil', 'Carte')); ?>
 
             <section>
 

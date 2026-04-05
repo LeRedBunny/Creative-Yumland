@@ -87,7 +87,7 @@
     }
 
 
-    function getAddress (String $address, int $code, String $city) {
+    function getAddress (String $address, String $code, String $city) {
         // Formats the address
         return $address.', '.$code.' '.$city;
     }

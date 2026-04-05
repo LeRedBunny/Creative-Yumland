@@ -87,8 +87,21 @@
                             } else {
                                 foreach ($_SESSION['in_charge'] as $order) {
                                     echo '<li> Commande #'.$order;
-                                    echo '<button type="submit" name="order" value="a'.$order.'"> Annuler  </input>';
-                                    echo '<button type="submit" name="order" value="t'.$order.'"> Terminé  </input>';
+                                    echo '<button type="submit" name="order" value="a'.$order.'"> Annuler  </button>';
+                                    echo '<button type="submit" name="order" value="t'.$order.'"> Terminé  </button>';
+
+                                    $order = getOrder($order);
+                                    if ($_SESSION['status'] == 'livreur') {
+                                        $user = getUserProfile($order['client_id']);
+                                        echo '<br> <i>'.getAddress($user['address'], $user['code'], $user['city']).'</i>';
+                                    } else {
+                                        echo '<ul>';
+                                        foreach($order['contents'] as $dish => $amount) {
+                                            echo '<a href="plat.php?plat='.$dish.'"> '.$dish.' </a> ✕ '.$amount;
+                                        }
+                                        echo '</ul>';
+                                    }
+                                    
                                     echo '</li>';
 
                                     // Afficher l'adresse de livraison ou les plats selon le statut de l'utilisateur
@@ -108,7 +121,18 @@
                             } else {
                                 foreach ($orders as $order) {
                                     echo '<li> Commande #'.$order['id'];
-                                    echo '<button type="submit" name="order" value="'.$order['id'].'"> Prendre en charge  </input>';
+                                    echo '<button type="submit" name="order" value="'.$order['id'].'"> Prendre en charge  </button>';
+                                    $order = getOrder($order['id']);
+                                    if ($_SESSION['status'] == 'livreur') {
+                                        $user = getUserProfile($order['client_id']);
+                                        echo '<br> <i>'.getAddress($user['address'], $user['code'], $user['city']).'</i>';
+                                    } else {
+                                        echo '<ul>';
+                                        foreach($order['contents'] as $dish => $amount) {
+                                            echo '<a href="plat.php?plat='.$dish.'"> '.$dish.' </a> ✕ '.$amount;
+                                        }
+                                        echo '</ul>';
+                                    }
                                     echo '</li>';
                                 }
                             }

@@ -73,7 +73,7 @@
                             echo '<h1> Commande#'.$id.' </h1>';
                             echo '<h2> Le paiement a été accepté! </h2>';
                             echo '<a href="index.php"> Renvenir à l\'accueil </a>';
-                            echo '<br> <a href="commande?order='.$id.'.php"> voir la commande </a>';
+                            echo '<br> <a href="commande.php?order='.$id.'"> voir la commande </a>';
                         }
 
                     ?>
