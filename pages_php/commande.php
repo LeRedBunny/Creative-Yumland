@@ -67,6 +67,13 @@
                 <fieldset>  
                     
                     <h1> Commande #<?= $id ?> </h1>
+                    <h2> 
+                        Statut : 
+                        <?php
+                            $STATUSES = array('Payée', 'En préparation', 'Préparée', 'En livraison', 'Livrée');
+                            echo $STATUSES[$order['status']];
+                        ?> 
+                    </h2>
                     <h3> <?= date('l jS \of F Y h:i:s A', $order['date']) ?> </h3>
                     <?= ($admin) ? '<h3> <a href="profil.php?id='.$order['client_id'].'"> Utilisateur #'.$order['client_id'].' </a> </h3>' : '' ?>
 
