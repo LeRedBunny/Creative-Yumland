@@ -1,4 +1,8 @@
-<?php session_start();//session_destroy();?>
+<?php session_start();//session_destroy();
+    if($_SESSION['logged_in'] = false){
+        header("Location: connexion.php");
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
