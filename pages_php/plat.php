@@ -3,11 +3,8 @@
     require('header.php');
     session_start();
 
-    if (!isset($_SESSION['logged_in']) || !$_SESSION['logged_in']) {
-        header('Location: index.php');
-    }
     
-    if ($_GET) {
+    if ($_GET) {                    // Coming from carte.php
         $carte = json_decode(file_get_contents("../json/carte.json"), true);
         $nomplat = $_GET["plat"];
         if (isset($carte[$nomplat])) { 
@@ -15,11 +12,24 @@
         } else {
             header('Location: carte.php');
         }
-    } else {
-        header('Location: carte.php');
-    }
-    
+    } 
+    elseif ($_POST) {               // Add to the cart
+        
+        if (isset($_SESSION['logged_in']) && $_SESSION['logged_in']) {
 
+            $name = $_POST['name'];
+            if (isset($_SESSION['panier'][$name])) {
+                $_SESSION['panier'][$name] += $_POST['amount'];
+            } else {
+                $_SESSION['panier'][$name] = $_POST['amount'];
+            }
+
+            header('Location: carte.php');
+        } else {
+            header('Location: connexion.php');
+        }
+        
+    } 
 ?>
 
 <!DOCTYPE html>
@@ -29,6 +39,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="../images/icon.png">
         <title> <?= $nomplat ?> </title>
         <link rel="stylesheet" href="../css/connexion_inscription_profil.css">
     </head>
@@ -62,10 +73,8 @@
                     </ul>
 
                     <!--3) formulaire demandant les données supplémentaires de la commande -->
-                    <form action="ajouterpanier.php" method="POST">
+                    <form action="plat.php" method="POST">
                         <input type="hidden" value=<?= "\"".$nomplat."\"" ?> name="name" id="name"/>
-                        <input type="hidden" value=<?= "\"".$plat["prix"]."\"" ?> name="prix" id="prix"/>
-                        <input type="hidden" value="1" name="ajout.suppression" id="a.s"/>
                         <input type="number" value="1" min="1" max="99" name="amount" id="amount"/>
                         <br>
                         <input type="submit" value="Ajouter au panier">

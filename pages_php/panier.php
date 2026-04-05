@@ -1,6 +1,6 @@
 <?php
 
-    require('user_json.php');
+    require('commandes_json.php');
     require('header.php');
     session_start();
 
@@ -13,12 +13,12 @@
         $plat = $_POST['plat'];
 
         if ($plat == 'pay') {
-            // Procédure de paiement
-            header('Location: paiement.php'); // ?
+            $_SESSION['order_type'] = $_POST['type'];
+            $_SESSION['price'] = $_POST['price'];
+            header('Location: paiement.php');
         }
 
         unset($_SESSION['panier'][$plat]);
-
     }
 
 ?>
@@ -50,7 +50,6 @@
 
                     <table>
                     <h1> Panier </h1>
-                    <form method="post">
                     
                     <?php 
 
@@ -58,26 +57,39 @@
 
                         if ($_SESSION['panier']) {
 
-                            foreach($_SESSION["panier"] as $index => $tab){
+                            echo '<form method="post">';
+
+                            foreach($_SESSION["panier"] as $dish_name => $amount){
+
+                                $price = getDish($dish_name)['prix'];
+
                                 echo "<tr>";
 
                                 echo '<td>';
                                 echo '</td>';
 
-                                echo '<td> '.$tab['name'].'</td>';
-                                echo '<td>'.$tab['amount'].' x '.$tab['prix'].'€ </td>';
+                                echo '<td> '.$dish_name.'</td>';
+                                echo '<td>'.$amount.' x '.$price.'€ </td>';
                                 
                                 
 
 
-                                echo '<td> <button type="submit" id="plat" name="plat" value="'.$index.'"> Retirer </button> </td>';
+                                echo '<td> <button type="submit" id="plat" name="plat" value="'.$dish_name.'"> Retirer </button> </td>';
                                 
-                                $prixtot += $tab["prix"] * $tab['amount'];
+                                $prixtot += $price * $amount;
                             }
                             echo "</table>";
 
-                            echo"<div>Prix total: ".$prixtot." €</div>";
+                            echo"<br> <br> <div>Prix total: ".$prixtot." €</div>";
+                            echo "<select id='type' name='type'>
+                                      <option value='livraison' selected> En livraison </option>
+                                      <option value='emporter'> À emporter </option>
+                                      <option value='sur place'> Sur place </option>
+                                  </select>";
+                            echo '<input type="hidden" name="price" id="price" value="'.$prixtot.'">';
                             echo "<button type='submit' value='pay' id='plat' name='plat'> Commander </button>";
+                            
+                            echo '</form>'; 
                                 
                         } else {
                             echo 'Votre panier est vide. <a href="carte.php"> Remplissez le vite! </a>';
@@ -86,7 +98,6 @@
                     ?>
 
 
-                    </form>
 
                 </fieldset>
 

@@ -131,7 +131,7 @@
                                     echo "Aucune commande dans l'historique.";
                                 } else {
                                     foreach($orders as $order) {
-                                        echo "<li> Commande #".$order['id']." - ".date($order['date'])."</li>";
+                                        echo "<li> <a href='commande.php?order=".$order['id']."'> Commande #".$order['id']."</a> - ".date($order['date'])."</li>";
                                     }
                                 }
 

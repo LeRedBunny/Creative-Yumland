@@ -29,8 +29,8 @@
     }
 
     
-    function createOrder (array $contents, String $type, int $client_id) : void {
-        // Writes a new order into the JSON file
+    function createOrder (array $contents, String $type, int $client_id) : int {
+        // Writes a new order into the JSON file, returns its id
 
         $order = array(
             'contents' => $contents,
@@ -48,10 +48,13 @@
         ) ;
 
         $data = getOrders();
-        $order['id'] = count($data);
+        $id = count($data);
+        $order['id'] = $id;
 
         $data[] = $order;
         file_put_contents(ORDER_JSON_PATH, json_encode($data, JSON_PRETTY_PRINT));
+
+        return $id;
     }
 
 
@@ -95,7 +98,7 @@
     }
 
 
-    function getUserOrders ($client_id) {
+    function getUserOrders (int $client_id) : array {
         // Returns all orders of the given client
         
         $orders = getOrders();
@@ -109,6 +112,19 @@
 
         return $requested;
 
+    }
+
+    function getDish (String $name) : array {
+        // Returns a dish, returns an empty array if not found
+
+        $menu = json_decode(file_get_contents('../json/carte.json'), true);
+
+        foreach($menu as $dishname => $data) {
+            if ($dishname == $name) {
+                return $data;
+            }
+        }
+        return array();
     }
 
 ?>

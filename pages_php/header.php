@@ -70,8 +70,8 @@
         }
 
         $count = 0;
-        foreach ($_SESSION['panier'] as $element) {
-            $count += $element['amount'];
+        foreach ($_SESSION['panier'] as $amount) {
+            $count += $amount;
         }
         return $count;
     }
