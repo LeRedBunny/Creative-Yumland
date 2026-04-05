@@ -1,7 +1,7 @@
 {
 "Savouroche": {
     "filename":"savouroche",
-    "image":"../images/savouroche.png",
+    "image":"../images/Savouroche.webp",
     "prix":"36",
     "pierres":{
         "0":"Ganolithe"
@@ -50,7 +50,7 @@
 },
 "Glace à l'émeraude": {
     "filename":"glace",
-    "image":"../images/glace.png",
+    "image":"../images/icon.png",
     "prix":"50",
     "pierres":{
         "0":"Emeraude",
@@ -149,5 +149,63 @@
     "mots_clefs":{
         "0":"Solide"
     }
+},
+"Menu Gourmet": {
+    "filename":"gourmet",
+    "name":"Menu Gourmet",
+    "contenu":{
+        "0":"Savouroche",
+        "1":"Coeur de corail",
+        "2":"Poisson céramique"
+    },
+    "prix": "60"
+},
+"Menu Eco": {
+    "filename":"eco",
+    "name":"Menu Eco",
+    "contenu":{
+        "0":"Bouchée de minerai",
+        "1":"Carapace de Lagavulin"
+    },
+    "prix": "15"
+},
+"Menu Coquille": {
+    "filename":"coquille",
+    "name":"Menu Coquille",
+    "contenu":{
+        "0":"Oeufs arcaniques",
+        "1":"Carapace de Lagavulin"
+    },
+    "prix": "30"
+},
+"Menu héro":{
+    "filename":"hero",
+    "name":"Menu héro",
+    "contenu":{
+        "0":"Coeur de corail",
+        "1":"Coeur de corail",
+        "2":"Pomme d'or"
+    },
+    "prix":"45"
+},
+"Menu gemme":{
+    "filename":"gemme",
+    "name":"Menu gemme",
+    "contenu":{
+        "0":"Lingot d'orichalque",
+        "1":"Pomme d'or",
+        "2":"Glace à l'émeraude"
+    },
+    "prix":"80"
+},
+"Menu minerai":{
+    "filename":"minerai",
+    "name":"Menu minerai",
+    "contenu":{
+        "0":"Lingot d'orichalque",
+        "1":"Bouchée de minerai",
+        "2":"Pierre lisse"
+    },
+    "prix":"80"
 }
 }
