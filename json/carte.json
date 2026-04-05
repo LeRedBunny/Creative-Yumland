@@ -1,0 +1,153 @@
+{
+"Savouroche": {
+    "filename":"savouroche",
+    "image":"../images/Savouroche.webp",
+    "prix":"36",
+    "pierres":{
+        "0":"Ganolithe"
+    },
+    "description" : "Un gigot de Ganolithe, importé depuis la Montage de la Mort.",
+    "mots_clefs":{
+        "0":"Toxique",
+        "1":"Solide",
+        "2":"Goron",
+        "3":"Sucré",
+        "4":"Viande"
+    }
+},
+"Bouchée de minerai": {
+    "filename":"bouchee",
+    "image":"../images/bouchee.jpg",
+    "prix":"17.50",
+    "pierres":{
+        "0":"Gravier",
+        "1":"Grès",
+        "2":"Calcaire",
+        "3":"Terre domestique"
+    },
+    "description":"Une salade de pierres ordinaires",
+    "mots_clefs":{
+        "0":"Solide",
+        "1":"Pas cher",
+        "2":"Salé"
+    }
+},
+"Pomme d'or": {
+    "filename":"pomme",
+    "image":"../images/pommedor.jpeg",
+    "prix":"25.25",
+    "pierres":{
+        "0":"Pomme",
+        "1":"Or",
+        "2":"Additifs accides"
+    },
+    "description":"Notre fameuse pomme d'or, plongée dans de l'or en fusion, avant d'arriver dans votre assiette.",
+    "mots_clefs":{
+        "0":"Solide",
+        "1":"Sucré",
+        "2":"Bon pour la santé"
+    }
+},
+"Glace à l'émeraude": {
+    "filename":"glace",
+    "image":"../images/icon.png",
+    "prix":"50",
+    "pierres":{
+        "0":"Emeraude",
+        "1":"Calcaire"
+    },
+    "description":"Extraite directement des biomes de collines extrèmes, cette glace vous apporte une succulente émeraude sur un cône en calcaire.",
+    "mots_clefs":{
+        "0":"Solide",
+        "1":"Sucré"
+    }
+},
+"Oeufs arcaniques": {
+    "filename":"oeufs",
+    "image":"../images/Oeufs_arcaniques.png",
+    "prix":"37",
+    "pierres":{
+        "0":"Obsidienne",
+        "1":"Basalte",
+        "2":"Vidrite",
+        "3":"Minerai Pale"
+    },
+    "description":"Provenant des abisses, et cuisinés en omelette pour vous.",
+    "mots_clefs":{
+        "0":"Salé"
+    }
+},
+"Coeur de corail": {
+    "filename":"coeur",
+    "image":"../images/Encrusted_Heart.png",
+    "prix":"12",
+    "pierres":{
+        "0":"Corail",
+        "1":"Sable"
+    },
+    "description":"Généreuse donnation de Kann, goutez à son courage et son pouvoir.",
+    "mots_clefs":{
+        "0":"Salé",
+        "1":"Pas cher",
+        "2":"Viande"
+    }
+},
+"Carapace de Lagavulin": {
+    "filename":"carapace",
+    "image":"../images/lagavulin.webp",
+    "prix":"8",
+    "pierres":{
+        "0":"Calcite",
+        "1":"Os"
+    },
+    "description":"Goutez à une préparation importée directement depuis la Spire.",
+    "mots_clefs":{
+        "0":"Salé",
+        "1":"Pas cher",
+        "2":"Solide"
+    }
+},
+"Poisson Céramique": {
+    "filename":"poisson",
+    "image":"../images/ceramicfish.webp",
+    "prix":"23",
+    "pierres":{
+        "0":"Céramique",
+        "1":"Poisson"
+    },
+    "description":"Une espèce unique de carpe Koï, pour vos papilles gustatives reconnaissantes.",
+    "mots_clefs":{
+        "0":"Salé",
+        "1":"Pas cher"
+    }
+},
+"Lingot d'orichalque": {
+    "filename":"lingot",
+    "image":"../images/orichalque.webp",
+    "prix":"21",
+    "pierres":{
+        "0":"Orichalque",
+        "1":"Fer",
+        "2":"Métaux",
+        "3":"Beurre"
+    },
+    "description":"Monsieur, je sais que vous voulez un menu varié, mais là c'est trop. C'est juste un truc sorti de votre collection de minerais.",
+    "mots_clefs":{
+        "0":"Salé",
+        "1":"Solide"
+    }
+},
+"Pierre lisse": {
+    "filename":"pierrelisse",
+    "image":"../images/smoothstone.webp",
+    "prix":"30",
+    "pierres":{
+        "0":"Calcaire",
+        "1":"Grès"
+    },
+    "description":"Honnêtement, je ne suis pas sûr de pourquoi on sert ça, mais la fille du patron y tenait.",
+    "mots_clefs":{
+        "0":"Solide"
+    }
+}
+}
