@@ -14,4 +14,4 @@ Il y a 5 utilisateurs déjà inscrits :
 
 
 
-Pour accéder au site, lancez la commande ``php -S localhost:8000`` dans le répertoire du projet puis allez à l'adresse ``http://localhost:8000/index.php`` dans un navigateur.
+Pour accéder au site, lancez la commande ``php -S localhost:8000`` dans le répertoire du projet puis allez à l'adresse ``http://localhost:8000/accueil.php`` dans un navigateur.
