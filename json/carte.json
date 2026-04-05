@@ -1,7 +1,7 @@
 {
 "Savouroche": {
     "filename":"savouroche",
-    "image":"../images/Savouroche.webp",
+    "image":"../images/savouroche.png",
     "prix":"36",
     "pierres":{
         "0":"Ganolithe"
@@ -148,6 +148,37 @@
     "description":"Honnêtement, je ne suis pas sûr de pourquoi on sert ça, mais la fille du patron y tenait.",
     "mots_clefs":{
         "0":"Solide"
+    }
+},
+"Coeur de Golem": {
+    "filename":"golem",
+    "image":"../images/coeur_golem.png",
+    "prix":"28",
+    "pierres":{
+        "0":"Calcaire",
+        "1":"Grès",
+        "2":"Ganolithe"
+    },
+    "description":"Un coeur de Lithorok, assaisonné aux épices d'Hyrule",
+    "mots_clefs":{
+        "0":"Solide",
+        "1":"salé"
+    }
+},
+    "Plat Brise-dents": {
+    "filename":"brise-dents",
+    "image":"../images/brise-dents.png",
+    "prix":"12",
+    "pierres":{
+        "0":"Diorite",
+        "1":"Herbe d'Hyrule",
+        "2":"Charbon"
+    },
+    "description":"Riches aux calories, mais extrèmement dur à manger. Réservé aux plus courageux.",
+    "mots_clefs":{
+        "0":"Solide",
+        "1":"salé",
+        "2":"pas cher"
     }
 },
 "Menu Gourmet": {
