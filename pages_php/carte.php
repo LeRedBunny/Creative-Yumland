@@ -1,4 +1,12 @@
-<?php session_start();?>
+<?php
+    require('user_json.php');
+    require('header.php');
+    session_start();
+
+    if (!isset($_SESSION['logged_in']) || !$_SESSION['logged_in']) {
+        header('Location: index.php');
+    }
+?>
 <!DOCTYPE html>
 
 <html lang="fr">
@@ -37,28 +45,9 @@
 
         <main>
 
-            <header>
-
-                <div> 
-                    <a href="../index.html" id="logo"> 
-                        <h1> Le Bistroche </h1> 
-                    </a>
-                </div>
-
-                <div>
-                    <a href="../index.html"> Accueil </a>
-                    <span> | </span>
-                    <a href="bistroche.html"> À propos </a>
-                </div>
-
-                
-                <div>
-                    <a href="inscription.html"> Inscription </a>
-                    <span> | </span>
-                    <a href="connexion.html"> Connexion </a>
-                </div>
-
-            </header>
+            <?php
+                createHeader(array('Accueil', 'Carte', 'À propos'));
+            ?>
             
             <?php  //récupération des données de POST, et ajout au JSON, puis écriture de ttes les données du json
             

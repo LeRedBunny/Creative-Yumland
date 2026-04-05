@@ -1,4 +1,4 @@
-<?php session_start();//session_destroy();
+<?php //session_destroy();
 
     require('user_json.php');
     require('header.php');
@@ -6,22 +6,6 @@
 
     if (!isset($_SESSION['logged_in']) || !$_SESSION['logged_in']) {
         header('Location: index.php');
-    }
-
-    $profile = getUserProfile($_SESSION['email']);
-    if (!$profile) {
-        header('Location: index.php');
-    }
-
-    if($_POST["ajout.suppression"]=='-1'){
-        $array;
-        foreach($_SESSION["panier"] as $index => $value){
-            if($index != $_POST["numtab"]){
-                $array[]=$value;
-            }
-        }
-        $_SESSION["panier"]=$array;
-        unset($array);
     }
 ?>
 <!DOCTYPE html>

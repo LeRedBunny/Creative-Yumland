@@ -1,4 +1,13 @@
-<?php session_start(); //$_SESSION["plat"]="Savouroche";?>
+<?php //$_SESSION["plat"]="Savouroche";
+    require('user_json.php');
+    require('header.php');
+    session_start();
+
+    if (!isset($_SESSION['logged_in']) || !$_SESSION['logged_in']) {
+        header('Location: index.php');
+    }
+?>
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,28 +19,10 @@
 <body>
     <main>
 
-            <header>
+            <?php
+                createHeader(array('Accueil', 'Carte', 'À propos'));
+            ?>
 
-                <div> 
-                    <a href="../index.html" id="logo"> 
-                        <h1> Le Bistroche </h1> 
-                    </a>
-                </div>
-
-                <div>
-                    <a href="../index.html"> Accueil </a>
-                    <span> | </span>
-                    <a href="bistroche.html"> À propos </a>
-                </div>
-
-                
-                <div>
-                    <a href="inscription.html"> Inscription </a>
-                    <span> | </span>
-                    <a href="connexion.html"> Connexion </a>
-                </div>
-
-            </header>
         <?php
         //-1) récupérer le json, puis le tableau du json correspondant à l'id contenu dans $_session
             $carte=json_decode(file_get_contents("../json/carte.json"),true);
