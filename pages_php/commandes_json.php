@@ -1,5 +1,6 @@
 <?php 
 
+    require('user_json.php');
     define('ORDER_JSON_PATH', '../json/commandes.json');
 
 
@@ -38,6 +39,13 @@
             'date' => time(),
             'status' => 0     // 0 = payée, 1 = en préparation, 2 = préparée, 3 = en livraison, 4 = livrée
         );
+
+        $client = getUserProfile($client_id);
+        $order['address'] = array(
+            'address' => $client['address'],
+            'code' => $client['code'],
+            'city' => $client['city']
+        ) ;
 
         $data = getOrders();
         $order['id'] = count($data);

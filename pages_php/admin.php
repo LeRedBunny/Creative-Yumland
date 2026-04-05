@@ -8,17 +8,6 @@
         header('Location: index.php');
     }
 
-    if ($_POST) {
-
-        foreach($_POST as $id => $new_status) {
-            $profile = array(
-                'id' => intval($id),
-                'status' => $new_status
-            );
-            updateUser($profile);
-        }
-    }
-
 ?>
 
 <!DOCTYPE html>
@@ -59,21 +48,13 @@
 
                             $users = getUserData();
 
-                            echo '<form method="post">';
-                            echo '<input type="submit" value="Sauvegarder les changements">';
+                            echo '<ul>';
                             foreach($users as $user) {
-                                echo '<li>';
-                                echo 'Utilisateur #'.$user['id'].' - '.$user['firstname'].' '.$user['name'];
+                                echo '<li> <a href="profil.php?id='.$user['id'].'">';
+                                echo 'Utilisateur #'.$user['id'].' </a> - '.$user['firstname'].' '.$user['name'].'</li>';
 
-                                echo '<select name="'.$user['id'].'">';
-                                foreach($STATUSES as $code => $status) {
-                                    echo '<option value="'.$code.'" '.(($user['status'] == $code) ? 'selected' : '').'> '.$status.' </option>';
-                                }
-                                echo '</select>';
-
-                                echo '</li>';
                             }
-                            echo '</form>';
+                            echo '</ul>';
                         
                         ?>
                     </ul>

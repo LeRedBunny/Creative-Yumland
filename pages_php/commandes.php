@@ -103,10 +103,14 @@
                                 $orders = getOrdersByStatus(0);
                             }
 
-                            foreach ($orders as $order) {
-                                echo '<li> Commande #'.$order['id'];
-                                echo '<button type="submit" name="order" value="'.$order['id'].'"> Prendre en charge  </input>';
-                                echo '</li>';
+                            if (!$orders) {
+                                echo 'Aucune commande à prendre en charge';
+                            } else {
+                                foreach ($orders as $order) {
+                                    echo '<li> Commande #'.$order['id'];
+                                    echo '<button type="submit" name="order" value="'.$order['id'].'"> Prendre en charge  </input>';
+                                    echo '</li>';
+                                }
                             }
 
                             echo '</ul> </form>';
