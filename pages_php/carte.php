@@ -45,7 +45,7 @@
         <main>
 
             <?php
-                createHeader(array('Accueil', 'Carte', 'À propos'));
+                createHeader(array('Accueil', 'À propos'));
             ?>
             
             <?php  //récupération des données de POST, et ajout au JSON, puis écriture de ttes les données du json
@@ -103,7 +103,7 @@
                         //imprime la div contenant un nouveau plat
                         echo
                             "<div class='box'>
-                                <a href='plat.php?plat=".$nom_plat."'>
+                                <a href=\"plat.php?plat=".$nom_plat." \">
                                 <img src=\"".$tab['image']."\"alt=\"".$nom_plat."\" width='50' height='50'>
                                 <div>".$nom_plat."</div>
                                 </a>

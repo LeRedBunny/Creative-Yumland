@@ -35,7 +35,7 @@
 
         if ($_SESSION['logged_in']) {
             echo "<div>
-                    <a href='panier.php'> Panier </a>
+                    <a href='panier.php'> Panier ".($_SESSION['panier'] ? '('.countCart().')' : '')."</a>
                     <span> | </span>
                     <a href='profil.php'> Profil </a>
                     <span> | </span>
@@ -62,4 +62,18 @@
         }
         echo '</div> </footer>';
     }
+
+    function countCart () {
+        // Counts how many items are currently in the cart
+        if (!isset($_SESSION['panier']) || !$_SESSION['panier']) {
+            return 0;
+        }
+
+        $count = 0;
+        foreach ($_SESSION['panier'] as $element) {
+            $count += $element['amount'];
+        }
+        return $count;
+    }
+
 ?>
