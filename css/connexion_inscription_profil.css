@@ -71,6 +71,13 @@ form>div{
     font-style: italic;
 }
 
+table {
+    margin-right: auto;
+    margin-left: auto;
+    border-style: hidden;
+    border-radius: 10px;
+}
+
 
 /*
 @media screen and (max-height: 600px) {

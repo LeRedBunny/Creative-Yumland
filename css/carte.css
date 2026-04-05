@@ -10,9 +10,7 @@ body {
 	margin: 0px;
 
     background-image: url("../images/background.png");
-    background-size: fill 100vw;
 }
-
 
 body>main {
 	display: grid;
@@ -45,7 +43,6 @@ body>main {
     font-size: 50px;
     font-weight: bold;
     border-radius: 12px;
-    overflow: hidden;
     background-color: bisque;
 }
 /*
