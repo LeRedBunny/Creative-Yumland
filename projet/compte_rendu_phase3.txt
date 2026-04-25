@@ -1,0 +1,6 @@
+25 avril
+  Participant: Grégoire
+Durée: 45 minutes
+    -Mise en minuscules des données servant au filtre des plats (seulement des plats, pas des menus...où sont passé les menus?)
+    -début de la conceptualisation du fetch relatif au filtre
+    -création du fichier filtre.php dont le rôle est assez évident
