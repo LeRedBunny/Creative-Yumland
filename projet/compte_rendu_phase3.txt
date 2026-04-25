@@ -1,6 +1,6 @@
 25 avril
   Participant: Grégoire
 Durée: 45 minutes
-    -Mise en minuscules des données servant au filtre des plats (seulement des plats, pas des menus...où sont passé les menus?)
+    -Mise en minuscules des données servant au filtre des plats (seulement des plats, pas des menus...où sont passé les menus? Je les ai toujours en sauvegarde si on veut les refaire)
     -début de la conceptualisation du fetch relatif au filtre et recherches
     -création du fichier filtre.php dont le rôle est assez évident
