@@ -11,7 +11,7 @@
         "0":"toxique",
         "1":"solide",
         "2":"goron",
-        "3":"sucré",
+        "3":"sucre",
         "4":"viande"
     }
 },
@@ -21,7 +21,7 @@
     "prix":"17.50",
     "pierres":{
         "0":"gravier",
-        "1":"grès",
+        "1":"gres",
         "2":"calcaire",
         "3":"terre domestique"
     },
@@ -29,7 +29,7 @@
     "mots_clefs":{
         "0":"solide",
         "1":"pas cher",
-        "2":"salé"
+        "2":"sale"
     }
 },
 "Pomme d'or": {
@@ -44,8 +44,8 @@
     "description":"Notre fameuse pomme d'or, plongée dans de l'or en fusion, avant d'arriver dans votre assiette.",
     "mots_clefs":{
         "0":"solide",
-        "1":"sucré",
-        "2":"bon pour la santé"
+        "1":"sucre",
+        "2":"bon pour la sante"
     }
 },
 "Glace à l'émeraude": {
@@ -74,7 +74,7 @@
     },
     "description":"Provenant des abisses, et cuisinés en omelette pour vous.",
     "mots_clefs":{
-        "0":"salé"
+        "0":"sale"
     }
 },
 "Coeur de corail": {
@@ -87,7 +87,7 @@
     },
     "description":"Généreuse donnation de Kann, goutez à son courage et son pouvoir.",
     "mots_clefs":{
-        "0":"salé",
+        "0":"sale",
         "1":"pas cher",
         "2":"viande"
     }
@@ -102,7 +102,7 @@
     },
     "description":"Goutez à une préparation importée directement depuis la Spire.",
     "mots_clefs":{
-        "0":"salé",
+        "0":"sale",
         "1":"pas cher",
         "2":"solide"
     }
@@ -112,12 +112,12 @@
     "image":"../images/ceramicfish.webp",
     "prix":"23",
     "pierres":{
-        "0":"céramique",
+        "0":"ceramique",
         "1":"poisson"
     },
     "description":"Une espèce unique de carpe Koï, pour vos papilles gustatives reconnaissantes.",
     "mots_clefs":{
-        "0":"salé",
+        "0":"sale",
         "1":"pas cher"
     }
 },
@@ -128,12 +128,12 @@
     "pierres":{
         "0":"orichalque",
         "1":"fer",
-        "2":"métaux",
+        "2":"metaux",
         "3":"beurre"
     },
     "description":"Monsieur, je sais que vous voulez un menu varié, mais là c'est trop. C'est juste un truc sorti de votre collection de minerais.",
     "mots_clefs":{
-        "0":"salé",
+        "0":"sale",
         "1":"solide"
     }
 },
@@ -143,7 +143,7 @@
     "prix":"30",
     "pierres":{
         "0":"calcaire",
-        "1":"grès"
+        "1":"gres"
     },
     "description":"Honnêtement, je ne suis pas sûr de pourquoi on sert ça, mais la fille du patron y tenait.",
     "mots_clefs":{
@@ -156,13 +156,13 @@
     "prix":"28",
     "pierres":{
         "0":"calcaire",
-        "1":"grès",
+        "1":"gres",
         "2":"ganolithe"
     },
     "description":"Un coeur de Lithorok, assaisonné aux épices d'Hyrule",
     "mots_clefs":{
         "0":"solide",
-        "1":"salé"
+        "1":"sale"
     }
 },
 "Plat Brise-dents": {
@@ -177,7 +177,7 @@
     "description":"Riches aux calories, mais extrèmement dur à manger. Réservé aux plus courageux.",
     "mots_clefs":{
         "0":"solide",
-        "1":"salé",
+        "1":"sale",
         "2":"pas cher"
     }
 }
