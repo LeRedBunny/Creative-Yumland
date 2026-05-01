@@ -4,3 +4,12 @@ Durée: 45 minutes
     -Mise en minuscules des données servant au filtre des plats (seulement des plats, pas des menus...où sont passé les menus? Je les ai toujours en sauvegarde si on veut les refaire)
     -début de la conceptualisation du fetch relatif au filtre et recherches
     -création du fichier filtre.php dont le rôle est assez évident
+
+
+31 avril-1er mai
+  Participant: Grégoire
+Durée: 6 heures
+  -système de filtre fonctionnel, avec formatage des caractères spéciaux pertinents
+  -affichage de carte filtrée, affichage de la carte entière lorsque le filtre est vide
+  -le seul bémol est que les mots-clefs et ingrédients en plusieurs mots ne peuvent pas être détectés. Pour résoudre: mots-clefs: dans plusieurs tableaux, puisque les mots-clefs ne sont jamais affichés. Ingrédients: lors de l'écriture et de l'analyse, vérification de s'il s'agit d'un array ou string, et s'adapter en fonction
+
