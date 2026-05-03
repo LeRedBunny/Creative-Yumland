@@ -69,6 +69,13 @@ ul {
     padding: 0;
 }
 
+
+h2{
+    padding: 5vh;
+    text-align: center;
+}
+
+
 button:hover {
     animation: zoom 0.3s ease-in-out forwards;
     background-color: var(--visitedlink);
@@ -251,7 +258,6 @@ label{
     background: white;
     padding: 0 4px;
     transition: 0.3s;
-    pointer-events: none;
     border-radius: 20px;
 }
 
@@ -324,3 +330,29 @@ table {
     background-position: center;
 }
 
+
+
+
+        /* Notation */
+
+        
+.rating {
+    font-size: 30px;
+}
+
+label.star {
+    position: static;
+    margin: 5px;
+    font-family: FontAwesome;
+    background: none;
+    /*display: inline-block;*/
+    cursor: pointer;
+}
+
+.rating input{
+    display: none;
+}
+
+.rating input:checked~label:not(.rating input:checked+label){
+    color:white;
+}
