@@ -13,3 +13,9 @@ Durée: 6 heures
   -affichage de carte filtrée, affichage de la carte entière lorsque le filtre est vide
   -le seul bémol est que les mots-clefs et ingrédients en plusieurs mots ne peuvent pas être détectés. Pour résoudre: mots-clefs: dans plusieurs tableaux, puisque les mots-clefs ne sont jamais affichés. Ingrédients: lors de l'écriture et de l'analyse, vérification de s'il s'agit d'un array ou string, et s'adapter en fonction
 
+3 mai
+
+  Participant: Grégoire
+Durée: 45 minutes
+  -changement léger du formatage des plats: les "pierres" sont les ingrédients utilisés pour l'affichage strictement, et les "mots-clefs" sont tous les mots susceptibles d'être pertinents pour la recherche
+  -extension du form servant pour le tri, ajout d'une donnée "dureté"
