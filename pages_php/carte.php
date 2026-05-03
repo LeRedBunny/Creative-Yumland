@@ -1,62 +1,55 @@
+<?php
+
+    require('user_json.php');
+    require('header.php');
+    session_start();
+
+?>
+
 <!DOCTYPE html>
 
 <html lang="fr">
 
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=*, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="icon" href="../images/icon.png">
-        <link rel="stylesheet" href="../css/carte.css">
+        <link rel="stylesheet" href="../css/style2.css">
         <title> Carte </title>
+        <script src="../js/carte.js"></script>
     </head>
 
     <body>
 
+
         <main>
 
-            <header>
+            <?php
+                createHeader(array('Accueil', 'À propos'));
+            ?>
+            
+        
 
-                <div> 
-                    <a href="../index.html" id="logo"> 
-                        <h1> Le Bistroche </h1> 
-                    </a>
-                </div>
+            <aside class="bbno">
+                <form action="#" method="GET">
+                    <input type="text" placeholder="Filtrer les plats" name="filtre" id="filters"> <br>
+                    <select name="tri" id="tri">    <!-- A finir d'implémenter-->
+                        <option value="">Aucun</option>
+                        <option value="prix">Prix</option>
+                        <option value="durete">Dureté</option>
+                    </select>
 
-                <div>
-                    <a href="../index.html"> Accueil </a>
-                    <span> | </span>
-                    <a href="bistroche.html"> À propos </a>
-                </div>
-
-                
-                <div>
-                    <a href="inscription.html"> Inscription </a>
-                    <span> | </span>
-                    <a href="connexion.html"> Connexion </a>
-                </div>
-
-            </header>
-
+                    <button type="button" placeholder="Rechercher" onclick='filter()'></button>
+                    <!-- no submit, or the page reloads and the filter doesn't apply-->
+                </form>
+            </aside>
             <section>
-                <div class="container">
-                    <?php 
-                    $plat=json_decode(file_get_contents("carte.json"));
-                    foreach($plat as $nom_plat => $tab){
-                        //deux manières de faire " à l'intérieur de "_" : '' à l'intérieur, ou mettre un \ devant
-                        //imprime la div contenant un nouveau plat
-                        echo
-                            "<div class='box'>
-                                <img src=\"".$tab['src']."\"alt\"".$nom_plat."\" width='50' height='50'>
-                                <div>Bouchée de minerai</div>
-                            </div>";
-                    }
+                <div class="container" id="box">
                     
-                    
-                    
-                    ?>
-                    <div class="box">
+                </div>
             </section>
 
+            
         </main>
     </body>
 

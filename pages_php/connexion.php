@@ -1,5 +1,28 @@
 <?php
+
+    require('user_json.php');
+    require('header.php');
     session_start();
+    
+    if ($_POST) {
+
+        $profile = getUserFromEmail($_POST['email']);
+
+        if ($profile) {
+            $password = $_POST['password'];
+            
+            if (hash('sha256', $password) == $profile['password']) {
+                logIn($profile);
+                header('Location: index.php');
+            } else {
+                $message = 'Mot de passe erroné.';
+            }
+        } else {
+            $message = "Aucun compte n'est associé à cet email.";
+        }
+
+    }
+
 ?>
 
 <!DOCTYPE html>
@@ -7,74 +30,71 @@
 <html lang="fr">
 
     <head>
+
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Connexion</title>
-        <link rel="stylesheet" href="../css/connexion_inscription_profil.css">
+
+        <title> Connexion </title>
+
+        <link rel="stylesheet" href="../css/style.css">
+
         <link rel="icon" href="../images/icon.png">
+
+        <script src='../js/see_password.js'> </script>
+
     </head>
 
     <body>
 
         <main>
 
-            <header>
-
-                <div> 
-                    <a href="../index.html" id="logo"> 
-                        <h1> Le Bistroche </h1> 
-                    </a>
-                </div>
-
-                <div>
-                    <a href="../index.html"> Accueil </a>
-                    <span> | </span>
-                    <a href="carte.html"> Carte </a>
-                    <span> | </span>
-                    <a href="bistroche.html"> À propos </a>
-                </div>
-
-                <div>
-                    <a href="inscription.html"> Inscription </a>
-                    <span> | </span>
-                    <a href="connexion.html"> Connexion </a>
-                </div>
-                    
-            </header>
+            <?php
+                createHeader(array('Accueil', 'Carte', 'À propos'));
+            ?>
 
             <section>
+                
+
                 <fieldset>
-                    <form name="connexion" method="post" action="#">
+                    <form name="connexion" method="post" action="connexion.php">
                         
-                            <h2>Connexion</h2>
-                                <div class="div1">
-                                    <input type="email" id="pEmail" required>
-                                    <label for="pEmail">Email</label>
-                                </div>
-                                <br>
-                                <div class="div1">
-                                    <input type="password" id="ppassword" required>
-                                    <label for="ppassword">Mot de passe</label>
-                                </div>
-                                <br>
-                                <button type="submit" class="login">Connexion</button>
-                                <button type="reset" class="login">Effacer</button>
-                                <br><br>
+                        <h2>Connexion</h2>
                         
-                            Vous n'avez pas de compte ? 
-                            <a href="inscription.html"> Cliquer ici </a>
+                        <?php
+                            if (isset($message)) {
+                                echo '<div class="error_message">'.$message.'</div>';
+                            }
+                        ?>
+
+                        <div class="div1">
+                            <input type="email" id="email" name='email' value="<?= isset($_POST['email']) ? $_POST['email'] : '' ?>" required>
+                            <label for="email">Email</label>
+                        </div>
+                        <br>
+                        <div class="div1">
+                            <input type="password" id="password" name='password' required>
+                            <label for="password">Mot de passe</label>
+                            <button type='button' onclick='seePassword();'> Voir </button>
+                            
+                        </div>
+                        <br>
+                        <button type="submit" class="login">Connexion</button>
+                        <button type="reset" class="login">Effacer</button>
+                        <br><br>
+                
+                        Vous n'avez pas de compte ? 
+                        <a href="inscription.php"> Cliquer ici </a>
+
                     </form>
                 </fieldset>
             </section>
 
-            <footer>
-                <div>
-                    <a href="mentions_legales.html"> Mentions légales </a>
-                    <span> | </span>
-                    <a href="notation.html"> Notez votre expérience </a>
-                </div>
-            </footer>
-            
+            <?php
+                createFooter(array('Mentions légales', 'Notez votre expérience'));
+            ?>
+
         </main>
+
     </body>
+
 </html>
