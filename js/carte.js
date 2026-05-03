@@ -10,7 +10,7 @@ async function filter(){
     box.innerHTML = '';
     //const items = Array.isArray(data) ? data : Object.values(data);
     for (const nomplat in carte) {
-        box.innerHTML += "<a href=plat.php?plat=" + nomplat + "\">" + "<img src=\"" + carte[nomplat].image + "\" alt=\"" + nomplat + "\" width='50' + height='50'>" + "<div>" + nomplat + "</div> </a>"
+        box.innerHTML += "<a href=\"plat.php?plat=" + nomplat + "\">" + "<img src=\"" + carte[nomplat].image + "\" alt=\"" + nomplat + "\" width='50' + height='50'>" + "<div>" + nomplat + "</div> </a>"
         //                <a href=plat.php?plat=Savouroche>            <img src=(Savouroche[image]=)"../savouroche.webp" alt="Savouroche" width='50' height='50'> <div> Savouroche </div> </a>
         
     }
