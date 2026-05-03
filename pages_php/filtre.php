@@ -29,16 +29,25 @@ if($count != $empties){ //not all strings are empty
                 }
             }
         }
+        /*Filtres des ingrédients, inutiles avec le nouveau format
         if($fit!=1){    //si le plat ne contient pas de mot-clef correspondant aux filtres, on cherche dans les ingrédients
             foreach($content["pierres"] as $id => $value){   //pour chaque ingrédient du plat
                 foreach($filtres as $id2 => $f){                //pour chaque filtre appliqué par l'utilisateur
-                    if($f == $value){                           //si le filtre est le même que l'ingrédient
+                    if(is_array($value)){
+                        foreach($value as $id3 => $component){
+                            if($f == $component){   //si l'un des mots de l'ingrédient correspond au filtre
+                                $fit=1;         //alors ce plat appartient aux plats filtrées
+                                break;  
+                            }
+                        }
+                    } else 
+                        if($f == $value){   //si le filtre est le même que l'ingrédient
                         $fit=1;         //alors ce plat appartient aux plats filtrées
                         break;          //on arrête la boucle pour plus d'efficacité
                     }
                 }
             }
-        }
+        }*/
         if($fit >= 1){
             $cartefiltree[$index]=$content;
         }

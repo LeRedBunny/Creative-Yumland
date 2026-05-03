@@ -33,7 +33,13 @@
             <aside class="bbno">
                 <form action="#" method="GET">
                     <input type="text" placeholder="Filtrer les plats" name="filtre" id="filters"> <br>
-                    <button type="button" placeholder="Filtrer la carte" onclick='filter()'></button>
+                    <select name="tri" id="tri">    <!-- A finir d'implémenter-->
+                        <option value="">Aucun</option>
+                        <option value="prix">Prix</option>
+                        <option value="durete">Dureté</option>
+                    </select>
+
+                    <button type="button" placeholder="Rechercher" onclick='filter()'></button>
                     <!-- no submit, or the page reloads and the filter doesn't apply-->
                 </form>
             </aside>
