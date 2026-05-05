@@ -1,5 +1,30 @@
 <?php 
 
+
+    function headLinks (string $title, bool $admin_style = FALSE) {
+        /* Writes the HTML tags needed in <head> */
+
+        if ($admin_style) {
+            $style = 'admin';
+        } else {
+            if (!isset($_COOKIE['style'])) {
+                setcookie('style', 'style', time() + 3600 * 24);
+                $style = 'style';
+            } else {
+                $style = $_COOKIE['style'];
+            }
+            
+        }
+        echo '<meta charset="UTF-8">
+              <meta name="viewport" content="width=device-width, initial-scale=1.0">
+              <title> '.$title.' </title>
+              <link rel="stylesheet" id="style" href="../css/'.$style.'.css"/>
+              <link rel="icon" href="../images/icon.png">
+              <script src="../js/style.js"> </script>';
+    }
+
+
+
     define('PAGE_LINKS', array(
         'Carte' => 'carte.php',
         'Connexion' => 'connexion.php',
@@ -33,6 +58,7 @@
         }
         echo '</div>';
 
+
         if ($_SESSION['logged_in']) {
             echo "<div>
                     <a href='panier.php'> Panier ".($_SESSION['panier'] ? '('.countCart().')' : '')."</a>
@@ -47,11 +73,16 @@
                     <a href='inscription.php'> Inscription </a>
                     <span> | </span>
                     <a href='connexion.php'> Connexion </a>
+                    <button id='theme' onclick='toggleStyle();'> Thème </button>
                     </div>";
         }
+        
+        
             
         echo "</header>";
     }
+
+
 
     function createFooter (array $pages) : void {
         // Creates a page's footer with links to the given pages
@@ -62,6 +93,8 @@
         }
         echo '</div> </footer>';
     }
+
+
 
     function countCart () {
         // Counts how many items are currently in the cart

@@ -31,7 +31,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=*, initial-scale=1.0">
         <link rel="icon" href="../images/icon.png">
-        <link rel="stylesheet" href="../css/connexion_inscription_profil.css">
+        <link rel="stylesheet" href="../css/style.css">
         <title> Panier </title>
     </head>
 

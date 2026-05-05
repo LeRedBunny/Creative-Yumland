@@ -14,12 +14,12 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="icon" href="../images/icon.png">
-        <link rel="stylesheet" href="../css/carte.css">
+        <link rel="stylesheet" href="../css/style.css">
         <title> Carte </title>
         <script src="../js/carte.js"></script>
     </head>
 
-    <body>
+    <body onload='filter();'>
 
 
         <main>
@@ -30,7 +30,7 @@
             
         
 
-            <aside class="bbno">
+            <aside class="left">
                 <form action="#" method="GET">
                     <input type="text" placeholder="Filtrer les plats" name="filtre" id="filters"> <br>
                     <select name="tri" id="tri">    <!-- A finir d'implémenter-->
@@ -43,6 +43,7 @@
                     <!-- no submit, or the page reloads and the filter doesn't apply-->
                 </form>
             </aside>
+
             <section>
                 <div class="container" id="box">
                     

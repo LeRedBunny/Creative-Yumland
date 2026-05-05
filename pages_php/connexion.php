@@ -36,7 +36,7 @@
 
         <title> Connexion </title>
 
-        <link rel="stylesheet" href="../css/connexion_inscription_profil.css">
+        <link rel="stylesheet" href="../css/style.css">
 
         <link rel="icon" href="../images/icon.png">
 

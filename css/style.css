@@ -56,6 +56,8 @@ body {
     background-image: url("../images/background.png");
     background-size: auto 100vh;
 
+    overflow: hidden;
+
 }
 
 a {
@@ -66,6 +68,13 @@ ul {
     list-style-type: none;
     padding: 0;
 }
+
+
+h2{
+    padding: 5vh;
+    text-align: center;
+}
+
 
 button:hover {
     animation: zoom 0.3s ease-in-out forwards;
@@ -218,4 +227,132 @@ main>footer a {
         font-size: 26px;
     }
 
+}
+
+
+        /* Inscription/Connexion & autres */
+
+
+fieldset {
+    border: none;
+    background-color: var(--left-background);
+
+    height: var(--left-height);
+    width: 40%;
+    min-width: 350px;
+
+    color: var(--footer-text-color);
+
+    text-align: center;
+    margin: 0 auto;
+
+    margin-top: 20px;
+    overflow-y:auto;
+}
+
+label{
+    position: absolute;
+    left: 10px;
+    top: 1vh;
+    color: var(--footer-text-color);
+    background: white;
+    padding: 0 4px;
+    transition: 0.3s;
+    border-radius: 20px;
+}
+
+.div1{
+    position: relative;
+    width: 250px;
+    margin: 0 auto;
+    border-radius: 15px;
+}
+
+input {
+    width: 90%; 
+    padding: 12px 10px;
+    border-radius: 20px;
+    border:none;
+    outline: none;
+}
+
+
+form>div{
+    padding: 3vh 0;
+}
+
+
+.error_message {
+    color: red;
+    font-style: italic;
+}
+
+table {
+    margin-right: auto;
+    margin-left: auto;
+    border-style: hidden;
+    border-radius: 10px;
+}
+
+
+
+    /* Carte */
+
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    margin: 0 auto;
+    gap: 2rem;
+    width: 95%;
+}
+
+.box{
+    aspect-ratio: 1 / 1;
+
+    object-fit: cover;
+
+    font-size: 50px;
+    font-weight: bold;
+    border-radius: 12px;
+}
+
+
+.box:hover{
+    transform: scale(1.03);
+    transition:0.3s;
+}
+
+.box[plat]{
+    background-size: cover;
+    background-repeat:no-repeat;
+    background-position: center;
+}
+
+
+
+
+        /* Notation */
+
+        
+.rating {
+    font-size: 30px;
+}
+
+label.star {
+    position: static;
+    margin: 5px;
+    font-family: FontAwesome;
+    background: none;
+    /*display: inline-block;*/
+    cursor: pointer;
+}
+
+.rating input{
+    display: none;
+}
+
+.rating input:checked~label:not(.rating input:checked+label){
+    color:white;
 }
