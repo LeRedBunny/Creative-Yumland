@@ -19,3 +19,11 @@ Durée: 6 heures
 Durée: 45 minutes
   -changement léger du formatage des plats: les "pierres" sont les ingrédients utilisés pour l'affichage strictement, et les "mots-clefs" sont tous les mots susceptibles d'être pertinents pour la recherche
   -extension du form servant pour le tri, ajout d'une donnée "dureté"
+
+
+5 mai
+
+Participants: Alexi, Grégoire
+Durée: 2 heures
+-système de tri par prix et dureté implémenté
+Je sais pas ce qu'a fait Alexi
