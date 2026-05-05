@@ -8,12 +8,14 @@
     },
     "description" : "Un gigot de Ganolithe, importé depuis la Montage de la Mort.",
     "mots_clefs":{
-        "0":"Toxique",
-        "1":"Solide",
-        "2":"Goron",
-        "3":"Sucré",
-        "4":"Viande"
-    }
+        "0":"toxique",
+        "1":"solide",
+        "2":"goron",
+        "3":"sucre",
+        "4":"viande",
+        "5":"ganolithe"
+    },
+    "durete": "4"
 },
 "Bouchée de minerai": {
     "filename":"bouchee",
@@ -23,14 +25,20 @@
         "0":"Gravier",
         "1":"Grès",
         "2":"Calcaire",
-        "3":"Terre domestique"
+        "3": "tTerre domestique"
     },
     "description":"Une salade de pierres ordinaires",
     "mots_clefs":{
-        "0":"Solide",
-        "1":"Pas cher",
-        "2":"Salé"
-    }
+        "0":"solide",
+        "1":"pas cher",
+        "2":"sale",
+        "3":"gravier",
+        "4":"gres",
+        "5":"calcaire",
+        "6": "terre",
+        "7":"domestique"
+    },
+    "durete": "3"
 },
 "Pomme d'or": {
     "filename":"pomme",
@@ -38,15 +46,19 @@
     "prix":"25.25",
     "pierres":{
         "0":"Pomme",
-        "1":"Or",
-        "2":"Additifs accides"
+        "1":"Or"
     },
     "description":"Notre fameuse pomme d'or, plongée dans de l'or en fusion, avant d'arriver dans votre assiette.",
     "mots_clefs":{
-        "0":"Solide",
-        "1":"Sucré",
-        "2":"Bon pour la santé"
-    }
+        "0":"solide",
+        "1":"sucre",
+        "2":"sante",
+        "3":"additifs",
+        "4":"accides",
+        "5":"pomme",
+        "6":"or"
+    },
+    "durete": "3"
 },
 "Glace à l'émeraude": {
     "filename":"glace",
@@ -58,9 +70,12 @@
     },
     "description":"Extraite directement des biomes de collines extrèmes, cette glace vous apporte une succulente émeraude sur un cône en calcaire.",
     "mots_clefs":{
-        "0":"Solide",
-        "1":"Sucré"
-    }
+        "0":"solide",
+        "1":"sucré",
+        "2":"emeraude",
+        "3":"calcaire"
+    },
+    "durete": "3"
 },
 "Oeufs arcaniques": {
     "filename":"oeufs",
@@ -70,12 +85,18 @@
         "0":"Obsidienne",
         "1":"Basalte",
         "2":"Vidrite",
-        "3":"Minerai Pale"
+        "3":"Minerai pâle"
     },
     "description":"Provenant des abisses, et cuisinés en omelette pour vous.",
     "mots_clefs":{
-        "0":"Salé"
-    }
+        "0":"sale",
+        "1":"obsidienne",
+        "2":"basalte",
+        "3":"vidrite",
+        "4":"minerai",
+        "5": "pale"
+    },
+    "durete": "2"
 },
 "Coeur de corail": {
     "filename":"coeur",
@@ -87,10 +108,14 @@
     },
     "description":"Généreuse donnation de Kann, goutez à son courage et son pouvoir.",
     "mots_clefs":{
-        "0":"Salé",
-        "1":"Pas cher",
-        "2":"Viande"
-    }
+        "0":"sale",
+        "1":"pas",
+        "2":"cher",
+        "3":"viande",
+        "4":"corail",
+        "5":"sable"
+    },
+    "durete": "2"
 },
 "Carapace de Lagavulin": {
     "filename":"carapace",
@@ -102,24 +127,32 @@
     },
     "description":"Goutez à une préparation importée directement depuis la Spire.",
     "mots_clefs":{
-        "0":"Salé",
-        "1":"Pas cher",
-        "2":"Solide"
-    }
+        "0":"sale",
+        "1":"pas",
+        "2":"cher",
+        "3":"solide",
+        "4":"calcite",
+        "5":"os"
+    },
+    "durete": "4"
 },
 "Poisson Céramique": {
     "filename":"poisson",
     "image":"../images/ceramicfish.webp",
     "prix":"23",
     "pierres":{
-        "0":"Céramique",
+        "0":"Ceramique",
         "1":"Poisson"
     },
     "description":"Une espèce unique de carpe Koï, pour vos papilles gustatives reconnaissantes.",
     "mots_clefs":{
-        "0":"Salé",
-        "1":"Pas cher"
-    }
+        "0":"sale",
+        "1":"pas",
+        "2":"cher",
+        "3":"ceramique",
+        "4":"poisson"
+    },
+    "durete": "3"
 },
 "Lingot d'orichalque": {
     "filename":"lingot",
@@ -133,22 +166,30 @@
     },
     "description":"Monsieur, je sais que vous voulez un menu varié, mais là c'est trop. C'est juste un truc sorti de votre collection de minerais.",
     "mots_clefs":{
-        "0":"Salé",
-        "1":"Solide"
-    }
+        "0":"sale",
+        "1":"solide",
+        "2":"orichalque",
+        "3":"fer",
+        "4":"metaux",
+        "5":"beurre"
+    },
+    "durete": "5"
 },
 "Pierre lisse": {
     "filename":"pierrelisse",
     "image":"../images/smoothstone.webp",
     "prix":"30",
     "pierres":{
-        "0":"Calcaire",
+        "0":"calcaire",
         "1":"Grès"
     },
     "description":"Honnêtement, je ne suis pas sûr de pourquoi on sert ça, mais la fille du patron y tenait.",
     "mots_clefs":{
-        "0":"Solide"
-    }
+        "0":"solide",
+        "1":"calcaire",
+        "2":"gres"
+    },
+    "durete": "4"
 },
 "Coeur de Golem": {
     "filename":"golem",
@@ -161,9 +202,13 @@
     },
     "description":"Un coeur de Lithorok, assaisonné aux épices d'Hyrule",
     "mots_clefs":{
-        "0":"Solide",
-        "1":"salé"
-    }
+        "0":"solide",
+        "1":"sale",
+        "2":"calcaire",
+        "3":"gres",
+        "4":"ganolithe"
+    },
+    "durete": "5"
 },
 "Plat Brise-dents": {
     "filename":"brise-dents",
@@ -171,14 +216,21 @@
     "prix":"12",
     "pierres":{
         "0":"Diorite",
-        "1":"Herbe d'Hyrule",
+        "1": "Herbes d'Hyrule",
         "2":"Charbon"
     },
     "description":"Riches aux calories, mais extrèmement dur à manger. Réservé aux plus courageux.",
     "mots_clefs":{
-        "0":"Solide",
-        "1":"salé",
-        "2":"pas cher"
-    }
+        "0":"solide",
+        "1":"sale",
+        "2":"pas",
+        "3":"cher",
+        "4":"diorite",
+        "5": "herbe",
+        "6": "d'",
+        "7": "hyrule",
+        "8":"charbon"
+    },
+    "durete": "5"
 }
 }
