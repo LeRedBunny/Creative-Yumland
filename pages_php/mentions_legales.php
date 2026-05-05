@@ -41,9 +41,9 @@
                     <div> 
                         <h3>Site réalisé par : </h3>
                         <ul>
+                            <li> Alexi TOUTOU </li>
                             <li> Grégoire MARIE </li>
                             <li> Maxime BASTO </li>
-                            <li> Alexi TOUTOU </li>
                         </ul>
                     </div>
 

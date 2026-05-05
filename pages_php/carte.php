@@ -16,10 +16,10 @@
         <link rel="icon" href="../images/icon.png">
         <link rel="stylesheet" href="../css/style.css">
         <title> Carte </title>
-        <script src="../js/carte.js"></script>
+        <script src="../js/carte.js" defer></script>
     </head>
 
-    <body onload='filter();'>
+    <body onload='filter(); showhide();'>
 
 
         <main>
@@ -32,13 +32,16 @@
 
             <aside class="left">
                 <form action="#" method="GET">
-                    <input type="text" placeholder="Filtrer les plats" name="filtre" id="filters"> <br>
-                    <select name="tri" id="tri">    <!-- A finir d'implémenter-->
-                        <option value="">Aucun</option>
+                    <input type="text" placeholder="Filtrer les plats" name="filtres" id="filtres"> <br>
+                    <select name="tri" id="tri" onclick="showhide()">    <!-- A finir d'implémenter-->
+                        <option value="0">Aucun</option>
                         <option value="prix">Prix</option>
                         <option value="durete">Dureté</option>
                     </select>
-
+                    <select name="typetri" id="typetri">
+                        <option value="1">Croissant</option>
+                        <option value="2">Décroissant</option>
+                    </select>
                     <button type="button" placeholder="Rechercher" onclick='filter()'></button>
                     <!-- no submit, or the page reloads and the filter doesn't apply-->
                 </form>

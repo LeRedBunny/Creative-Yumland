@@ -1,7 +1,10 @@
 <?php
 $carte = json_decode(file_get_contents("../json/carte.json"), true);
 $filtre=$_GET['filtres'] ?? ''; //extrait la string depuis GET (via l'url), la rend vide si erreur
-if($filtre)
+/*$tri=$_GET['tri'] ?? '';
+if($tri != "0" && $tri){
+    $ordre=$_GET['ordre'] ?? '';
+} */
 //appel de la fonction formateur
 $filtre=formateur($filtre);
 // le retour est une string formatée, qu'on peut éclater en tableau de filtres
@@ -9,7 +12,7 @@ $filtres=explode(" ",$filtre);     //on éclate cette string en tableau pour pou
 $cartefiltree = [];
 $fit = 0;
 
-//vérification que filtres n'est pas vide (profite du formatage)
+//vérification que filtres n'est pas vide (profite du formatage des caractèrse assimilables à des espaces)
 $count=0;
 $empties=0;
 foreach($filtres as $index => $string){
@@ -51,7 +54,6 @@ if($count != $empties){ //not all strings are empty
         if($fit >= 1){
             $cartefiltree[$index]=$content;
         }
-        
     }
     echo json_encode($cartefiltree);    //renvoie la carte filtrée
 } else {
@@ -65,8 +67,7 @@ if($count != $empties){ //not all strings are empty
 
         //formatage des caractères spéciaux
         $letters=array("e" => array("é","è","ê","ë"), "a" => array("à","â",'ä'), "u" => array("ù","û",'ü'), "o" => array("ô","ò",'ö'),
-                ' ' => array("-","_",","),      //caractères "espaces"
-                ' ' => array("0",'1','2','3','4','5','6','7','8','9'));
+                ' ' => array("-","_",",","0",'1','2','3','4','5','6','7','8','9'));      //caractères "espaces"
         foreach($letters as $index => $value){
             $string=str_replace($value,$index,$string);
         }
@@ -76,3 +77,5 @@ if($count != $empties){ //not all strings are empty
         return $string;
     };
 ?>
+
+
