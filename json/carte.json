@@ -1,6 +1,6 @@
 {
 "Savouroche": {
-    "filename":"savouroche",
+    "name":"Savouroche",
     "image":"../images/savouroche.png",
     "prix":"36",
     "pierres":{
@@ -18,14 +18,14 @@
     "durete": "4"
 },
 "Bouchée de minerai": {
-    "filename":"bouchee",
+    "name":"Bouchée de minerai",
     "image":"../images/bouchee.jpg",
     "prix":"17.50",
     "pierres":{
         "0":"Gravier",
         "1":"Grès",
         "2":"Calcaire",
-        "3": "tTerre domestique"
+        "3": "terre domestique"
     },
     "description":"Une salade de pierres ordinaires",
     "mots_clefs":{
@@ -41,7 +41,7 @@
     "durete": "3"
 },
 "Pomme d'or": {
-    "filename":"pomme",
+    "name":"Pomme d'or",
     "image":"../images/pommedor.jpeg",
     "prix":"25.25",
     "pierres":{
@@ -61,7 +61,7 @@
     "durete": "3"
 },
 "Glace à l'émeraude": {
-    "filename":"glace",
+    "name":"Glace à l'émeraude",
     "image":"../images/glace.png",
     "prix":"50",
     "pierres":{
@@ -78,7 +78,7 @@
     "durete": "3"
 },
 "Oeufs arcaniques": {
-    "filename":"oeufs",
+    "name":"Oeufs arcaniques",
     "image":"../images/Oeufs_arcaniques.png",
     "prix":"37",
     "pierres":{
@@ -99,7 +99,7 @@
     "durete": "2"
 },
 "Coeur de corail": {
-    "filename":"coeur",
+    "name":"Coeur de corail",
     "image":"../images/Encrusted_Heart.png",
     "prix":"12",
     "pierres":{
@@ -118,7 +118,7 @@
     "durete": "2"
 },
 "Carapace de Lagavulin": {
-    "filename":"carapace",
+    "name":"Carapace de Lagavulin",
     "image":"../images/lagavulin.webp",
     "prix":"8",
     "pierres":{
@@ -137,7 +137,7 @@
     "durete": "4"
 },
 "Poisson Céramique": {
-    "filename":"poisson",
+    "name":"Poisson Céramique",
     "image":"../images/ceramicfish.webp",
     "prix":"23",
     "pierres":{
@@ -155,7 +155,7 @@
     "durete": "3"
 },
 "Lingot d'orichalque": {
-    "filename":"lingot",
+    "name":"Lingot d'orichalque",
     "image":"../images/orichalque.webp",
     "prix":"21",
     "pierres":{
@@ -176,7 +176,7 @@
     "durete": "5"
 },
 "Pierre lisse": {
-    "filename":"pierrelisse",
+    "name":"Pierre lisse",
     "image":"../images/smoothstone.webp",
     "prix":"30",
     "pierres":{
@@ -192,7 +192,7 @@
     "durete": "4"
 },
 "Coeur de Golem": {
-    "filename":"golem",
+    "name":"Coeur de Golem",
     "image":"../images/coeur_golem.png",
     "prix":"28",
     "pierres":{
@@ -211,7 +211,7 @@
     "durete": "5"
 },
 "Plat Brise-dents": {
-    "filename":"brise-dents",
+    "name":"Plat Brise-dents",
     "image":"../images/brise-dents.png",
     "prix":"12",
     "pierres":{
@@ -219,7 +219,7 @@
         "1": "Herbes d'Hyrule",
         "2":"Charbon"
     },
-    "description":"Riches aux calories, mais extrèmement dur à manger. Réservé aux plus courageux.",
+    "description":"Riches en calories, mais extrèmement dur à manger. Réservé aux plus courageux.",
     "mots_clefs":{
         "0":"solide",
         "1":"sale",
