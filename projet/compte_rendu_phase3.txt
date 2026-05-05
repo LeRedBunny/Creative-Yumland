@@ -20,10 +20,22 @@ Durée: 45 minutes
   -changement léger du formatage des plats: les "pierres" sont les ingrédients utilisés pour l'affichage strictement, et les "mots-clefs" sont tous les mots susceptibles d'être pertinents pour la recherche
   -extension du form servant pour le tri, ajout d'une donnée "dureté"
 
+  Participant: Alexi
+Durée: 2h30
+  - Nettoyage des fichiers css
+  - Correction de problèmes sur les fichiers js
+
+
+4 mai
+
+  Participant: Alexi
+Durée: 30 minutes
+  - Conception du système de style alternatif
+
 
 5 mai
 
-Participants: Alexi, Grégoire
+  Participants: Alexi, Grégoire
 Durée: 2 heures
--système de tri par prix et dureté implémenté
-Je sais pas ce qu'a fait Alexi
+  - Système de tri par prix et dureté implémenté
+  - Système de style alternatif et gestion des cookies en js terminés
