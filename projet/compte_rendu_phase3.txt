@@ -39,3 +39,17 @@ Durée: 30 minutes
 Durée: 2 heures
   - Système de tri par prix et dureté implémenté
   - Système de style alternatif et gestion des cookies en js terminés
+
+10 mai
+
+Participant: Grégoire
+Durée: 1 heure et demie
+  -correction de bug sur l'affichage du mot de passe lors de la connexion
+  -ajout de cet affichage en inscription
+  -formatage du programme au code localhost:8000 (seulement dans carte.php, mais à garder en tête à l'avenir)
+  -ajout de commentaires dans les fichiers gérant l'inscription
+  -conceptualisation de la modif de profil:
+La seule chose impérative est l'envoi des données en asynchrone->fichier php qui met à jour le fichier (voir updateUser()).
+En supplément peut être le changement de mode de la page/de la balise lors du l'appui sur le bouton. Un appui supplémentaire executera les instructions ci-dessus.
+Ce n'est néanmoins pas précisé dans le pdf de projet.
+Méthode asynchrone: onclick, exéctuer tel fonction, qui vérifie le mode actuel. Si en formulaire, alors récupérer les données de celui-ci, les incorporer à un object post, et envoyer une requête fetch. (voir l'utilité des headers?). response serait booleen. Le fichier cible serait un php qui met à jour le fichier json en utilisant updateUser(). Ensuite, mettre à jour la valeur des formulaires à celles possédées (voir getUser()).
