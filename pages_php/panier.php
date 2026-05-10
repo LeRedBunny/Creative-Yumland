@@ -28,11 +28,7 @@
 <html lang="fr">
 
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=*, initial-scale=1.0">
-        <link rel="icon" href="../images/icon.png">
-        <link rel="stylesheet" href="../css/style.css">
-        <title> Panier </title>
+        <?php headLinks('Panier'); ?>
     </head>
 
     <body>

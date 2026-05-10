@@ -20,6 +20,7 @@
               <title> '.$title.' </title>
               <link rel="stylesheet" id="style" href="../css/'.$style.'.css"/>
               <link rel="icon" href="../images/icon.png">
+              <script src="../js/cookie.js"> </script>
               <script src="../js/style.js"> </script>';
     }
 
@@ -66,6 +67,7 @@
                     <a href='profil.php'> Profil </a>
                     <span> | </span>
                     <a href='deconnexion.php'> Se déconnecter </a>
+                    <button id='theme' onclick='toggleStyle();'> Thème </button>
                     </div>";
         }
         else {

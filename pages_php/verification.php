@@ -43,9 +43,7 @@
 <html lang='fr'>
 
     <head>
-        <link rel='stylesheet' href='../css/style.css'>
-        <link rel="icon" href="../images/icon.png">
-        <title> <?= $titre ?> </title>
+        <?php headLinks($titre); ?>
     </head>
 
     <body> 
