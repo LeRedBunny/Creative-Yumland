@@ -6,34 +6,34 @@
     function getUserData () : array {
         // Returns all profiles
 
-        if (!file_exists(USER_JSON_PATH)) {
+        if (!file_exists(USER_JSON_PATH)) { //morceau de code inutile?
             $file = fopen(USER_JSON_PATH, 'w');
             fclose($file);
         }
 
-        $data = json_decode(file_get_contents(USER_JSON_PATH), true);
-        if (!$data) {
+        $data = json_decode(file_get_contents(USER_JSON_PATH), true);//récupération du json traduit
+        if (!$data) {   //si problème, renvoie un tableau vide
             return array();
         }
-        return $data;
+        return $data;   //retourne les données du json
     }
 
 
     function writeNewUser (array $newUser) : int {
         // Writes the new user's data, the id of the user
 
-        $data = getUserData();
+        $data = getUserData();  //get the json containing everything
 
-        $profile = getUserFromEmail($newUser['email']);
-        if ($profile) {
+        $profile = getUserFromEmail($newUser['email']); //return the user with that e-mail, or none if it doesn't exist yet
+        if ($profile) { //if the user already exists, return error number
             return -1;
         }
 
-        $newUser['id'] = count($data);
-        $newUser['creation_date'] = time();
-        $data[] = $newUser;
-        file_put_contents(USER_JSON_PATH, json_encode($data, JSON_PRETTY_PRINT));
-        return $newUser['id'];
+        $newUser['id'] = count($data);  //get ID equal to the amount of data already stored (might cause bugs if users can be deleted)
+        $newUser['creation_date'] = time(); //self-explanatory
+        $data[] = $newUser;     //write all the data contained within the parameter array into the json, at the last position
+        file_put_contents(USER_JSON_PATH, json_encode($data, JSON_PRETTY_PRINT));   //put back all the data into the json
+        return $newUser['id'];  //return the ID of the new user, to serve as success code
     }
 
 
@@ -71,14 +71,14 @@
 
         $found = false;
         foreach ($data as $index => $profile) {
-            if ($profile['id'] == $new_info['id']) {
-                $data[$index] = array_merge($profile, $new_info);
+            if ($profile['id'] == $new_info['id']) {//if the user is within the database, their data are merged with the old ones
+                $data[$index] = array_merge($profile, $new_info);  
                 $found = true;
                 break;
             }
         }
 
-        if (!$found) {
+        if (!$found) {  //the user is not within the database, then no updates can be done
             return false;
         }
 

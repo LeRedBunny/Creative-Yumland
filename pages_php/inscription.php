@@ -17,11 +17,11 @@
 
         $newUser['id'] = writeNewUser($newUser);
         $message = '';
-        if ($newUser['id'] != -1) {
-            logIn($newUser);
-            header("Location: index.php");
+        if ($newUser['id'] != -1) { //id is defined, then everything goes smoothly, the user is connected
+            logIn($newUser);    //all relevant data is stored within the Session array
+            header("Location: index.php");  //the user is taken to the menu, now logged in
         } else {
-            $message = 'Un utilisateur avec cet email existe déjà.';
+            $message = 'Un utilisateur avec cet email existe déjà.';    //message in case someone with that e-mail already exists
         }
         
     }
@@ -38,6 +38,7 @@
         <title>Inscription</title>
         <link rel="stylesheet" href="../css/style.css">
         <link rel="icon" href="../images/icon.png">
+        <script src='../js/see_password.js'> </script>
     </head>
 
     <body>
@@ -86,8 +87,10 @@
                         <br>
 
                         <div class="div1">
-                            <input type="password" id="password" name="password" required>
+                            <input type="password" id="password" name='password' required>
                             <label for="password">Mot de passe</label>
+                            <button type='button' onclick='seePassword();'> Voir </button>
+                            
                         </div>
                         <br>
 

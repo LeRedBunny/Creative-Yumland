@@ -42,7 +42,7 @@
                         <option value="1">Croissant</option>
                         <option value="2">Décroissant</option>
                     </select>
-                    <button type="button" placeholder="Rechercher" onclick='filter()'></button>
+                    <button type="button" placeholder="Rechercher" onclick='filter()'>Rechercher</button>
                     <!-- no submit, or the page reloads and the filter doesn't apply-->
                 </form>
             </aside>
