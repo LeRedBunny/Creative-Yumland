@@ -1,6 +1,6 @@
 <?php
 
     session_start();
-    header("Location: pages_php/index.php");
+    header("Location: pages/index.php");
 
 ?>
