@@ -86,6 +86,7 @@
 
                     if ($admin == false) {
                         echo '<form method="post"> <input type="submit" id="submit" name="submit" value="Copier la commande"> </form>';
+                        echo '<br> <a href="notation.php?order='.$id.'"> Noter la commande </a>';
                     }
 
                     ?>
@@ -95,7 +96,7 @@
             </section>
 
             <?php
-                createFooter(array('Mentions légales', 'Notez votre expérience'));
+                createFooter(array('Mentions légales', 'Avis des consommateurs'));
             ?>
 
         </main>

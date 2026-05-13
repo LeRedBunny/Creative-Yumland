@@ -166,7 +166,7 @@
             </section>
 
             <?php
-                createFooter(array('Mentions légales', 'Notez votre expérience'));
+                createFooter(array('Mentions légales', 'Avis des consommateurs'));
             ?>
 
         </main>

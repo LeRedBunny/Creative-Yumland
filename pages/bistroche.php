@@ -50,7 +50,7 @@
 
             </section>
 
-            <?php createFooter(array('Mentions légales', 'Notez votre expérience')); ?>
+            <?php createFooter(array('Mentions légales', 'Avis des consommateurs')); ?>
             
         </main>
 
