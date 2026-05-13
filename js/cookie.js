@@ -1,10 +1,10 @@
 
 
 function setCookie (name, value, lifespan=3600*24) {
-    /* Creates a cookie with the given name, value and lifespan */
+    /* Creates a cookie with the given name, value and lifespan in seconds*/
 
     let date = new Date();
-    date.setTime(date.getTime() + lifespan);
+    date.setTime(date.getTime() + lifespan * 1000);
 
     document.cookie = name + '=' + value + '; expires=' + date.toUTCString() + ';';
 }
