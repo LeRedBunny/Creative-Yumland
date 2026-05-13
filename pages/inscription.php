@@ -1,0 +1,140 @@
+<?php 
+    
+    require('../php/user_json.php');
+    require('../php/header.php');
+    session_start();
+
+    if ($_POST) {
+
+        $newUser = array();
+        foreach($_POST as $key => $value) {
+            $newUser[$key] = $value;
+        }
+        $newUser['password'] = hash('sha256', $newUser['password'], false);
+        $newUser['status'] = 'client';
+        $newUser['favorite_rock'] = 'Aucune';
+        $newUser['fidelity_points'] = 0;
+
+        $newUser['id'] = writeNewUser($newUser);
+        $message = '';
+        if ($newUser['id'] != -1) {
+            logIn($newUser);
+            header("Location: index.php");
+        } else {
+            $message = 'Un utilisateur avec cet email existe déjà.';
+        }
+        
+    }
+
+?>
+
+<!DOCTYPE html>
+
+<html lang="fr">
+
+    <head>
+        <?php headLinks('Inscription'); ?>
+        <script src='../js/see_password.js'> </script>
+    </head>
+
+    <body>
+
+        <main>
+
+            <?php
+                createHeader(array('Accueil', 'Carte', 'À propos'));
+            ?>
+                    
+            
+            <section>
+                <fieldset> 
+
+                    <form name="Inscription" method="post" action="inscription.php">
+
+                        <h1> Inscription </h1>
+
+                        <?php
+                            if (isset($message)) {
+                                echo '<div class="error_message">'.$message.'</div>';
+                            }
+                        ?>
+
+
+
+                        <h3> Informations personnelles </h3>
+
+                        <br>
+                        <div class="div1">
+                            <input type="text" id="nom" name="name" value="<?= isset($_POST['email']) ? $_POST['email'] : '' ?>" required>
+                            <label for="nom">Nom</label>
+                        </div>
+                        <br>
+
+                        <div class="div1">
+                            <input type="text" id="prenom" name="firstname" value="<?= isset($_POST['firstname']) ? $_POST['firstname'] : '' ?>" required>
+                            <label for="prenom">Prénom</label>
+                        </div>
+                        <br>
+
+                        <div class="div1">
+                            <input type="email" id="email" name="email" value="<?= isset($_POST['email']) ? $_POST['email'] : '' ?>" required>
+                            <label for="email">Email</label>
+                        </div>
+                        <br>
+
+                        <div class="div1">
+                            <input type="password" id="password" name="password" required>
+                            <label for="password">Mot de passe</label>
+                            <button type='button' onclick='seePassword();'> Voir </button>
+                        </div>
+                        <br>
+
+                        <div class="div1">
+                            <input type="tel" id="tel" name="tel" pattern="[0-9]{10}" value="<?= isset($_POST['tel']) ? $_POST['tel'] : '' ?>" required>
+                            <label for="tel">Téléphone</label>
+                        </div>
+
+
+
+                        <h3> Adresse </h3>
+
+                        <div class="div1">
+                            <input type="text" id="address" name="address" value="<?= isset($_POST['address']) ? $_POST['address'] : '' ?>" required>
+                            <label for="address"> Adresse </label>
+                        </div>
+                        <br>
+
+                        <div class="div1">
+                            <input type="text" id="city" name="city" value="<?= isset($_POST['city']) ? $_POST['city'] : '' ?>" required>
+                            <label for="city"> Ville </label>
+                        </div>
+                        <br>
+
+                        <div class="div1">
+                            <input type="number" id="code" name="code" pattern="[0-9]{5}" value="<?= isset($_POST['code']) ? $_POST['code'] : '' ?>" required>
+                            <label for="code"> Code postal </label>
+                        </div>
+                        
+                        <br><br>
+                        <button type="submit" class="login">Creer un compte</button>
+                        <button type="reset" class="login">Effacer</button>
+                        <br><br>
+
+
+                        Vous avez déjà un compte ?  
+                        <a href="connexion.php">Cliquez ici</a>
+
+                    
+                    </form>
+                </fieldset>
+            </section>
+
+            <?php
+                createFooter(array('Mentions légales', 'Notez votre expérience'));
+            ?>
+            
+        </main>
+
+    </body>
+
+</html>
