@@ -53,3 +53,19 @@ La seule chose impérative est l'envoi des données en asynchrone->fichier php q
 En supplément peut être le changement de mode de la page/de la balise lors du l'appui sur le bouton. Un appui supplémentaire executera les instructions ci-dessus.
 Ce n'est néanmoins pas précisé dans le pdf de projet.
 Méthode asynchrone: onclick, exéctuer tel fonction, qui vérifie le mode actuel. Si en formulaire, alors récupérer les données de celui-ci, les incorporer à un object post, et envoyer une requête fetch. (voir l'utilité des headers?). response serait booleen. Le fichier cible serait un php qui met à jour le fichier json en utilisant updateUser(). Ensuite, mettre à jour la valeur des formulaires à celles possédées (voir getUser()).
+
+
+
+14 mai
+
+  Participants: Alexi, Grégoire
+Durée: 25 min
+  - Correction de soucis liés aux différentes branches et uniformisation
+
+
+  Participant: Alexi
+Durée: 1h
+  - Système de notation des commandes
+  - Début de la page des avis
+
+
