@@ -32,6 +32,7 @@
         "À propos" => 'bistroche.php',
         'Accueil' => 'index.php',
         'Notez votre expérience' => 'notation.php',
+        'Avis des consommateurs' => 'avis.php',
         'Mentions légales' => 'mentions_legales.php'
     ));
 
