@@ -78,3 +78,6 @@ Durée: 1h
   - Page "commande" améliorée
   - Amélioration du système de styles alternatifs, en lien avec le style "admin" des pages admin et commandes
 
+  Participant: Alexi
+Durée: 30 min
+  - Début du JS pour la page avis
