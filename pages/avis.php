@@ -7,13 +7,17 @@
 ?>
 <!DOCTYPE html>
 
+
 <html lang="fr">
 
     <head>
         <?php headLinks('Avis'); ?>
+        <script src='../js/avis.js'> </script>
+        <script src='../js/get_url.js'> </script>
     </head>
 
-    <body>
+
+    <body onload='console.log(getReviews());'>
         
         <main>
 
@@ -21,7 +25,7 @@
 
             <section> 
 
-                <!-- Lister les avis, triés par date ou par note (ou les deux ensembles?) -->
+                
 
             </section>
 
