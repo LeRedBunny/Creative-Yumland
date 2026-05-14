@@ -21,7 +21,7 @@ async function filter(){
     // debug console.log("Filters value:", filters); //temp permet de savoir si les valeurs de filtre sont bien reçues
     const tri1=document.getElementById("tri").value;
     const tri2=document.getElementById("typetri").value;
-    const response=await fetch('http://localhost/projet/php/filtre.php?filtres=' + filtres + '&tri=' + tri1 + '&ordre=' + tri2);
+    const response=await fetch('http://localhost:8000/php/filtre.php?filtres=' + filtres + '&tri=' + tri1 + '&ordre=' + tri2);
 
     if(!response.ok) throw new Error("could not fetch resource");
 
