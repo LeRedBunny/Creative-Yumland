@@ -2,6 +2,7 @@
 
     require('../php/commandes_json.php');
     require('../php/header.php');
+    require('../php/avis_json.php');
     session_start();
 
     if (!isset($_SESSION['logged_in']) || !$_SESSION['logged_in']) {
@@ -64,10 +65,6 @@
                     
                     <h1> Commande #<?= $id ?> </h1>
 
-                    <div class='error_message'>
-                        <?= (isset($_POST['message'])) ? $_POST['message'] : '' ?>
-                    </div>
-
                     <h2> 
                         Statut : 
                         <?php
@@ -91,7 +88,10 @@
 
                     if ($admin == false) {
                         echo '<form method="post"> <input type="submit" id="submit" name="submit" value="Copier la commande"> </form>';
-                        echo '<br> <a href="notation.php?order='.$id.'"> Noter la commande </a>';
+
+                        if (!getReview($id)) {
+                            echo '<br> <a href="notation.php?order='.$id.'"> Noter la commande </a>';
+                        }
                     }
 
                     ?>
