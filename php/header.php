@@ -36,7 +36,7 @@
         'Mentions légales' => 'mentions_legales.php'
     ));
 
-    function createHeader (array $pages) : void {
+    function createHeader (array $pages, bool $theme_button = true) : void {
         // Creates a page's header with links to the given pages
 
         echo '<header> 
@@ -67,18 +67,19 @@
                     <span> | </span>
                     <a href='profil.php'> Profil </a>
                     <span> | </span>
-                    <a href='deconnexion.php'> Se déconnecter </a>
-                    <button id='theme' onclick='toggleStyle();'> Thème </button>
-                    </div>";
+                    <a href='deconnexion.php'> Se déconnecter </a>";
         }
         else {
             echo "<div>
                     <a href='inscription.php'> Inscription </a>
                     <span> | </span>
-                    <a href='connexion.php'> Connexion </a>
-                    <button id='theme' onclick='toggleStyle();'> Thème </button>
-                    </div>";
+                    <a href='connexion.php'> Connexion </a>";
         }
+
+        if ($theme_button) {
+            echo "<button id='theme' onclick='toggleStyle();'> Thème </button>";
+        }
+        echo '</div>';
         
         
             
