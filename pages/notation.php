@@ -12,6 +12,7 @@
     // When sending the review
     if ($_POST) {
         writeReview(intval($_POST['order_id']), intval($_SESSION['user_id']), intval($_POST['rating']), $_POST['comment']);
+        $_POST['message'] = 'Merci d\'avoir laissé votre avis!';
         header('Location: commande.php?order='.$_POST['order_id']);
     }
     
@@ -23,8 +24,10 @@
     $order = getOrder($order_id);
     if (!$order || $order['client_id'] != $_SESSION['user_id']) {
         header('Location: index.php');
+    } else if (getReview($order_id)) {
+        $_POST['message'] = 'Vous avez déjà noté cette commande.';
+        header('Location: commande.php?order='.$order_id);
     }
-
 ?>
 
 <!DOCTYPE html>

@@ -15,18 +15,14 @@
 <html lang="fr">
 
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title> Administrateur </title>
-        <link rel="stylesheet" href="../css/admin.css">
-        <link rel="icon" href="../images/icon.png">
+        <?php headLinks('Administrateur', true) ?>
     </head>
 
     <body>
 
         <main>
     
-            <?php createHeader(array('Accueil', 'Carte', 'À propos')); ?>
+            <?php createHeader(array('Accueil', 'Carte', 'À propos'), false); ?>
 
             <section>
                 <!--Liste des utilisateurs-->

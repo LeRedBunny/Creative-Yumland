@@ -13,6 +13,7 @@
     <head>
         <?php headLinks('Carte'); ?>
         <script src="../js/carte.js" defer></script>
+        <script src="../js/get_url.js"></script>
     </head>
 
     <body onload='filter(); showhide();'>

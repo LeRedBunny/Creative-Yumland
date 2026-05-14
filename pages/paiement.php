@@ -3,13 +3,14 @@
     require("../php/header.php");
     require('../php/user_json.php');
     require('../php/getapikey.php');
+    require('../php/get_url.php');
     session_start();
 
     $montant = $_SESSION['price'];
     $order = $_SESSION['panier'];
     $transaction = substr(str_shuffle("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"), 0, 12); //Identifiant généré aléatoirement
     $vendeur = "MI-4_G";
-    $retour = "http://localhost:8000/pages/verification.php";
+    $retour = getDomain()."/pages/verification.php";
     $api_key = getAPIKey($vendeur);
 
     // Vérif API key

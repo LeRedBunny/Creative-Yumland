@@ -40,14 +40,14 @@
 <html lang="fr">
 
     <head>
-        <?php headLinks('Commandes'); ?>
+        <?php headLinks('Commandes', true); ?>
     </head>
 
     <body>
 
         <main>
     
-            <?php createHeader(array('Accueil', 'Carte', 'À propos')); ?>
+            <?php createHeader(array('Accueil', 'Carte', 'À propos'), false); ?>
 
             <section>
 
