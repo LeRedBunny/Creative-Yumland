@@ -81,3 +81,16 @@ Durée: 1h
   Participant: Alexi
 Durée: 30 min
   - Début du JS pour la page avis
+
+
+15 mai
+
+Participant: Grégoire
+Durée: 3 heures 30
+  -Finition à 90% de profil.js, qui permet à profil.php de "devenir" modifier_profil.php via javascript.
+  -manque encore la mise à jour dans le json des données de l'utilisateur. Le fetch ne semble déboucher sur rien. Cela ne fait pas cracher la page pour autant. (emoji désespéré)
+  -fichiers modifiés/créés: profil.php, profil.js, fuser.php. Le fichier modifier_profil.php est maintenant obsolète (enfin on va pas le supprimer mon truc ne fonctionne pas encore je rappelle)
+  -me reste à faire: résoudre le bug, #Monsieur Le Breton (ou copilot si je me dégonfle), placer les fichiers aux bons endroits de la nouvelle organisation du github, corriger les chemins de fichier/url, faire une jolie sauvegarde avec noeud papillon et rubans
+
+
+
