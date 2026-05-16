@@ -12,6 +12,7 @@ Il y a 5 utilisateurs déjà inscrits :
   - Fébastien de la Garenne-Colombes, cuisinier, febastien@cuivine.fr, mot de passe : cuisine
   - Olive Raison, livreuse, livreuse@livraison.com, mot de passe : livraison
   - Slender Woman, bloqué, nopenopenope@horror.fr, mot de passe: creepypasta
+  - Count Mourn, client, cryandweepmort@l.com,mot de passe: regret
 
 
 
