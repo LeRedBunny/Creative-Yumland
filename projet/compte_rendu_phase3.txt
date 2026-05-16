@@ -93,4 +93,7 @@ Durée: 3 heures 30
   -me reste à faire: résoudre le bug, #Monsieur Le Breton (ou copilot si je me dégonfle), placer les fichiers aux bons endroits de la nouvelle organisation du github, corriger les chemins de fichier/url, faire une jolie sauvegarde avec noeud papillon et rubans
 
 
-
+16 mai
+Participant: Grégoire
+Durée: 4 heures
+  -Finition intégrale (et oui, intégrale) du système de modification de profil, et nettoyage du code
