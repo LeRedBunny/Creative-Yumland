@@ -1,0 +1,42 @@
+<script>
+
+const emaile = document.getElementById("email");
+const passworde = document.getElementById("password");
+const boutone = document.getElementById(""); //Id du bouton
+boutonConnexion.addEventListener("click", verifconnexion);
+
+function verifconnexion(e) {
+    e.preventDefault(); // comme ça l'envoie ne se fait pas immédiatement
+    let valid = true;
+    document.getElementById("emailError").textContent = "";
+    document.getElementById("passwordError").textContent = "";
+
+const email = emaile.value.trim();
+const password = passworde.value;
+
+// liste des conditions
+     if(email === "") {
+        document.getElementById("emailError").textContent = "Email obligatoire";
+        valid = false;
+    }
+    else if(!email.includes("@")||!email.includes(".")) {
+        document.getElementById("emailError").textContent =
+            "Email invalide";
+        valid = false;
+    }
+
+    if(password === "") {
+        document.getElementById("passwordError").textContent = "Mot de passe obligatoire";
+        valid = false;
+    }
+    else if(password.length < 8) {
+        document.getElementById("passwordError").textContent = "8 caractères minimum";
+        valid = false;
+    }
+
+    if(valid) {
+        console.log("Connexion valide");
+        // fetch  ?
+    }
+};
+</script>

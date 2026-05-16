@@ -1,0 +1,120 @@
+<script>
+
+// recup des champs
+
+const nome = document.getElementById("nom");
+const prenome = document.getElementById("prenom");
+const emaile = document.getElementById("email");
+const passworde = document.getElementById("password");
+const tele = document.getElementById("tel");
+const citye = document.getElementById("city");
+const addresse = document.getElementById("address");
+const codee = document.getElementById("code");
+
+const bouton = document.getElementById(""); //Id du bouton
+
+// bouton d'inscription
+
+bouton.addEventListener("click", verifconnexion); 
+
+function verifconnexion(e) {
+
+    e.preventDefault(); // empêche envoi
+    let valid = true;
+
+    document.getElementById("nomError").textContent = "";
+    document.getElementById("prenomError").textContent = "";
+    document.getElementById("emailError").textContent = "";
+    document.getElementById("passwordError").textContent = "";
+    document.getElementById("telError").textContent = "";
+    document.getElementById("cityError").textContent = "";
+    document.getElementById("addressError").textContent = "";
+    document.getElementById("codeError").textContent = "";
+
+    // on recupère ici les valeurs
+
+    const nom = nome.value.trim();
+    const prenom = prenome.value.trim();
+    const email = emaile.value.trim();
+    const password = passworde.value;
+    const tel = tele.value.trim();
+    const city = citye.value.trim();
+    const address = addresse.value.trim();
+    const code = codee.value.trim();    
+
+    // liste des conditions pour vérifier qu'il n'y ait pas de problème
+    if(nom === "") {
+        document.getElementById("nomError").textContent =
+            "Nom obligatoire";
+        valid = false;
+    }
+    else if(nom.length < 2) {
+        document.getElementById("nomError").textContent =
+            "Nom trop court";
+        valid = false;
+    }
+
+    if(prenom === "") {
+        document.getElementById("prenomError").textContent =
+            "Prénom obligatoire";
+        valid = false;
+    }
+
+    if(email === "") {
+        document.getElementById("emailError").textContent =
+            "Email obligatoire";
+        valid = false;
+    }
+    else if(!email.includes("@")||!email.includes(".")) {
+        document.getElementById("emailError").textContent =
+            "Email invalide";
+        valid = false;
+    }
+
+    if(password.length < 8) {
+        document.getElementById("passwordError").textContent =
+            "8 caractères minimum";
+        valid = false;
+    }
+
+    if(tel === "") {
+        document.getElementById("telError").textContent =
+            "Téléphone obligatoire";
+        valid = false;
+    }
+    else if(isNaN(tel)) {
+        document.getElementById("telError").textContent =
+            "Uniquement des chiffres";
+        valid = false;
+    }
+
+    if(city === "") {
+        document.getElementById("cityError").textContent =
+            "Ville obligatoire";
+        valid = false;
+    }
+
+    if(address === "") {
+        document.getElementById("addressError").textContent =
+            "Adresse obligatoire";
+        valid = false;
+    }
+
+    if(code === "") {
+        document.getElementById("codeError").textContent =
+            "Code postal obligatoire";
+        valid = false;
+    }
+    else if(isNaN(code) || code.length !== 5) {
+        document.getElementById("codeError").textContent =
+            "Code postal invalide";
+        valid = false;
+    }
+    // si on a tout de ok 
+
+    if(valid) {
+        console.log("Formulaire inscription valide");
+        // fetch ? 
+    }
+};
+</script>
