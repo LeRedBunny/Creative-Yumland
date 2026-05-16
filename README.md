@@ -11,6 +11,7 @@ Il y a 5 utilisateurs déjà inscrits :
   - Client Consommateur, client, client@conso.gouv, mot de passe : client
   - Fébastien de la Garenne-Colombes, cuisinier, febastien@cuivine.fr, mot de passe : cuisine
   - Olive Raison, livreuse, livreuse@livraison.com, mot de passe : livraison
+  - Slender Woman, bloqué, nopenopenope@horror.fr, mot de passe: creepypasta
 
 
 
