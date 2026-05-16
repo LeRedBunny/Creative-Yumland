@@ -91,9 +91,15 @@ Durée: 3 heures 30
   -manque encore la mise à jour dans le json des données de l'utilisateur. Le fetch ne semble déboucher sur rien. Cela ne fait pas cracher la page pour autant. (emoji désespéré)
   -fichiers modifiés/créés: profil.php, profil.js, fuser.php. Le fichier modifier_profil.php est maintenant obsolète (enfin on va pas le supprimer mon truc ne fonctionne pas encore je rappelle)
   -me reste à faire: résoudre le bug, #Monsieur Le Breton (ou copilot si je me dégonfle), placer les fichiers aux bons endroits de la nouvelle organisation du github, corriger les chemins de fichier/url, faire une jolie sauvegarde avec noeud papillon et rubans
+HAHA LOL AUCUN DES DEUX J'AI TROUVE TOUT SEUL MOUAHAHAHAHA
 
 
 16 mai
 Participant: Grégoire
 Durée: 4 heures
   -Finition intégrale (et oui, intégrale) du système de modification de profil, et nettoyage du code
+
+Durée: 1 heure
+  -ajout de deux comptes, Slender Woman, bloqué, et Count Mourn, client, pour le fun mais aussi pour avoir des comptes pour expérimenter sur le blocage et les statuts
+  -conceptualisation du statut bloqué:  -fetch classique: page,js,php executif
+                                        -installer une fonction js dans le header.php, qui se déclenche autant que possible, pour éject er l'utilisateur si il est en ligne (si status="bloque")
