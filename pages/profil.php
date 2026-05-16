@@ -41,7 +41,13 @@
 <html lang="fr">
     
     <head>
-        <?php headLinks('Profil'); ?>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Profil</title>
+        <link rel="stylesheet" href="../css/style.css">
+        <link rel="icon" href="../images/icon.png">
+        <script src="../js/profil.js" defer></script>
+        <script src="../js/get_url.js"></script>
     </head>
 
     <body>
@@ -52,9 +58,9 @@
                 createHeader(array('Accueil', 'Carte', 'À propos'));
             ?>
 
-            <section>
+            <section id="section">
 
-                <fieldset>  
+                <fieldset id="fieldset">  
                     
                     <?php 
 
@@ -71,12 +77,10 @@
 
                         if (!$admin) {
                             
-                            echo '<h2> 
-                                    <a href="modifier_profil.php">
-                                        <button>
-                                            <img src="../images/Pickaxe.png" alt="Modifier" height="20px">
-                                        </button>
-                                    </a> 
+                            echo '<h2>
+                                    <button  onclick="modifymode()">
+                                        <img src="../images/Pickaxe.png" alt="Modifier" height="20px">
+                                    </button>
                                     Mon Profil
                                 </h2>';
                         } else {
@@ -90,32 +94,32 @@
                         }
                     ?>
                         
-
+                <div id="box" mode="display">
 
                     <!-- Informations personnelles -->
                     <h3> Informations personnelles </h3>
 
-                    <div>
+                    <div id="data">
                         <p>
-                            <strong>Nom :</strong> <?= $profile['name'] ?>
+                            <strong>Nom :</strong> <span id="name" value="<?= $profile['name'] ?>"> <?= $profile['name'] ?> </span>
                         </p>
                         <p>
-                            <strong>Prénom :</strong> <?= $profile['firstname'] ?>
+                            <strong>Prénom :</strong> <span id="firstname" value="<?= $profile['firstname'] ?>"> <?= $profile['firstname'] ?> </span>
                         </p>
                         <p>
-                            <strong>Mail :</strong> <?= $profile['email'] ?>
+                            <strong>Mail :</strong> <span id="email" value="<?= $profile['email'] ?>"> <?= $profile['email'] ?> </span>
                         </p>
                         <p>
-                            <strong>Pierre préférée :</strong> <?= $profile['favorite_rock'] ?>
+                            <strong>Pierre préférée :</strong> <span id="favorite_rock" value="<?= $profile['favorite_rock'] ?>"> <?= $profile['favorite_rock'] ?> </span>
                         </p>
                         <p>
-                            <strong>Numéro de téléphone :</strong> <?= $profile['tel'] ?>
+                            <strong>Numéro de téléphone :</strong> <span id="tel" value="<?= $profile['tel'] ?>"> <?= $profile['tel'] ?> </span>
                         </p>
                         <p>
-                            <strong>Adresse :</strong> <?= getAddress($profile['address'], $profile['code'], $profile['city']) ?>
+                            <strong>Adresse :</strong> <span id="address" value1="<?= $profile['address'] ?>" value2="<?= $profile['code']?>" value3="<?= $profile['city'] ?>" >  <?= getAddress($profile['address'], $profile['code'], $profile['city']) ?> </span>
                         </p>
                     </div>
-
+                </div>
                     <!--Commandes-->
                     <div class="bloc">
                         <h3>Commandes</h3>
@@ -160,13 +164,12 @@
                                 echo '</form>';
                             }
                     ?>
-                
                 </fieldset>
                 
             </section>
 
             <?php
-                createFooter(array('Mentions légales', 'Avis des consommateurs'));
+                createFooter(array('Mentions légales', 'Notez votre expérience'));
             ?>
 
         </main>
