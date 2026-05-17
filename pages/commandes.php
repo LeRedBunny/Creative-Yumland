@@ -4,7 +4,7 @@
     require('../php/header.php');
     session_start();
 
-    if (!$_SESSION['logged_in'] || $_SESSION['status'] == 'client') {
+    if (!$_SESSION['logged_in'] || $_SESSION['status'] == 'client' || $_SESSION['status'] == 'bloque') {
         header('Location: index.php');
     }
 
