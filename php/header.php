@@ -21,7 +21,9 @@
               <link rel="stylesheet" id="style" href="../css/'.$style.'.css"/>
               <link rel="icon" href="../images/icon.png">
               <script src="../js/cookie.js"> </script>
-              <script src="../js/style.js"> </script>';
+              <script src="../js/get_url.js"> </script>
+              <script src="../js/style.js"> </script>
+              <script src="../js/profil.js" defer> </script>';
     }
 
 
@@ -60,6 +62,9 @@
         }
         echo '</div>';
 
+        if(isset($_SESSION["user_id"])){
+            echo '<input type="hidden" id="IDIDID" name="IDIDID" value="'.$_SESSION["user_id"].'"/>';
+        }
 
         if ($_SESSION['logged_in']) {
             echo "<div>
