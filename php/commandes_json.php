@@ -41,8 +41,11 @@
         ) ;
 
         $data = getOrders();
-        $id = count($data);
-        $order['id'] = $id;
+        $id = 0;
+        foreach($data as $o) {
+            $id = max($id, $o['id']);
+        }
+        $order['id'] = $id + 1;
 
         $data[] = $order;
         file_put_contents(ORDER_JSON_PATH, json_encode($data, JSON_PRETTY_PRINT));
