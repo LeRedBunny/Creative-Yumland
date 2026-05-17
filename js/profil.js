@@ -184,12 +184,26 @@ async function updateJson(data){
 
         let text=await response.text();
         if(response.ok){
-            console.log("fetch request went as expected");
+            console.log("Modifications appliquées avec succès");
             //alert("Vos données ont été correctement récupérées.")
             return 1;
         } else {
-            console.log("Uh oh, something went wrong");
+            console.log("Erreur lors de l'application des changements");
             alert("Vos modifications n'a pa pu être sauvegardées. Il est recommandé de contacter le restaurant.")
             return 0;
         }
 }
+
+async function statuschange(){
+    let data= {
+        status: document.getElementById('status').value,
+        email: document.getElementById('email').getAttribute('value')
+    };
+    updateJson(data);
+}
+
+async function statuscheck(){
+
+}
+
+//have a loop triggering status check
