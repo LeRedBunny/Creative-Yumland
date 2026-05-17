@@ -118,3 +118,11 @@ Durée: 4h
   - Création du système de points de fidélité
   - Création du système d'annulation d'une commande payée 
   - Finition du style alternatif
+
+Participant: Grégoire
+  je...je sais plus ce que j'ai fait
+je crois que...
+ha oui, donc du coup: maintenant, quand les utilisateurs sont bloqués, ils sont dégagés directs, et sont réenvoyés sur des pages éccueils à chaque tentative.
+Le js permet de faire l'ejection de manière asynchrone, et une fois l'utilisateur dégagé, il sera bloqué par le php en plus (car le js attend que le dom se charge pour se lancer). Plus de détails dans le compte-rendu ou pas hahahahah je veux dormir (il n'est que 22h)
+et accessoirement, le changement de statut d'un utilisateur entrainera la suppression de toute ses commandes
+Plus de détails sur tout le tintouin dans le pdf du compte rendu de phase 3
