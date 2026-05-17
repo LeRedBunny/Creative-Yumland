@@ -6,9 +6,13 @@ function score (review) {
 }
 
 
-function getReviewHTML (review, user) {
+function getReviewHTML (review) {
     /* Returns the HTML to display the review */
-    return '<div> ' + user['firstname'] + '★'.repeat(review['rating']) + '<br> <div> ' + review['text'] + ' </div> </div>';
+    let html = '<br> <div> ' + review['firstname'] + ' - ';
+    html += '★'.repeat(review['rating']) + '<br>';
+    html += '<i> "' + review['text'] + '" <i>';
+    html += '</div>' + new Date(review['creation_date']).toUTCString() + '<br> <br>';
+    return html;
 }
 
 
@@ -21,6 +25,14 @@ async function getReviews () {
         throw new Error("Could not fetch reviews.");
     }
 
-    let data = await response.json();
-    return data;
+    const data = await response.json();
+    
+
+    let box = document.getElementById('review_box');
+    box.innerHTML = '';
+    data.forEach(review => {
+        let html = getReviewHTML(review);
+        console.log(html);
+        box.innerHTML += html;
+    });
 }
