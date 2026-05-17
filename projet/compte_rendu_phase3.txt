@@ -93,6 +93,8 @@ Durée: 3 heures 30
   -me reste à faire: résoudre le bug, #Monsieur Le Breton (ou copilot si je me dégonfle), placer les fichiers aux bons endroits de la nouvelle organisation du github, corriger les chemins de fichier/url, faire une jolie sauvegarde avec noeud papillon et rubans
 HAHA LOL AUCUN DES DEUX J'AI TROUVE TOUT SEUL MOUAHAHAHAHA
 
+  Participant: Maxime
+- Commencement du code permettant la vérification des formulaires. 
 
 16 mai
 
@@ -104,6 +106,9 @@ Durée: 1 heure
   -ajout de deux comptes, Slender Woman, bloqué, et Count Mourn, client, pour le fun mais aussi pour avoir des comptes pour expérimenter sur le blocage et les statuts
   -conceptualisation du statut bloqué:  -fetch classique: page,js,php executif
                                         -installer une fonction js dans le header.php, qui se déclenche autant que possible, pour éject er l'utilisateur si il est en ligne (si status="bloque")
+
+Participant: Maxime
+- continuation et finition du code permettant la vérification des formulaires. 
 
 
 17 mai
