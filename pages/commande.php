@@ -89,7 +89,7 @@
                     if ($admin == false) {
                         echo '<form method="post"> <input type="submit" id="submit" name="submit" value="Copier la commande"> </form>';
 
-                        if (!getReview($id)) {
+                        if (!getReview($id) && $order['status'] == 4) {
                             echo '<br> <a href="notation.php?order='.$id.'"> Noter la commande </a>';
                         }
                     }
