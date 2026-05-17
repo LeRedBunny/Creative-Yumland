@@ -282,7 +282,7 @@ form>div{
 }
 
 
-.error_message {
+#error_message {
     color: red;
     font-style: italic;
 }
