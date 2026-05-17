@@ -1,0 +1,23 @@
+[
+    {
+        "order_id": 1,
+        "user_id": 1,
+        "rating": 5,
+        "text": "c'\u00e9tait bon",
+        "creation_date": 1779036793
+    },
+    {
+        "order_id": 2,
+        "user_id": 5,
+        "rating": 1,
+        "text": "c'\u00e9tait pas bon",
+        "creation_date": 1779036807
+    },
+    {
+        "order_id": 3,
+        "user_id": 6,
+        "rating": 5,
+        "text": "",
+        "creation_date": 1779037645
+    }
+]
