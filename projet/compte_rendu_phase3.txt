@@ -103,3 +103,8 @@ Durée: 1 heure
   -ajout de deux comptes, Slender Woman, bloqué, et Count Mourn, client, pour le fun mais aussi pour avoir des comptes pour expérimenter sur le blocage et les statuts
   -conceptualisation du statut bloqué:  -fetch classique: page,js,php executif
                                         -installer une fonction js dans le header.php, qui se déclenche autant que possible, pour éject er l'utilisateur si il est en ligne (si status="bloque")
+
+17 mai
+Participant: Grégoire
+  Durée: 30 minutes
+  -mise à jour de profil.php, profil.js, et fuser.php, permettant une mise à jour asynchrone du statut de profil des utilisateurs
