@@ -85,7 +85,7 @@ Durée: 30 min
 
 15 mai
 
-Participant: Grégoire
+  Participant: Grégoire
 Durée: 3 heures 30
   -Finition à 90% de profil.js, qui permet à profil.php de "devenir" modifier_profil.php via javascript.
   -manque encore la mise à jour dans le json des données de l'utilisateur. Le fetch ne semble déboucher sur rien. Cela ne fait pas cracher la page pour autant. (emoji désespéré)
@@ -95,7 +95,8 @@ HAHA LOL AUCUN DES DEUX J'AI TROUVE TOUT SEUL MOUAHAHAHAHA
 
 
 16 mai
-Participant: Grégoire
+
+  Participant: Grégoire
 Durée: 4 heures
   -Finition intégrale (et oui, intégrale) du système de modification de profil, et nettoyage du code
 
@@ -104,7 +105,16 @@ Durée: 1 heure
   -conceptualisation du statut bloqué:  -fetch classique: page,js,php executif
                                         -installer une fonction js dans le header.php, qui se déclenche autant que possible, pour éject er l'utilisateur si il est en ligne (si status="bloque")
 
+
 17 mai
-Participant: Grégoire
-  Durée: 30 minutes
+
+  Participant: Grégoire
+Durée: 30 minutes
   -mise à jour de profil.php, profil.js, et fuser.php, permettant une mise à jour asynchrone du statut de profil des utilisateurs
+
+  Participant: Alexi
+Durée: 4h
+  - Fini la page avis
+  - Création du système de points de fidélité
+  - Création du système d'annulation d'une commande payée 
+  - Finition du style alternatif
