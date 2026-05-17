@@ -209,11 +209,14 @@ async function statuscheck(id){
         //console.log("looks like you shouldn't be here");
         //procédure d'ejection de l'utilisateur
 
-        //url normale
-        //location.replace(getDomain() + '/pages/timeout.php');
-        
-        //url du rendu, parce que nous sommes de gais lurons
-        location.replace('https://www.youtube.com/watch?v=dQw4w9WgXcQ');
+        //si l'utilisateur est bloqué, on l'envoie ailleurs.
+        let number=Math.floor(Math.random() * 2);
+        switch(number){
+            case 0: location.replace(getDomain() + '/pages/timeout.php');
+                break;
+            case 1: location.replace('https://www.youtube.com/watch?v=dQw4w9WgXcQ');
+                break;
+        }
 
     } else{
         //console.log("bienvenue dans la boîte");
@@ -229,7 +232,7 @@ function levideur(){
         //boucle de vérification que l'utilisateur est valide
         setInterval(()=> {
             statuscheck(id);
-        }, 5000);   //s'exécute avec un intervalle de 5 secondes
+        }, 1000);   //s'exécute avec un intervalle de 1 seconde
     }
 }
 
