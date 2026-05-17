@@ -17,7 +17,7 @@
     </head>
 
 
-    <body onload='console.log(getReviews());'>
+    <body onload='getReviews();'>
         
         <main>
 
@@ -25,7 +25,15 @@
 
             <section> 
 
-                
+                <fieldset>
+
+                    <h2> Avis de nos consommateurs </h2>
+
+                    <div id='review_box'>
+
+                    </div>
+
+                </fieldset>
 
             </section>
 

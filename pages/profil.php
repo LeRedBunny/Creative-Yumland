@@ -142,7 +142,7 @@
                                 echo '<input type="number" name="fidelity_points" id="fidelity_points" placeholder="Points fidélité" value="'.$profile["fidelity_points"].'">';
                                 echo '<button type="submit" value="Sauvegarder"> Sauvegarder </button>';
                             } else {
-                                echo '<p>Points: '.$profile["fidelity_points"].' points </p>';
+                                echo '<p>Points: '.$profile["fidelity_points"].' points (1 point = 1 centime) </p>';
                             }
 
                         ?>

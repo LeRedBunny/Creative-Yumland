@@ -3,6 +3,8 @@
     require('../php/user_json.php');
     require('../php/header.php');
     session_start();
+
+    $message = '';
     
     if ($_POST) {
 
@@ -32,6 +34,7 @@
     <head>
         <?php headLinks('Connexion'); ?>
         <script src='../js/see_password.js'> </script>
+        <script src='../js/check_form.js'> </script>
     </head>
 
     <body>
@@ -46,15 +49,11 @@
                 
 
                 <fieldset>
-                    <form name="connexion" method="post" action="connexion.php">
+                    <form name="connexion" method="post" action="connexion.php" id='form'>
                         
                         <h2>Connexion</h2>
                         
-                        <?php
-                            if (isset($message)) {
-                                echo '<div class="error_message">'.$message.'</div>';
-                            }
-                        ?>
+                        <div id='error_message'> <?= $message ?> </div>
 
                         <div class="div1">
                             <input type="email" id="email" name='email' value="<?= isset($_POST['email']) ? $_POST['email'] : '' ?>" required>
@@ -68,7 +67,7 @@
                             
                         </div>
                         <br>
-                        <button type="submit" class="login">Connexion</button>
+                        <button onclick='checkForm("form");' class="login">Connexion</button>
                         <button type="reset" class="login">Effacer</button>
                         <br><br>
                 

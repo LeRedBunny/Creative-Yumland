@@ -51,6 +51,9 @@
             </section>
 
             
+            <?php createFooter(array('Mentions légales', 'Notez votre expérience')) ?>
+
+            
         </main>
     </body>
 

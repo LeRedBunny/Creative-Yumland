@@ -4,6 +4,8 @@
     require('../php/header.php');
     session_start();
 
+    $message = '';
+
     if ($_POST) {
 
         $newUser = array();
@@ -35,6 +37,7 @@
     <head>
         <?php headLinks('Inscription'); ?>
         <script src='../js/see_password.js'> </script>
+        <script src='../js/check_form.js'> </script>
     </head>
 
     <body>
@@ -49,15 +52,11 @@
             <section>
                 <fieldset> 
 
-                    <form name="Inscription" method="post" action="inscription.php">
+                    <form id='form' method="post" action="inscription.php">
 
                         <h1> Inscription </h1>
 
-                        <?php
-                            if (isset($message)) {
-                                echo '<div class="error_message">'.$message.'</div>';
-                            }
-                        ?>
+                        <div id="error_message"> <?= $message ?></div>
 
 
 
@@ -116,7 +115,7 @@
                         </div>
                         
                         <br><br>
-                        <button type="submit" class="login">Creer un compte</button>
+                        <button onclick='checkForm("form");' class="login">Créer un compte</button>
                         <button type="reset" class="login">Effacer</button>
                         <br><br>
 
