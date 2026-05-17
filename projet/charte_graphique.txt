@@ -1,5 +1,7 @@
-
 Charte Graphique 
+
+
+Style 1 :
 
     Couleur du logo : rgb(212, 249, 255)
 
@@ -8,8 +10,23 @@ Charte Graphique
     Liens survolés : #e680ec
     Liens du footer : #6b4aa3
 
-    Texte: #d4f9ff
-    Texte du footer: #1f1f7e
+    Texte: #1f1f7e
 
     Fond du header : #151e22
     Fond de la bande gauche: #01fafa
+
+
+
+Style 2 :
+
+    Couleur du logo : #d44300
+
+    Liens : #eb54ac
+    Liens visités : #b34987
+    Liens survolés : #d45da3
+    Liens du footer : #b34987
+
+    Texte: #00ff62
+
+    Fond du header : #162830b3
+    Fond de la bande gauche: #9a2e28a1
