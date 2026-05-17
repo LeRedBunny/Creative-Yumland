@@ -53,7 +53,7 @@
             echo '<a href="'.PAGE_LINKS[$page].'"> '.$page.' </a> <span> | </span>';
         }
         if ($_SESSION['logged_in']) {
-            if ($_SESSION['status'] != 'client') {
+            if ($_SESSION['status'] != 'client' && $_SESSION['status'] != 'bloque') {
                 echo '<a href="commandes.php"> Commandes </a> <span> | </span>';
             }
             if ($_SESSION['status'] == 'admin') {
