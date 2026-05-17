@@ -1,10 +1,8 @@
 # Creative-Yumland
-Projet :D
-
 La charte graphique et les compte-rendus sont dans le dossier "projet".
 
 
-Il y a 5 utilisateurs déjà inscrits :
+Il y a 7 utilisateurs déjà inscrits :
 
   - Minnie Strate, admin, admin1@admin.com, mot de passe : admin
   - Magie Strate, admin, admin2@admin.com, mot de passe : admin
