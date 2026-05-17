@@ -41,9 +41,7 @@
 <html lang="fr">
     
     <head>
-        <?php headLinks('Profil'); ?>
-        <script src="../js/profil.js" defer></script>
-        <script src="../js/get_url.js"></script>
+        <?php headlinks('Profil');?>
     </head>
 
     <body>
