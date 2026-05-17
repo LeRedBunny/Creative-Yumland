@@ -86,7 +86,7 @@
                         } else {
                             echo '<form method="post">';
                             echo '<h2> Profil #'.$profile['id'].' : ';
-                            echo '<select name="status">';
+                            echo '<select name="status" onchange=statuschange() id="status">';
                             foreach($STATUSES as $code => $status) {
                                 echo '<option value="'.$code.'" '.(($profile['status'] == $code) ? 'selected' : '').'> '.$status.' </option>';
                             }
