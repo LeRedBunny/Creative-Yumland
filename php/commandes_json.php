@@ -4,14 +4,6 @@
     define('ORDER_JSON_PATH', '../json/commandes.json');
 
 
-    function calculatePrice ($order) {
-        // Returns the price of the order
-        $price = 0;
-        foreach($order as $element) {
-            $price += $element['prix'];
-        }
-        return price;
-    }
 
     function getOrders () : array {
         // Returns all past orders
@@ -29,7 +21,7 @@
     }
 
     
-    function createOrder (array $contents, String $type, int $client_id) : int {
+    function createOrder (array $contents, String $type, int $client_id, int $price) : int {
         // Writes a new order into the JSON file, returns its id
 
         $order = array(
@@ -37,6 +29,7 @@
             'client_id' => $client_id,
             'type' => $type,    // Sur place, à emporter, etc
             'date' => time(),
+            'price' => $price,
             'status' => 0     // 0 = payée, 1 = en préparation, 2 = préparée, 3 = en livraison, 4 = livrée
         );
 
@@ -138,6 +131,19 @@
             }
         }
         return array();
+    }
+
+    function deleteOrder (int $id) : bool {
+        /* Deletes the order from the js, returns true if it was a success */
+        $orders = getOrders();
+        foreach($orders as $key => $order) {
+            if ($order['id'] == $id) {
+                unset($orders[$key]);
+                file_put_contents(ORDER_JSON_PATH, json_encode($orders, JSON_PRETTY_PRINT));
+                return true;
+            }
+        }
+        return false;
     }
 
 ?>
