@@ -41,11 +41,7 @@
 <html lang="fr">
     
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Profil</title>
-        <link rel="stylesheet" href="../css/style.css">
-        <link rel="icon" href="../images/icon.png">
+        <?php headLinks('Profil'); ?>
         <script src="../js/profil.js" defer></script>
         <script src="../js/get_url.js"></script>
     </head>
