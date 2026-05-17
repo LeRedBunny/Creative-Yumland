@@ -46,7 +46,7 @@
         // Points de fidélité (1pt = 1 centime)
         $points = intval($montant);
         $user = getUserProfile($_SESSION['user_id']);
-        $user['fidelity_points'] += $points;
+        $user['fidelity_points'] = $points;
         updateUser($user);
 
 

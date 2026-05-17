@@ -6,7 +6,9 @@
     require('../php/get_url.php');
     session_start();
 
-    $montant = $_SESSION['price'];
+    $user = getUserProfile($_SESSION['user_id']);
+
+    $montant = ($user) ? $_SESSION['price'] - $user['fidelity_points'] / 100 : $_SESSION['price'];
     $order = $_SESSION['panier'];
     $transaction = substr(str_shuffle("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"), 0, 12); //Identifiant généré aléatoirement
     $vendeur = "MI-4_G";
@@ -39,7 +41,15 @@
 
                 <fieldset>
 
-                    <h2> Le prix total de votre commande est <?= $montant ?>€ </h2>
+                    <h2> Le prix total de votre commande est <?= $_SESSION['price'] ?>€ </h2>
+                    <?php
+                        if ($user) {
+                            echo 'Vous avez actuellement '.$user['fidelity_points'].' points de fidélité.';
+                            if ($user['fidelity_points']) {
+                                echo '<br> Vous gagnerez donc '.($user['fidelity_points'] / 100).'€ sur votre commande!';
+                            }
+                        }
+                    ?>
                     <br>
                     <br>
 
