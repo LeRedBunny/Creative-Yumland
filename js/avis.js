@@ -11,7 +11,7 @@ function getReviewHTML (review) {
     let html = '<br> <div> ' + review['firstname'] + ' - ';
     html += '★'.repeat(review['rating']) + '<br>';
     html += '<i> "' + review['text'] + '" <i>';
-    html += '</div>' + new Date(review['creation_date']).toUTCString() + '<br> <br>';
+    html += '</div>' + new Date(review['creation_date'] * 1000).toUTCString() + '<br> <br>';
     return html;
 }
 
