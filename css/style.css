@@ -151,7 +151,7 @@ main>header a:visited {
     color: var(--visitedlink);
 }
 
-main>header a:hover {
+a:hover {
     color: var(--linkhover);
 }
 
