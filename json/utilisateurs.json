@@ -13,10 +13,10 @@
         "fidelity_points": 0,
         "id": 0,
         "creation_date": 1775417124,
-        "last_login": 1779025838
+        "last_login": 1778956910
     },
     {
-        "name": "Consommateur",
+        "name": "Consommatrice",
         "firstname": "Client",
         "email": "client@conso.gouv",
         "password": "948fe603f61dc036b5c596dc09fe3ce3f3d30dc90f024c85f3c82db2ccab679d",
@@ -29,7 +29,7 @@
         "fidelity_points": 0,
         "id": 1,
         "creation_date": 1775417237,
-        "last_login": 1775425786
+        "last_login": 1778954197
     },
     {
         "name": "de la Garenne-Colombes",
@@ -78,5 +78,37 @@
         "id": 4,
         "creation_date": 1775417558,
         "last_login": 1775417898
+    },
+    {
+        "name": "Woman",
+        "firstname": "Slender",
+        "email": "nopenopenope@horror.fr",
+        "password": "d795fefc5400c2c2abb074a67f9550092dfb9cbb741980cb303f2e8e57050800",
+        "tel": "6667778889",
+        "address": "87 rue du meurtre",
+        "city": "Tombe",
+        "code": "48764",
+        "status": "bloque",
+        "favorite_rock": "Aucune",
+        "fidelity_points": "0",
+        "id": 5,
+        "creation_date": 1778956885,
+        "last_login": 1778956885
+    },
+    {
+        "name": "Count",
+        "firstname": "Mourn",
+        "email": "cryandweepmort@l.com",
+        "password": "cc43f61e5d817a62ca571f43d2403777e7169060e0f34992d4756d8eb85e35d0",
+        "tel": "7659870543",
+        "address": "67 place du sacrifice",
+        "city": "Bristos",
+        "code": "12345",
+        "status": "client",
+        "favorite_rock": "Aucune",
+        "fidelity_points": 0,
+        "id": 6,
+        "creation_date": 1778957187,
+        "last_login": 1778957187
     }
 ]
