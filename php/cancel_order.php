@@ -19,7 +19,7 @@
     if (isset($success) && $success) {
         $user = getUserProfile($order['client_id']);
         if ($user) {
-            $user['fidelity_points'] -= $order['price'];
+            $user['fidelity_points'] += $order['price'] * 99;
             updateUser($user);
         }
         echo 'Commande annulée avec succès.';
