@@ -69,6 +69,24 @@
 
                     <div id='error_message'> </div>
 
+                    <div> 
+                        <?php
+                            switch ($order['type']) {
+                                case 'livraison' :
+                                    echo 'Commande en livraison';
+                                    break;
+                                
+                                case 'emporter' :
+                                    echo 'Commande à emporter';
+                                    break;
+                                
+                                case 'sur place' :
+                                    echo 'Commande sur place'; 
+                                    break;
+                            }
+                        ?>
+                    </div>
+
                     <h2> 
                         Statut : 
                         <?php
@@ -94,7 +112,7 @@
                         echo '<form method="post"> <input type="submit" id="submit" name="submit" value="Copier la commande"> </form>';
 
                         // Link to review the order
-                        if (!getReview($id) && $order['status'] == 4) {
+                        if (!getReview($id) && ($order['status'] == 4 || ($order['status'] == 2 && $order['type'] != 'livraison'))) {
                             echo '<br> <a href="notation.php?order='.$id.'"> Noter la commande </a>';
                         }
 
