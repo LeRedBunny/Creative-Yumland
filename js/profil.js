@@ -182,7 +182,6 @@ async function updateJson(data){
             body: JSON.stringify(data)
         });
 
-        let text=await response.text();
         if(response.ok){
             console.log("Modifications appliquées avec succès");
             //alert("Vos données ont été correctement récupérées.")
@@ -202,8 +201,42 @@ async function statuschange(){
     updateJson(data);
 }
 
-async function statuscheck(){
+async function statuscheck(id){
+    let answer = await fetch(getDomain() + '/php/status.php?id=' + id); //requête GET
+    let status = await answer.text();
+    console.log("current status:" + status);
+    if(status == 5){
+        //console.log("looks like you shouldn't be here");
+        //procédure d'ejection de l'utilisateur
 
+        //url normale
+        //location.replace(getDomain() + '/pages/timeout.php');
+        
+        //url du rendu, parce que nous sommes de gais lurons
+        location.replace('https://www.youtube.com/watch?v=dQw4w9WgXcQ');
+
+    } else{
+        //console.log("bienvenue dans la boîte");
+    }
 }
 
-//have a loop triggering status check
+function levideur(){
+    //récupération de l'id de l'utilisateur
+    let getter=document.getElementById("IDIDID");
+    let id="none";
+    if(getter){
+        id=getter.value;
+        //boucle de vérification que l'utilisateur est valide
+        setInterval(()=> {
+            statuscheck(id);
+        }, 5000);   //s'exécute avec un intervalle de 5 secondes
+    }
+}
+
+
+window.addEventListener("DOMContentLoaded", () => {
+    console.log("DOM is loaded");
+
+    levideur();
+
+});
