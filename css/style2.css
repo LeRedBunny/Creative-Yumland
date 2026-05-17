@@ -20,13 +20,14 @@
     --linkhover: #d45da3;
     --footer-link-color: #b34987;
 
-    --main-text-color: rgb(139, 0, 35);
-    --footer-text-color: rgb(139, 0, 35);
+    --main-text-color: rgb(69, 0, 139);
+    --footer-text-color: rgb(0, 255, 98);
 
     --header-background: rgba(22, 40, 48, 0.7);
     --header-border: rgba(21, 30, 34, 0.9);
-    --left-background: rgba(1, 250, 250, 0.7);
-    --left-border: rgba(152, 224, 224, 0.9);
+    --left-background: rgba(154, 46, 40, 0.633);
+    --left-border: rgba(154, 46, 40, 0.533);
+    --footer-background: rgb(154, 45, 40);
 
 }
 
@@ -44,6 +45,12 @@
 
 
     /* Main */
+
+#prison {
+    background-image: url("../images/background3.png");
+    background-size: cover 100%;
+    background-repeat: no-repeat;
+}
 
 body {
 	color: var(--main-text-color);
@@ -149,7 +156,7 @@ main>header a:visited {
     color: var(--visitedlink);
 }
 
-main>header a:hover {
+a:hover {
     color: var(--linkhover);
 }
 
@@ -201,6 +208,8 @@ main>footer {
 
     width: 100vw;
     height: var(--footer-height);
+
+    background-color: var(--footer-background);
 }
 
 main>footer>div {

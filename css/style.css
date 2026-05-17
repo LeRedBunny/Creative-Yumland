@@ -50,6 +50,7 @@
     background-size: cover 100%;
     background-repeat: no-repeat;
 }
+
 body {
 	color: var(--main-text-color);
 	text-align: center;
@@ -156,7 +157,7 @@ main>header a:visited {
     color: var(--visitedlink);
 }
 
-main>header a:hover {
+a:hover {
     color: var(--linkhover);
 }
 
@@ -287,7 +288,7 @@ form>div{
 }
 
 
-.error_message {
+#error_message {
     color: red;
     font-style: italic;
 }
