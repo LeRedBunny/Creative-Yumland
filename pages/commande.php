@@ -49,6 +49,8 @@
     
     <head>
         <?php headLinks('Commande #'.$order['id']); ?>
+        <script src='../js/cancel_order.js'> </script>
+        <script src='../js/get_url.js'> </script>
     </head>
 
     <body>
@@ -64,6 +66,8 @@
                 <fieldset>  
                     
                     <h1> Commande #<?= $id ?> </h1>
+
+                    <div id='error_message'> </div>
 
                     <h2> 
                         Statut : 
@@ -89,9 +93,16 @@
                     if ($admin == false) {
                         echo '<form method="post"> <input type="submit" id="submit" name="submit" value="Copier la commande"> </form>';
 
+                        // Link to review the order
                         if (!getReview($id) && $order['status'] == 4) {
                             echo '<br> <a href="notation.php?order='.$id.'"> Noter la commande </a>';
                         }
+
+                        // Link to cancel the order
+                        if ($order['status'] == 0) {
+                            echo '<button onclick="cancelOrder(\''.$id.'\');"> Annuler la commande </button>';
+                        }
+
                     }
 
                     ?>

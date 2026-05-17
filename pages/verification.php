@@ -36,6 +36,24 @@
     } else {
         $titre = 'Paiement refusé';
     }
+
+    // Cette condition permet de ne pas répéter la commande en rafraichissant la page
+    if ($_SESSION['panier']) {
+        
+        $id = createOrder($_SESSION['panier'], $_SESSION['order_type'], $_SESSION['user_id'], $montant);
+        $_SESSION['panier'] = array();
+
+        // Points de fidélité (1pt = 1 centime)
+        $points = intval($montant);
+        $user = getUserProfile($_SESSION['user_id']);
+        $user['fidelity_points'] += $points;
+        updateUser($user);
+
+
+    } else {
+        header('Location: index.php');
+    }
+
 ?>
 
 <!DOCTYPE html>
@@ -61,17 +79,18 @@
                         if ($statut == 'corrupted') {
                             echo '<h2> Les données du paiement ont été corrompues, veuillez réessayer. </h2>';
                             echo '<a href="panier.php"> Renvenir au panier </a>';
-                        } elseif ($statut == 'denied') {
+                        } 
+                        elseif ($statut == 'denied') {
                             echo '<h2> Le paiement a été refusé, veuillez réessayer. </h2>';
                             echo '<a href="panier.php"> Renvenir au panier </a>';
-                        } else {
+                        } 
+                        else {  
 
-                            $id = createOrder($_SESSION['panier'], $_SESSION['order_type'], $_SESSION['user_id']);
-                            $_SESSION['panier'] = array();
-                            echo '<h1> Commande#'.$id.' </h1>';
+                            echo '<h1> Commande #'.$id.'</h1>';
                             echo '<h2> Le paiement a été accepté! </h2>';
-                            echo '<a href="index.php"> Renvenir à l\'accueil </a>';
-                            echo '<br> <a href="commande.php?order='.$id.'"> voir la commande </a>';
+                            echo 'Vous avez obtenu '.$points.' points de fidélité ! <br>';
+                            echo '<a href="index.php"> Renvenir à l\'accueil </a> <br>';
+                            echo '<a href="commande.php?order='.$id.'"> Voir la commande </a>';
                         }
 
                     ?>
