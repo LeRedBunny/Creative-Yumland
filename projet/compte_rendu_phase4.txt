@@ -1,0 +1,10 @@
+Mardi 19 mai
+  Participants: Grégoire, Alexi
+  Réunion de projet, correction de code dû à un commentaire laissé dans profil.js
+  Durée: 15 minutes
+
+  Participant: Grégoire
+    -Début de création du système de sécurité avec checkforms.php: la modification d'id/name ou tag des balises input entraine une non-reconnaissance des données nécessaires, et une suppression du tableau post
+    Les données ne sont donc pas traitées.
+    A faire: tester avec une page web le traitement des données du type '<style>' par les fonctions de checkforms.php. Pour le moment, leur inclusion entraîne un plantage de la page, ce qui est pas trop grave d'un point de vue sécurité
+    
