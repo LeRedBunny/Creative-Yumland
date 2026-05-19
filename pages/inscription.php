@@ -64,14 +64,14 @@
 
                         <br>
                         <div class="div1">
-                            <input type="text" id="nom" name="name" value="<?= isset($_POST['email']) ? $_POST['email'] : '' ?>" required>
-                            <label for="nom">Nom</label>
+                            <input type="text" id="name" name="name" value="<?= isset($_POST['email']) ? $_POST['email'] : '' ?>" required>
+                            <label for="name">Nom</label>
                         </div>
                         <br>
 
                         <div class="div1">
-                            <input type="text" id="prenom" name="firstname" value="<?= isset($_POST['firstname']) ? $_POST['firstname'] : '' ?>" required>
-                            <label for="prenom">Prénom</label>
+                            <input type="text" id="firstname" name="firstname" value="<?= isset($_POST['firstname']) ? $_POST['firstname'] : '' ?>" required>
+                            <label for="firstname">Prénom</label>
                         </div>
                         <br>
 
