@@ -2,30 +2,34 @@
     
     require('../php/user_json.php');
     require('../php/header.php');
+    require('../php/checkform.php');
     session_start();
 
-    $message = '';
 
     if ($_POST) {
 
-        $newUser = array();
-        foreach($_POST as $key => $value) {
-            $newUser[$key] = $value;
-        }
-        $newUser['password'] = hash('sha256', $newUser['password'], false);
-        $newUser['status'] = 'client';
-        $newUser['favorite_rock'] = 'Aucune';
-        $newUser['fidelity_points'] = 0;
+            $_POST=createError($POST,'inscription');
+            if(detectError($_POST)){ unset($_POST); } 
 
-        $newUser['id'] = writeNewUser($newUser);
-        $message = '';
-        if ($newUser['id'] != -1) {
-            logIn($newUser);
-            header("Location: index.php");
-        } else {
-            $message = 'Un utilisateur avec cet email existe déjà.';
+            if ($_POST){
+                $newUser = array();
+                foreach($_POST as $key => $value) {
+                    $newUser[$key] = $value;
+                }
+                $newUser['password'] = hash('sha256', $newUser['password'], false);
+                $newUser['status'] = 'client';
+                $newUser['favorite_rock'] = 'Aucune';
+                $newUser['fidelity_points'] = 0;
+
+                $newUser['id'] = writeNewUser($newUser);
+                $message = '';
+                if ($newUser['id'] != -1) {
+                    logIn($newUser);
+                    header("Location: index.php");
+                } else {
+                    $message = 'Un utilisateur avec cet email existe déjà.';
+                }
         }
-        
     }
 
 ?>

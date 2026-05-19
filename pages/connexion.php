@@ -8,22 +8,26 @@
     $message = '';
     
     if ($_POST) {
-        //à tester 
-        $_POST=$detecterror($POST,'connexion');
-        
-        $profile = getUserFromEmail($_POST['email']);
+        //bloc de code à placer dans toutes les pages au fonctionnement similaire 
+        $_POST=createError($POST,'connexion');
+        if(detectError($_POST)){ unset($_POST); } 
+        //POST est supprimé si ses données sont corrompues
+        if ($_POST) {
+            $profile=getUserFromEmail($_POST['email']);
+            //fin du bloc de code
 
-        if ($profile) {
-            $password = $_POST['password'];
-            
-            if (hash('sha256', $password) == $profile['password']) {
-                logIn($profile);
-                header('Location: index.php');
+            if ($profile) {
+                $password = $_POST['password'];
+                
+                if (hash('sha256', $password) == $profile['password']) {
+                    logIn($profile);
+                    header('Location: index.php');
+                } else {
+                    $message = 'Mot de passe erroné.';
+                }
             } else {
-                $message = 'Mot de passe erroné.';
+                $message = "Aucun compte n'est associé à cet email.";
             }
-        } else {
-            $message = "Aucun compte n'est associé à cet email.";
         }
 
     }
