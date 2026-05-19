@@ -215,9 +215,9 @@ async function statuschange(){
 async function statuscheck(id){
     let answer = await fetch(getDomain() + '/php/status.php?id=' + id); //requête GET
     let status = await answer.text();
-    //console.log("current status:" + status);
+    console.log("current status:" + status);
     if(status == 5){
-        //console.log("looks like you shouldn't be here");
+        console.log("looks like you shouldn't be here");
         //procédure d'ejection de l'utilisateur
 
         //si l'utilisateur est bloqué, on l'envoie ailleurs.
@@ -249,7 +249,7 @@ function levideur(){
 
 
 window.addEventListener("DOMContentLoaded", () => {
-    //console.log("DOM is loaded");
+    console.log("DOM is loaded");
 
     levideur();
 
