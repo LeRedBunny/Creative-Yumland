@@ -8,3 +8,4 @@ Mardi 19 mai
     Les données ne sont donc pas traitées.
     A faire: tester avec une page web le traitement des données du type '<style>' par les fonctions de checkforms.php. Pour le moment, leur inclusion entraîne un plantage de la page, ce qui est pas trop grave d'un point de vue sécurité
     Rajouter le système de check des forms aux autres fichiers de traitement de données
+    (et un cas default pour le switch case)
