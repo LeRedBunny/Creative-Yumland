@@ -27,7 +27,7 @@ function checkForm (id) {
         
         if (tag.tagName == 'INPUT') {
 
-            switch (tag.type) {
+            switch (tag.id) {
             
                 case 'password' :
                     const password = tag.value;
@@ -50,7 +50,7 @@ function checkForm (id) {
                     }
                     break;
                 
-                case 'number' :
+                case 'code' :
                     const code = tag.value;
                     if (code.length != 5 || isNaN(code)) {
                         message += '- Veuillez entrer un code postal valide <br>'
