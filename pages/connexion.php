@@ -2,12 +2,15 @@
 
     require('../php/user_json.php');
     require('../php/header.php');
+    require('../php/checkform.php');
     session_start();
 
     $message = '';
     
     if ($_POST) {
-
+        //à tester 
+        $_POST=$detecterror($POST,'connexion');
+        
         $profile = getUserFromEmail($_POST['email']);
 
         if ($profile) {
