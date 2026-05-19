@@ -217,17 +217,17 @@ async function statuscheck(id){
     let status = await answer.text();
     console.log("current status:" + status);
     if(status == 5){
-        console.log("looks like you shouldn't be here");
+        //console.log("looks like you shouldn't be here");
         //procédure d'ejection de l'utilisateur
 
         //si l'utilisateur est bloqué, on l'envoie ailleurs.
         let number=Math.floor(Math.random() * 2);
-        /*switch(number){
+        switch(number){
             case 0: location.replace(getDomain() + '/pages/timeout.php');
                 break;
             case 1: location.replace('https://www.youtube.com/watch?v=dQw4w9WgXcQ');
                 break;
-        }*/
+        }
 
     } else{
         //console.log("bienvenue dans la boîte");
@@ -249,7 +249,7 @@ function levideur(){
 
 
 window.addEventListener("DOMContentLoaded", () => {
-    console.log("DOM is loaded");
+    //console.log("DOM is loaded");
 
     levideur();
 
