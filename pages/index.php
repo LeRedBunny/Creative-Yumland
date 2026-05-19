@@ -25,8 +25,8 @@
             <?php createHeader(array('Carte', 'À propos')); ?>
 
             <aside class="left">
-                <form>
-                    <input type="text" name="search" placeholder="Chercher des plats" />
+                <form method='get' action='carte.php'>
+                    <input type="text" name="filtres" placeholder="Chercher des plats" />
                 </form>
             </aside>
 

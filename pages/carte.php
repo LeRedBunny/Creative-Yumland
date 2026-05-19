@@ -29,7 +29,7 @@
 
             <aside class="left">
                 <form action="#" method="GET">
-                    <input type="text" placeholder="Filtrer les plats" name="filtres" id="filters"> <br>
+                    <input type="text" placeholder="Filtrer les plats" name="filtres" id="filters" value=<?= isset($_GET['filtres']) ? $_GET['filtres'] : '' ?>> <br>
                     <select name="tri" id="tri" onclick="showhide()">    <!-- A finir d'implémenter-->
                         <option value="0">Aucun</option>
                         <option value="prix">Prix</option>
