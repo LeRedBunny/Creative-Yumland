@@ -9,3 +9,13 @@ Mardi 19 mai
     A faire: tester avec une page web le traitement des données du type '<style>' par les fonctions de checkforms.php. Pour le moment, leur inclusion entraîne un plantage de la page, ce qui est pas trop grave d'un point de vue sécurité
     Rajouter le système de check des forms aux autres fichiers de traitement de données
     (et un cas default pour le switch case)
+
+
+
+Mercredi 20 mai
+  Participants: Grégoire, Alexi
+    -Avancée sur la sécurité des formulaires.
+    -Correction du bloc de code appelant checkform.php, à ajouter dans les autres formulaires
+    -Avancée sur la correction du système de paiement avec pts de fidélité
+
+A faire: rajouter le bloc de code appelant chekform dans les autres, formulaires, tester; cas default pour son switch case; log.json pour répértorier les différentes actions, corriger les critiques des précédentes phases, améliorer le look de carte.php
