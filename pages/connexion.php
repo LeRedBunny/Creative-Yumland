@@ -9,7 +9,7 @@
     
     if ($_POST) {
         //bloc de code à placer dans toutes les pages au fonctionnement similaire 
-        $_POST=createError($POST,'connexion');
+        $_POST=createError($_POST,'connexion');
         if(detectError($_POST)){ unset($_POST); } 
         //POST est supprimé si ses données sont corrompues
         if ($_POST) {
