@@ -8,7 +8,19 @@
 
     $user = getUserProfile($_SESSION['user_id']);
 
-    $montant = ($user) ? $_SESSION['price'] - $user['fidelity_points'] / 100 : $_SESSION['price'];
+    $pay = true; // To know if it needs to take you to CY Bank or if the price is 0€
+    $montant = $_SESSION['price'];
+    if ($user) {
+        $reduc = $user['fidelity_points'] / 100;
+        if ($reduc >= $montant) {
+            $pay = false;
+            $reduc = $montant;
+            $montant = 0;
+        } else {
+            $montant -= $reduc;
+        }
+    }
+
     $order = $_SESSION['panier'];
     $transaction = substr(str_shuffle("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"), 0, 12); //Identifiant généré aléatoirement
     $vendeur = "MI-4_G";
@@ -46,8 +58,10 @@
                         if ($user) {
                             echo 'Vous avez actuellement '.$user['fidelity_points'].' points de fidélité.';
                             if ($user['fidelity_points']) {
-                                echo '<br> Vous gagnerez donc '.($user['fidelity_points'] / 100).'€ sur votre commande!';
+                                echo '<br> Vous gagnerez donc '.($reduc).'€ sur votre commande!';
                             }
+                        } else {
+                            echo 'Une erreur est survenue dans le chargement de vos points de fidélité.';
                         }
                     ?>
                     <br>
@@ -67,7 +81,7 @@
                     ?>
 
 
-                    <form id="paymentForm" action="https://www.plateforme-smc.fr/cybank/index.php" method="POST">
+                    <form id="paymentForm" action=<?= ($pay) ? "https://www.plateforme-smc.fr/cybank/index.php" : "verification.php"; ?> method="POST">
                         <input type="hidden" name="transaction" value="<?= $transaction ?>">
                         <input type="hidden" name="montant" value="<?= $montant ?>">
                         <input type="hidden" name="vendeur" value="<?= $vendeur ?>">
