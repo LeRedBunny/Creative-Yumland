@@ -73,7 +73,7 @@
                             
                             echo '<h2>
                                     <button  onclick="modifymode()">
-                                        <img src="../images/Pickaxe.png" alt="Modifier" height="20px">
+                                        <img src="../images/keymodify.png" alt="Modifier" height="20px">
                                     </button>
                                     Mon Profil
                                 </h2>';
