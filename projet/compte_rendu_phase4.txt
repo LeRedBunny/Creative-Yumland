@@ -19,3 +19,11 @@ Mercredi 20 mai
     -Avancée sur la correction du système de paiement avec pts de fidélité
 
 A faire: rajouter le bloc de code appelant chekform dans les autres, formulaires, tester; cas default pour son switch case; log.json pour répértorier les différentes actions, corriger les critiques des précédentes phases, améliorer le look de carte.php
+
+
+
+Lundi 1er juin
+  Participant: Grégoire
+  -suppression de la page modifier_profil.php rendure obsolète à la phase 3
+  -ajout d'une image plus appropriée à la modification de profil, correction appropriée du code dans profil.php
+  -début de création d'une fonction integrity_check dans profil.js, dont le but sera de vérifier entre autres si la page n'a pas été modifiée
