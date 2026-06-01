@@ -1,3 +1,26 @@
+//vérifie l'intégrité des données, et élimine les caractères problématiques
+function integrity_check(array, type){
+    let parameters=[];
+    let object;
+    let temp=0;
+    switch (type){
+        case "display_profile":
+            parameters=["name","firstname","email","favorite_rock","tel","address","code","city"];
+            for(index in parameters){//vérifie que toutes les données sont initialisées
+                if(! isset(data[parameters[index]])){
+                    console.log("Trying to mess with the website?");
+                    return 0;
+                }
+            }
+            break;
+        case "modify_profile":
+            break;
+    }
+    
+
+    //vérifie que 1) tous les éléments on un id cohérent 2) aucun id n'est présent deux fois 3) élimine les caractères problématiques
+}
+
 async function modifymode(){
 
 
@@ -23,6 +46,13 @@ async function modifymode(){
         data["address"]=document.getElementById("address").getAttribute("value1");
         data["code"]=document.getElementById("address").getAttribute("value2");
         data["city"]=document.getElementById("address").getAttribute("value3");
+
+        //vérification que tous les paramètres sont reconnus
+
+        if(! integrity_check(data,"display_profile")){
+            return;
+        }
+        
         //for(index in data){console.log("Recovered data[\""+index+"]\":"+data[index]);}
 
         //console.log("changing from display to modify mode");
@@ -215,7 +245,7 @@ async function statuschange(){
 async function statuscheck(id){
     let answer = await fetch(getDomain() + '/php/status.php?id=' + id); //requête GET
     let status = await answer.text();
-    console.log("current status:" + status);
+    //console.log("current status:" + status);
     if(status == 5){
         //console.log("looks like you shouldn't be here");
         //procédure d'ejection de l'utilisateur
