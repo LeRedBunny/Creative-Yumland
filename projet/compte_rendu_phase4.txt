@@ -24,6 +24,7 @@ A faire: rajouter le bloc de code appelant chekform dans les autres, formulaires
 
 Lundi 1er juin
   Participant: Grégoire
+Durée: 40 minutes
   -suppression de la page modifier_profil.php rendure obsolète à la phase 3
   -ajout d'une image plus appropriée à la modification de profil, correction appropriée du code dans profil.php
   -début de création d'une fonction integrity_check dans profil.js, dont le but sera de vérifier entre autres si la page n'a pas été modifiée
