@@ -28,3 +28,9 @@ Durée: 40 minutes
   -suppression de la page modifier_profil.php rendure obsolète à la phase 3
   -ajout d'une image plus appropriée à la modification de profil, correction appropriée du code dans profil.php
   -début de création d'une fonction integrity_check dans profil.js, dont le but sera de vérifier entre autres si la page n'a pas été modifiée
+
+Mardi 2 juin:
+  1h
+  correction de profil.js, apparemment tu peux appeler un index d'objet comme si c'était un tableau, du coup le data de display->modify est un objet maintenant
+  finition de integrity check. Puisque si il y a un bug de récupération des données, la modificationd e la page ne devrait pas être problématique, et les formulaires sont sécurisés contre les caractères spécifiques d'html
+
