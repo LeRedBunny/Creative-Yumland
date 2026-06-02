@@ -1,24 +1,49 @@
+//fonction de remplacement de caractères html
+function escapeHTML(text) {//merci stackoverflow
+  let map = {   //tableau contenant les équivalents des caractères, aux index des caractères à remplacer
+    '&': '&amp;',
+    '<': '&lt;',
+    '>': '&gt;',
+    '"': '&quot;',
+    "'": '&#039;'
+  };
+  
+  return text.replace(/[&<>"']/g, function(m) { return map[m]; });
+    //              /tableau des valeurs à remplacer/g, fonction anonyme qui retourne le contenu du tableau à l'index voulu
+}
+
 //vérifie l'intégrité des données, et élimine les caractères problématiques
-function integrity_check(array, type){
+//(couvre les deux modes de profil)
+function integrity_check(object, type){
     let parameters=[];
-    let object;
     let temp=0;
     switch (type){
         case "display_profile":
+            console.log("executing integrity check for display_profile");
             parameters=["name","firstname","email","favorite_rock","tel","address","code","city"];
-            for(index in parameters){//vérifie que toutes les données sont initialisées
-                if(! isset(data[parameters[index]])){
-                    console.log("Trying to mess with the website?");
-                    return 0;
-                }
-            }
             break;
         case "modify_profile":
+            console.log("executing integrity check for modify_profile");
+            parameters=["name","firstname","email","favorite_rock","tel","address","code","city"];
+            break;
+        default:
             break;
     }
-    
+    for(index in parameters){//vérifie que toutes les données sont initialisées
+        console.log("checking data["+index+"]");
+        if(! parameters[index] in object){   //vérifie que l'indice de tableau est contenu dans le tableau
+            console.log("Trying to mess with the website?");
+            return 0;
+        }
+        console.log("no issues detected");
 
-    //vérifie que 1) tous les éléments on un id cohérent 2) aucun id n'est présent deux fois 3) élimine les caractères problématiques
+        // élimine les caractères problématiques
+        //console.log("replacing suspicious caracters");
+        //console.log("for check, data." + parameters[index] + " is " + object[parameters[index]]);
+        object[parameters[index]]=escapeHTML(object[parameters[index]]);
+    }
+    return object;
+    
 }
 
 async function modifymode(){
@@ -37,26 +62,26 @@ async function modifymode(){
     if(mode == "display"){   //basculer en mode modification
         //récupération des données, pour les rentrer dans le formulaire
         //console.log("collecting user data");
-        let data=[];
-        data["name"]=document.getElementById("name").getAttribute("value");
-        data["firstname"]=document.getElementById("firstname").getAttribute("value");
-        data["email"]=document.getElementById("email").getAttribute("value");
-        data["favorite_rock"]=document.getElementById("favorite_rock").getAttribute("value");
-        data["tel"]=document.getElementById("tel").getAttribute("value");
-        data["address"]=document.getElementById("address").getAttribute("value1");
-        data["code"]=document.getElementById("address").getAttribute("value2");
-        data["city"]=document.getElementById("address").getAttribute("value3");
-
+        let data={
+            "name": document.getElementById("name").getAttribute("value"),
+            "firstname": document.getElementById("firstname").getAttribute("value"),
+            "email": document.getElementById("email").getAttribute("value"),
+            "favorite_rock": document.getElementById("favorite_rock").getAttribute("value"),
+            "tel": document.getElementById("tel").getAttribute("value"),
+            "address": document.getElementById("address").getAttribute("value1"),
+            "code": document.getElementById("address").getAttribute("value2"),
+            "city": document.getElementById("address").getAttribute("value3")
+        };
         //vérification que tous les paramètres sont reconnus
 
         if(! integrity_check(data,"display_profile")){
             return;
         }
-        
-        //for(index in data){console.log("Recovered data[\""+index+"]\":"+data[index]);}
 
         //console.log("changing from display to modify mode");
         //écriture de la page, avec valeurs incorporées dedans
+        
+        //changement de data[index] à data.index pas nécessaire visiblement 
         box.innerHTML=`
             <!-- Informations personnelles -->
             <h3> Modifier le profil </h3>
@@ -153,16 +178,24 @@ async function modifymode(){
             "code": document.getElementById("code").value,
             "city": document.getElementById("city").value
         };
-            //console.log("data.name="+data.name);
-            //console.log("data.firstname="+data.firstname);
-            //console.log("data.email="+data.email);
-            //console.log("data.favorite_rock="+data.favorite_rock);
-            //console.log("data.tel="+data.tel);
-            //console.log("data.city="+data.city);
-            //console.log("data.code="+data.code);
-            //console.log("data.address="+data.address);
-        
-        //console.log("changing from modify to display mode");
+
+        /*if("console.log de débugage"){
+            console.log("data.name="+data.name);
+            console.log("data.firstname="+data.firstname);
+            console.log("data.email="+data.email);
+            console.log("data.favorite_rock="+data.favorite_rock);
+            console.log("data.tel="+data.tel);
+            console.log("data.city="+data.city);
+            console.log("data.code="+data.code);
+            console.log("data.address="+data.address);
+            console.log("changing from modify to display mode");
+        }*/
+
+        //vérification que tous les paramètres sont reconnus
+
+        if(! integrity_check(data,"display_profile")){
+            return;
+        }
 
         box.innerHTML=`
             <!-- Informations personnelles -->
