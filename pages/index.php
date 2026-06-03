@@ -22,7 +22,7 @@
 
         <main>
 
-            <?php createHeader(array('Carte', 'À propos')); ?>
+            <?php createHeader(array('Carte', 'À propos', 'La Mine')); ?>
 
             <aside class="left">
                 <form method='get' action='carte.php'>
