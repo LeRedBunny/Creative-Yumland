@@ -31,7 +31,7 @@ function mine (user_id) {
 
 function playSound () {
     /* Plays a stone sound */
-    var audio = new Audio('../sound/mining_sound.mp3');
+    var audio = new Audio('../sounds/mining_sound.mp3');
     audio.play();
 }
 
