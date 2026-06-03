@@ -5,30 +5,21 @@
 
     
     if ($_GET) {                    // Coming from carte.php
+
         $carte = json_decode(file_get_contents("../json/carte.json"), true);
         $nomplat = $_GET["plat"];
+
         if (isset($carte[$nomplat])) { 
             $plat=$carte[$nomplat];
         } else {
             header('Location: carte.php');
         }
-    } 
-    elseif ($_POST) {               // Add to the cart
-        
-        if (isset($_SESSION['logged_in']) && $_SESSION['logged_in']) {
 
-            $name = $_POST['name'];
-            if (isset($_SESSION['panier'][$name])) {
-                $_SESSION['panier'][$name] += $_POST['amount'];
-            } else {
-                $_SESSION['panier'][$name] = $_POST['amount'];
-            }
+    } elseif ($_POST) {               // Add to the cart
 
-            header('Location: carte.php');
-        } else {
-            header('Location: connexion.php');
-        }
-        
+        addItem($_POST['name'], intval($_POST['amount']));
+        header('Location: carte.php');
+
     } 
 ?>
 

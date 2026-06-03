@@ -52,11 +52,12 @@
     
 
     // Cette condition permet de ne pas répéter la commande en rafraichissant la page
-    if ($_SESSION['panier']) {
+    $cart = getCart();
+    if ($cart) {
         
-        $id = createOrder($_SESSION['panier'], $_SESSION['order_type'], $_SESSION['user_id'], $montant);
-        $_SESSION['panier'] = array();
-
+        $id = createOrder($cart, $_SESSION['order_type'], $_SESSION['user_id'], $montant);
+        resetCart();
+        
         // Points de fidélité (1pt = 1 centime)
 
         $user = getUserProfile($_SESSION['user_id']);
