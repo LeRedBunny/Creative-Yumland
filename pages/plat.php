@@ -36,7 +36,7 @@
         <main>
 
             <?php
-                createHeader(array('Accueil', 'Carte', 'À propos'));
+                createHeader(array('Accueil', 'Carte', 'À propos', 'La Mine'));
             ?>
 
             <section>

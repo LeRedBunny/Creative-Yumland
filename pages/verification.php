@@ -83,7 +83,7 @@
 
         <main> 
 
-            <?php createHeader(array('Accueil', 'Carte', 'À propos')); ?>
+            <?php createHeader(array('Accueil', 'Carte', 'À propos', 'La Mine')); ?>
 
             <section>
 

@@ -17,7 +17,7 @@
         
         <main>
 
-            <?php createHeader(array('Accueil', 'Carte')); ?>
+            <?php createHeader(array('Accueil', 'Carte', 'La Mine')); ?>
 
             <section>
 

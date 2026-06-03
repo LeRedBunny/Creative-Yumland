@@ -22,7 +22,7 @@
         <main>
 
             <?php
-                createHeader(array('Accueil', 'À propos'));
+                createHeader(array('Accueil', 'À propos', 'La Mine'));
             ?>
             
         
