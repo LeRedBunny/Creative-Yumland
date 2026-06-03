@@ -39,3 +39,10 @@ Mardi 2 juin:
   Durée: 4h
   - Intégration quasi-complète du panier en JS. Actuellement, le seul problème est lié aux apostrophe dans les noms de plats.
   - Pour ça, le panier est maintenant un cookie contenant du json.
+
+
+Mercredi 3 juin 
+  Participant: Alexi
+  Durée: 2h30
+  - Tentative de corriger le problème des apostrophe, c'est impossible donc j'abandonne l'idée.
+  - Correction de l'affichage de la carte.
