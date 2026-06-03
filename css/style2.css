@@ -310,6 +310,7 @@ table {
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: center;
+	padding-left: 15vw;
     margin: 0 auto;
     gap: 2rem;
     width: 95%;
