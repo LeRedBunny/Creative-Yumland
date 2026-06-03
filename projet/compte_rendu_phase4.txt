@@ -44,5 +44,5 @@ Mardi 2 juin:
 Mercredi 3 juin 
   Participant: Alexi
   Durée: 2h30
-  - Tentative de corriger le problème des apostrophe, c'est impossible donc j'abandonne l'idée.
+  - Tentative de corriger le problème des apostrophes, c'est impossible donc j'abandonne l'idée.
   - Correction de l'affichage de la carte.
