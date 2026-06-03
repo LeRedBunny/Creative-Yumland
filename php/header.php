@@ -97,7 +97,7 @@
     function createFooter (array $pages) : void {
         // Creates a page's footer with links to the given pages
 
-        echo '<footer> <div> |';
+        echo '<footer> <div>'.($pages ? '|' : '');
         foreach($pages as $page) {
             echo '<a href="'.PAGE_LINKS[$page].'"> '.$page.' </a> <span> | </span>';
         }
