@@ -98,7 +98,7 @@ async function updatePoints (user_id, points_obtained) {
     const points = parseInt(await response.text());
 
     let div = document.getElementById('fidelity_points');
-    div.innerText = 'Points actuels: ' + points;
+    div.innerText = 'Points actuels: ' + points + 'pts';
     
 }
 
