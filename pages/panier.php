@@ -34,9 +34,7 @@
 
         <main>
 
-            <?php
-                createHeader(array('Accueil', 'Carte', 'À propos'));
-            ?>
+            <?php createHeader(array('Accueil', 'Carte', 'À propos')); ?>
 
             <section>
 
@@ -50,6 +48,8 @@
                 </fieldset>
 
             </section>
+
+            <?php createFooter(Array()); ?>
             
         </main>
     </body>
