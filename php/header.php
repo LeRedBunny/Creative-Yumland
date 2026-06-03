@@ -36,7 +36,8 @@
         'Accueil' => 'index.php',
         'Notez votre expérience' => 'notation.php',
         'Avis des consommateurs' => 'avis.php',
-        'Mentions légales' => 'mentions_legales.php'
+        'Mentions légales' => 'mentions_legales.php',
+        'La Mine' => 'mine.php'
     ));
 
     function createHeader (array $pages, bool $theme_button = true) : void {
