@@ -30,6 +30,8 @@
                     $message = 'Un utilisateur avec cet email existe déjà.';
                 }
         }
+    } else {
+        $message = '';
     }
 
 ?>
