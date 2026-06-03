@@ -111,7 +111,7 @@ body>main {
 	display: grid;
 	grid-template-areas:
 		"header header"
-		"left-aside section "
+		"left-aside section"
 		"footer footer";
 	grid-template-rows: 50px auto 50px;
 	grid-template-columns: 50px auto;
@@ -309,7 +309,7 @@ table {
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: center;
-	padding-left: 15vw;
+    padding-left: 15vw;
     margin: 0 auto;
     gap: 2rem;
     width: 95%;
@@ -362,4 +362,12 @@ label.star {
 
 .rating input:checked~label:not(.rating input:checked+label){
     color:white;
+}
+
+
+
+    /* Mine */
+
+#mine_button_img {
+    max-height: 20vh;
 }
