@@ -37,4 +37,5 @@ Mardi 2 juin:
 
   Participant: Alexi
   Durée: 4h
-  -Intégration quasi-complète du panier en JS. Actuellement, le seul problème est lié aux apostrophe dans les noms de plats.
+  - Intégration quasi-complète du panier en JS. Actuellement, le seul problème est lié aux apostrophe dans les noms de plats.
+  - Pour ça, le panier est maintenant un cookie contenant du json.
