@@ -6,10 +6,15 @@
     session_start();
 
 
+    
     if ($_POST) {
-
+        foreach($_POST as $index => $value){
+            echo '$_POST['.$index."]=".$value;
+        }
         $_POST=createError($_POST,'inscription');
-        if(detectError($_POST)){ unset($_POST); } 
+        if(detectError($_POST)){ unset($_POST); 
+        //echo"<b>erreur detectée</b>";
+        } 
 
         if ($_POST){
             $newUser = array();
