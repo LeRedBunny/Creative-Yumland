@@ -2,7 +2,7 @@
     //prend en paramètre le tableau des données du formulaire et le mode voulu
     //retourne un formulaire dont toutes les données non récupérables ont été initialisées à une valeur censé causer une erreur
     function createError(array $array, string $mode) : array{   //utiliser un tableau de chaînes de caractères avec un foreach plutôt qu'un switch case?
-        echo 'beginning function createError';
+        //echo 'beginning function createError';
         switch ($mode){
             case 'connexion':   //si les valeurs ne sont pas récupérées par réécriture de balise ou autre, les initialise à une valeur prévue
                 //echo 'checking for email<br>';
