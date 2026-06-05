@@ -1,32 +1,33 @@
 <?php 
 
-    require('panier.php');
+    require_once('../php/cart.php');
 
-    function headLinks (string $title, bool $admin_style = FALSE) {
-        /* Writes the HTML tags needed in <head> */
+    if(!function_exists('headLinks')){ //sécurité supplémentaire, apparemment le require de panier cause un rappel de header
+            function headLinks (string $title, bool $admin_style = FALSE) {
+            /* Writes the HTML tags needed in <head> */
 
-        if ($admin_style) {
-            $style = 'admin';
-        } else {
-            if (!isset($_COOKIE['style'])) {
-                setcookie('style', 'style', time() + 3600 * 24);
-                $style = 'style';
+            if ($admin_style) {
+                $style = 'admin';
             } else {
-                $style = $_COOKIE['style'];
+                if (!isset($_COOKIE['style'])) {
+                    setcookie('style', 'style', time() + 3600 * 24);
+                    $style = 'style';
+                } else {
+                    $style = $_COOKIE['style'];
+                }
+                
             }
-            
+            echo '<meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title> '.$title.' </title>
+                <link rel="stylesheet" id="style" href="../css/'.$style.'.css"/>
+                <link rel="icon" href="../images/icon.png">
+                <script src="../js/cookie.js"> </script>
+                <script src="../js/get_url.js"> </script>
+                <script src="../js/style.js"> </script>
+                <script src="../js/profil.js" defer> </script>';
         }
-        echo '<meta charset="UTF-8">
-              <meta name="viewport" content="width=device-width, initial-scale=1.0">
-              <title> '.$title.' </title>
-              <link rel="stylesheet" id="style" href="../css/'.$style.'.css"/>
-              <link rel="icon" href="../images/icon.png">
-              <script src="../js/cookie.js"> </script>
-              <script src="../js/get_url.js"> </script>
-              <script src="../js/style.js"> </script>
-              <script src="../js/profil.js" defer> </script>';
     }
-
 
 
     define('PAGE_LINKS', array(
@@ -40,80 +41,83 @@
         'La Mine' => 'mine.php'
     ));
 
-    function createHeader (array $pages, bool $theme_button = true) : void {
-        // Creates a page's header with links to the given pages
+    if(!function_exists('createHeader')){
+        function createHeader (array $pages, bool $theme_button = true) : void {
+            // Creates a page's header with links to the given pages
 
-        echo '<header> 
-                <div> 
-                    <a href="index.php" id="logo"> 
-                    <h1> Le Bistroche </h1> 
-                    </a>
-                </div>';
-        
-        echo '<div> |';
-        foreach($pages as $page) {
-            echo '<a href="'.PAGE_LINKS[$page].'"> '.$page.' </a> <span> | </span>';
-        }
-        if ($_SESSION['logged_in']) {
-            if ($_SESSION['status'] != 'client' && $_SESSION['status'] != 'bloque') {
-                echo '<a href="commandes.php"> Commandes </a> <span> | </span>';
-            }
-            if ($_SESSION['status'] == 'admin') {
-                echo '<a href="admin.php"> Page administrateur </a> <span> | </span>';
-            }
-        }
-        echo '</div>';
-
-        if(isset($_SESSION["user_id"])){
-            echo '<input type="hidden" id="IDIDID" name="IDIDID" value="'.$_SESSION["user_id"].'"/>';
-        }
-
-        if ($_SESSION['logged_in']) {
-            echo "<div>
-                    <a href='panier.php' id='cart_link'> Panier ".((isset($_COOKIE['cart']) && $_COOKIE['cart'] != '{}') ? '('.countCart().')' : '')."</a>
-                    <span> | </span>
-                    <a href='profil.php'> Profil </a>
-                    <span> | </span>
-                    <a href='deconnexion.php'> Se déconnecter </a>";
-        }
-        else {
-            echo "<div>
-                    <a href='inscription.php'> Inscription </a>
-                    <span> | </span>
-                    <a href='connexion.php'> Connexion </a>";
-        }
-
-        if ($theme_button) {
-            echo "<button id='theme' onclick='toggleStyle();'> Thème </button>";
-        }
-        echo '</div>';
-        
-        
+            echo '<header> 
+                    <div> 
+                        <a href="index.php" id="logo"> 
+                        <h1> Le Bistroche </h1> 
+                        </a>
+                    </div>';
             
-        echo "</header>";
-    }
+            echo '<div> |';
+            foreach($pages as $page) {
+                echo '<a href="'.PAGE_LINKS[$page].'"> '.$page.' </a> <span> | </span>';
+            }
+            if ($_SESSION['logged_in']) {
+                if ($_SESSION['status'] != 'client' && $_SESSION['status'] != 'bloque') {
+                    echo '<a href="commandes.php"> Commandes </a> <span> | </span>';
+                }
+                if ($_SESSION['status'] == 'admin') {
+                    echo '<a href="admin.php"> Page administrateur </a> <span> | </span>';
+                }
+            }
+            echo '</div>';
 
+            if(isset($_SESSION["user_id"])){
+                echo '<input type="hidden" id="IDIDID" name="IDIDID" value="'.$_SESSION["user_id"].'"/>';
+            }
 
+            if ($_SESSION['logged_in']) {
+                echo "<div>
+                        <a href='panier.php' id='cart_link'> Panier ".((isset($_COOKIE['cart']) && $_COOKIE['cart'] != '{}') ? '('.countCart().')' : '')."</a>
+                        <span> | </span>
+                        <a href='profil.php'> Profil </a>
+                        <span> | </span>
+                        <a href='deconnexion.php'> Se déconnecter </a>";
+            }
+            else {
+                echo "<div>
+                        <a href='inscription.php'> Inscription </a>
+                        <span> | </span>
+                        <a href='connexion.php'> Connexion </a>";
+            }
 
-    function createFooter (array $pages) : void {
-        // Creates a page's footer with links to the given pages
-
-        echo '<footer> <div>'.($pages ? '|' : '');
-        foreach($pages as $page) {
-            echo '<a href="'.PAGE_LINKS[$page].'"> '.$page.' </a> <span> | </span>';
+            if ($theme_button) {
+                echo "<button id='theme' onclick='toggleStyle();'> Thème </button>";
+            }
+            echo '</div>';
+            
+            
+                
+            echo "</header>";
         }
-        echo '</div> </footer>';
     }
 
+    if(!function_exists('createFooter')){
+        function createFooter (array $pages) : void {
+            // Creates a page's footer with links to the given pages
 
-
-    function countCart () {
-        // Counts how many items are currently in the cart
-        $count = 0;
-        foreach (getCart() as $amount) {
-            $count += $amount;
+            echo '<footer> <div>'.($pages ? '|' : '');
+            foreach($pages as $page) {
+                echo '<a href="'.PAGE_LINKS[$page].'"> '.$page.' </a> <span> | </span>';
+            }
+            echo '</div> </footer>';
         }
-        return $count;
     }
+
+    if(!function_exists('countCart')){
+        function countCart () {
+            // Counts how many items are currently in the cart
+            $count = 0;
+            foreach (getCart() as $amount) {
+                $count += $amount;
+            }
+            return $count;
+        }
+    }
+    
 
 ?>
