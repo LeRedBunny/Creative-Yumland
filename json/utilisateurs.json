@@ -13,7 +13,7 @@
         "fidelity_points": 0,
         "id": 0,
         "creation_date": 1775417124,
-        "last_login": 1779035338
+        "last_login": 1780669059
     },
     {
         "name": "Consommatrice",
@@ -101,7 +101,7 @@
         "email": "cryandweepmort@l.com",
         "password": "cc43f61e5d817a62ca571f43d2403777e7169060e0f34992d4756d8eb85e35d0",
         "tel": "7659870543",
-        "address": "67 place du sacrifice",
+        "address": "12 place du sacrifice",
         "city": "Bristos",
         "code": "12345",
         "status": "client",
@@ -110,5 +110,21 @@
         "id": 6,
         "creation_date": 1778957187,
         "last_login": 1778957187
+    },
+    {
+        "name": "Dreemur",
+        "firstname": "Kris",
+        "email": "roaringKnigh@notme.com",
+        "password": "adefb4c282421e70a3c6f1f98ebd5c8705e31063785713f59d1989b6d26c81b5",
+        "tel": "7659870543",
+        "address": "1 impasse royale",
+        "city": "Town?",
+        "code": "77270",
+        "status": "client",
+        "favorite_rock": "Aucune",
+        "fidelity_points": 0,
+        "id": 7,
+        "creation_date": 1780676545,
+        "last_login": 1780676545
     }
 ]
