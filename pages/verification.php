@@ -105,7 +105,7 @@
                                 echo '<h1> Commande #'.$id.'</h1>';
                                 echo '<h2> Le paiement a été accepté! </h2>';
                                 echo 'Vous avez obtenu '.intval($montant).' points de fidélité ! <br>';
-                                echo '<a href="index.php"> Renvenir à l\'accueil </a> <br>';
+                                echo '<a href="index.php"> Revenir à l\'accueil </a> <br>';
                                 echo '<a href="commande.php?order='.$id.'"> Voir la commande </a>';
                             }
                         } else {
@@ -114,7 +114,7 @@
                             if ($user) {
                                 echo 'Il vous reste '.$user['fidelity_points'].' points de fidélité !';
                             }
-                            echo '<br> <a href="index.php"> Renvenir à l\'accueil </a> <br>';
+                            echo '<br> <a href="index.php"> Revenir à l\'accueil </a> <br>';
                             echo '<a href="commande.php?order='.$id.'"> Voir la commande </a>';
                         }
 

@@ -8,7 +8,7 @@
 
     if ($_POST) {
 
-        $_POST=createError($POST,'inscription');
+        $_POST=createError($_POST,'inscription');
         if(detectError($_POST)){ unset($_POST); } 
 
         if ($_POST){
