@@ -8,3 +8,9 @@ Causes:
 certaines: require('panier.php'), même lorsque panier.php est vide
 	encore une gimmick à la con dont on ne sait rien
 possibles: une fonction de header.php qui appelle le fichier encore
+
+
+Résolu:
+Le code devait confondre panier.php page et fichier php. Pourquoi? Ma théorie c'est parce que le require déplace le code dans le fichier. Donc le fichier reconnu par le simple chemin 'panier.php' était la page, et non pas le fichier, lorsque le require(header.php) était appelé par une page web.
+C'est bizarre, mais bon. ça a ses applications en vrai.
+Résolution: renommage de php/panier.php en cart.php
