@@ -11,7 +11,7 @@ Il y a 7 utilisateurs déjà inscrits :
   - Olive Raison, livreuse, livreuse@livraison.com, mot de passe : livraison
   - Slender Woman, bloqué, nopenopenope@horror.fr, mot de passe: creepypasta
   - Count Mourn, client, cryandweepmort@l.com, mot de passe: senebris
-
+  - Kris Dreemur, client, roaringKnigh@notme.com ,mot de passe: dinosaurs
 
 
 Pour accéder au site, lancez la commande ``php -S localhost:8000`` dans le répertoire du projet puis allez à l'adresse ``http://localhost:8000/accueil.php`` dans un navigateur.
