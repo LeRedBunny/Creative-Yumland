@@ -1,0 +1,10 @@
+Bug: re-appel de index.php, header.php
+symptômes:
+Si les fonctions de header.php ne sont pas sécurisées, le site plante en essayant de les redéclarer
+Si les fonctions sont sécurisés, le site plante en essayant de se rediriger infiniment vers index.php
+
+
+Causes:
+certaines: require('panier.php'), même lorsque panier.php est vide
+	encore une gimmick à la con dont on ne sait rien
+possibles: une fonction de header.php qui appelle le fichier encore
