@@ -46,3 +46,11 @@ Mercredi 3 juin
   Durée: 2h30
   - Tentative de corriger le problème des apostrophes, c'est impossible donc j'abandonne l'idée.
   - Correction de l'affichage de la carte.
+
+
+
+Vendredi 5 juin
+  Participant: Grégoire
+  Durée: 3 heures
+  -correction de bugs, fautes d'orthographes et autres
+  -ajout d'un système de temps d'attentes entre deux connexions si le mot de passe est erroné trop de fois. Originellement avec une page dédiée, mais galère, donc je fais simplement en utilisant sleep(). La page ne finit pas de se charger si le php n'est pas près, donc le client est bloqué pour la durée de temps voulue.
