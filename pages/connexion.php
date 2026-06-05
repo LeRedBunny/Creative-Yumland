@@ -6,7 +6,7 @@
     session_start();
 
     $message = '';
-    
+
     if ($_POST) {
         //bloc de code à placer dans toutes les pages au fonctionnement similaire 
         $_POST=createError($_POST,'connexion');
@@ -21,9 +21,34 @@
                 
                 if (hash('sha256', $password) == $profile['password']) {
                     logIn($profile);
+                        if(isset($_SESSION['forcing'])){
+                            unset($_SESSION['forcing']);
+                        }
+                        if(isset($_COOKIE['forcing'])){
+                            setcookie('forcing','1',time() - 60);
+                        }
                     header('Location: index.php');
                 } else {
                     $message = 'Mot de passe erroné.';
+                    //comptage du nombre d'essais. Le temps d'attente devient de plus en plus élevé.
+                        if(isset($_SESSION['forcing'])){//session sera utilisé par défaut
+                            $_SESSION['forcing']++;
+                        }else{
+                            $_SESSION['forcing']=1;
+                        }
+                        //conséquence de blocage ici -> attendre x secondes
+                        //récupération de la quantité d'essais de l'utilisateur
+                        $wait=0;
+                        if(isset($_SESSION['forcing'])){
+                            $wait=$_SESSION['forcing'];
+                        }
+
+                        if($wait>3){
+                            //header('Location: pleasewait.php');
+                            $wait=($wait-3)*2;
+                            sleep($wait);
+                            }
+                        //echo "<b>vous avez attendu ".$wait." secondes<b>";
                 }
             } else {
                 $message = "Aucun compte n'est associé à cet email.";
