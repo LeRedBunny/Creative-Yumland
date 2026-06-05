@@ -2,7 +2,7 @@
     
     session_start(); 
     
-    require('../php/header.php');
+    require_once('../php/header.php');
 
     if (!isset($_SESSION['logged_in'])) {
         $_SESSION['logged_in'] = false;

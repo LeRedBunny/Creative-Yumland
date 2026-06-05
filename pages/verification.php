@@ -94,11 +94,11 @@
                         if ($pay) {
                             if ($statut == 'corrupted') {
                             echo '<h2> Les données du paiement ont été corrompues, veuillez réessayer. </h2>';
-                            echo '<a href="panier.php"> Renvenir au panier </a>';
+                            echo '<a href="panier.php"> Revenir au panier </a>';
                             } 
                             elseif ($statut == 'denied') {
                                 echo '<h2> Le paiement a été refusé, veuillez réessayer. </h2>';
-                                echo '<a href="panier.php"> Renvenir au panier </a>';
+                                echo '<a href="panier.php"> Revenir au panier </a>';
                             } 
                             else {  
 
