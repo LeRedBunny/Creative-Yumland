@@ -9,9 +9,9 @@
 
     $users=getUserData();   //récupération du tableau des utilisateurs
 
-    $target=$users[$id]['status'];    //récupération de l'individu connecté
+    $target=$users[$id]['block'];    //récupération de l'individu connecté
     $return=0;              //initialisation de la valeur de retour
-    switch($target){        //détermine la valeur de retour en fonction du statut de la cible (j'ai pas envie de gérer une bêtise de renvoi de données)
+    /*switch($target){        //détermine la valeur de retour en fonction du statut de la cible (j'ai pas envie de gérer une bêtise de renvoi de données)
         case 'bloque':
             $return=5;
         break;
@@ -30,8 +30,9 @@
         default :   //si le système a enregistré une autre valeur, considéré comme un client par défaut
             $return=4;
         break;
-    }
-
+    }*/
+    
+    $return=$target;
     echo $return;
 
 ?>

@@ -2,7 +2,6 @@
 
     define('USER_JSON_PATH', '../json/utilisateurs.json');
 
-
     function getUserData () : array {
         // Returns all profiles
 
@@ -104,6 +103,7 @@
         $_SESSION['email'] = $profile['email'];
         $_SESSION['status'] = $profile['status'];
         $_SESSION['user_id'] = $profile['id'];
+        $_SESSION['block'] = $profile['block'];
 
         $_SESSION['address'] = $profile['address'];
         $_SESSION['code'] = intval($profile['code']);
@@ -132,4 +132,25 @@
         }
     }
 
+    function videurdesoiree(){
+        if(isset($_SESSION["user_id"])){
+            //collecting user data
+            $id=$_SESSION["user_id"];
+            $users=getUserData();
+            $user=$users[$id];
+
+            //checking user status, and reacting accordingly
+            if($user['block'] == "1"){
+                $rand=round(rand(1,2));
+                switch($rand){
+                    case 1:
+                        header("Location: timeout.php");
+                        break;
+                    case 2:
+                        header("Location: https://www.youtube.com/watch?v=dQw4w9WgXcQ");
+                        break;
+                }
+            }
+        }
+    }
 ?>
