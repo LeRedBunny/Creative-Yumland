@@ -266,11 +266,13 @@ async function cleancommand(email){
 async function statuschange(){
     let data= {
         status: document.getElementById('status').value,
+        block: document.getElementById('block').value,
         email: document.getElementById('email').getAttribute('value')
     };
     //console.log("current status is " + data.status);
+    //console.log("current block is " + data.block);
     updateJson(data);
-    if(data.status == 'bloque'){
+    if(data.block == '1'){
         cleancommand(data.email);
     }
 }
@@ -279,7 +281,7 @@ async function statuscheck(id){
     let answer = await fetch(getDomain() + '/php/status.php?id=' + id); //requête GET
     let status = await answer.text();
     //console.log("current status:" + status);
-    if(status == 5){
+    if(status == 1){
         //console.log("looks like you shouldn't be here");
         //procédure d'ejection de l'utilisateur
 
