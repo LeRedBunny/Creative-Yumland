@@ -2,6 +2,8 @@
 
     require('../php/header.php');
     require('../php/avis_json.php');
+    require_once('../php/user_json.php');
+    videurdesoiree();
     session_start();
 
 ?>

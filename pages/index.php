@@ -3,6 +3,8 @@
     session_start(); 
     
     require_once('../php/header.php');
+    require_once('../php/user_json.php');
+    videurdesoiree();
 
     if (!isset($_SESSION['logged_in'])) {
         $_SESSION['logged_in'] = false;

@@ -1,7 +1,8 @@
 <?php
 
     require("../php/header.php");
-    require('../php/user_json.php');
+    require_once('../php/user_json.php');
+    videurdesoiree();
     require('../php/getapikey.php');
     require('../php/get_url.php');
     session_start();

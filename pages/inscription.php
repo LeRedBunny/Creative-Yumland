@@ -1,6 +1,7 @@
 <?php 
     
     require('../php/user_json.php');
+    videurdesoiree();
     require('../php/header.php');
     require('../php/checkform.php');
     session_start();
@@ -25,6 +26,7 @@
             $newUser['status'] = 'client';
             $newUser['favorite_rock'] = 'Aucune';
             $newUser['fidelity_points'] = 0;
+            $newUser['block'] = 0;
 
             $newUser['id'] = writeNewUser($newUser);
             $message = '';

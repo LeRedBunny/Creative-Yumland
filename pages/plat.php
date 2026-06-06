@@ -1,5 +1,6 @@
 <?php 
-    require('../php/user_json.php');
+    require_once('../php/user_json.php');
+    videurdesoiree();
     require('../php/header.php');
     session_start();
 

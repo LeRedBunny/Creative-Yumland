@@ -3,6 +3,8 @@
     require('../php/header.php');
     require('../php/commandes_json.php');
     require('../php/avis_json.php');
+    require_once('../php/user_json.php');
+    videurdesoiree();
     session_start();
 
     if (!$_SESSION['logged_in']) {

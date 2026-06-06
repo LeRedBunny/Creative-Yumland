@@ -2,6 +2,8 @@
 
     require('../php/commandes_json.php');
     require('../php/header.php');
+    require_once('../php/user_json.php');
+    videurdesoiree();
     session_start();
 
     if (!isset($_SESSION['logged_in']) || !$_SESSION['logged_in']) {
@@ -62,8 +64,7 @@
                                 'client' => 'Client',
                                 'admin' => 'Administrateur',
                                 'livreur' => 'Livreur',
-                                'cuisinier' => 'Cuisinier',
-                                'bloque' => 'Bloqué'
+                                'cuisinier' => 'Cuisinier'
                             );
                         
 
@@ -85,6 +86,12 @@
                                 echo '<option value="'.$code.'" '.(($profile['status'] == $code) ? 'selected' : '').'> '.$status.' </option>';
                             }
                             echo '</select> </h2>';
+
+                            echo '<select name="block" onchange=statuschange() id="block">';
+                                echo '<option value="1" selected> Bloqué </option>';
+                                echo '<option value="0" selected> Non Bloqué </option>';
+                            echo '</select> </h2>';
+                            echo '</form>';
                         }
                     ?>
                         
