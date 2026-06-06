@@ -54,3 +54,12 @@ Vendredi 5 juin
   Durée: 3 heures
   -correction de bugs, fautes d'orthographes et autres
   -ajout d'un système de temps d'attentes entre deux connexions si le mot de passe est erroné trop de fois. Originellement avec une page dédiée, mais galère, donc je fais simplement en utilisant sleep(). La page ne finit pas de se charger si le php n'est pas près, donc le client est bloqué pour la durée de temps voulue.
+
+
+Samedi 6 juin
+  Grégoire
+  Durée: 45 minutes
+  Ajout de la donnée "block" dans le json, dédié maintenant à vérifier si l'utilisateur est blocké ou non.
+  Modifications aportées: la donnée vérifiée pour ejecter l'utilisateur est maintenant cette donnée là
+      la page admin possède un formulaire supplémentaire qui permet de bloquer ou non l'utilisateur et d'appliquer les changements précedemment dus au statut
+Ajout d'une section php au début de chaque page qui permet de dégager l'utilisateur si il est blocké.
