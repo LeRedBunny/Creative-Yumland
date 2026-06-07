@@ -18,10 +18,14 @@
 
     } elseif ($_POST) {               // Add to the cart
 
-        addItem($_POST['name'], intval($_POST['amount']));
-        header('Location: carte.php');
-
+        if (isset($_SESSION['logged_in']) && $_SESSION['logged_in']) {
+            addItem($_POST['name'], intval($_POST['amount']));
+            header('Location: carte.php');
+        } else {
+            header('Location: connexion.php');
+        }
     } 
+
 ?>
 
 <!DOCTYPE html>

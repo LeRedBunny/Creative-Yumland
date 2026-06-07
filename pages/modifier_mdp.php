@@ -34,6 +34,7 @@
 
     <head>
         <?php headLinks('Mot de passe'); ?>
+        <script src='../js/see_password.js'> </script>
     </head>
 
     <body>
@@ -61,11 +62,13 @@
 
                         <div>
                             <input type="password" id="password" name="password" placeholder='Mot de passe actuel' required>
+                            <button type='button' onclick='seePassword("password");'> Voir </button>
                         </div>
                         <br>
 
                         <div>
                             <input type="password" id="new_password" name="new_password" placeholder='Nouveau Mot de passe' required>
+                            <button type='button' onclick='seePassword("new_password");'> Voir </button>
                         </div>
                         <br>
                         

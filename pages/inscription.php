@@ -97,7 +97,7 @@
                         <div class="div1">
                             <input type="password" id="password" name="password" required>
                             <label for="password">Mot de passe</label>
-                            <button type='button' onclick='seePassword();'> Voir </button>
+                            <button type='button' onclick='seePassword("password");'> Voir </button>
                         </div>
                         <br>
 

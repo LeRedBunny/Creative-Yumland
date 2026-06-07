@@ -34,11 +34,7 @@
     if ($_POST) {
         
         foreach($order['contents'] as $name => $amount) {
-            if (isset($_SESSION['panier'][$name])) {
-                $_SESSION['panier'][$name] += $amount;
-            } else {
-                $_SESSION['panier'][$name] = $amount;
-            }
+            addItem($name, intval($amount));
         }
         header('Location: panier.php');
     }
