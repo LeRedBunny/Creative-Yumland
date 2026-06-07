@@ -40,43 +40,8 @@
     },
     "durete": "3"
 },
-"Pomme d'or": {
-    "name":"Pomme d'or",
-    "image":"../images/pommedor.jpeg",
-    "prix":"25.25",
-    "pierres":{
-        "0":"Pomme",
-        "1":"Or"
-    },
-    "description":"Notre fameuse pomme d'or, plongée dans de l'or en fusion, avant d'arriver dans votre assiette.",
-    "mots_clefs":{
-        "0":"solide",
-        "1":"sucre",
-        "2":"sante",
-        "3":"additifs",
-        "4":"accides",
-        "5":"pomme",
-        "6":"or"
-    },
-    "durete": "3"
-},
-"Glace à l'émeraude": {
-    "name":"Glace à l'émeraude",
-    "image":"../images/glace.png",
-    "prix":"50",
-    "pierres":{
-        "0":"Emeraude",
-        "1":"Calcaire"
-    },
-    "description":"Extraite directement des biomes de collines extrèmes, cette glace vous apporte une succulente émeraude sur un cône en calcaire.",
-    "mots_clefs":{
-        "0":"solide",
-        "1":"sucré",
-        "2":"emeraude",
-        "3":"calcaire"
-    },
-    "durete": "3"
-},
+
+
 "Oeufs arcaniques": {
     "name":"Oeufs arcaniques",
     "image":"../images/Oeufs_arcaniques.png",
@@ -154,27 +119,7 @@
     },
     "durete": "3"
 },
-"Lingot d'orichalque": {
-    "name":"Lingot d'orichalque",
-    "image":"../images/orichalque.webp",
-    "prix":"21",
-    "pierres":{
-        "0":"Orichalque",
-        "1":"Fer",
-        "2":"Métaux",
-        "3":"Beurre"
-    },
-    "description":"Monsieur, je sais que vous voulez un menu varié, mais là c'est trop. C'est juste un truc sorti de votre collection de minerais.",
-    "mots_clefs":{
-        "0":"sale",
-        "1":"solide",
-        "2":"orichalque",
-        "3":"fer",
-        "4":"metaux",
-        "5":"beurre"
-    },
-    "durete": "5"
-},
+
 "Pierre lisse": {
     "name":"Pierre lisse",
     "image":"../images/smoothstone.webp",

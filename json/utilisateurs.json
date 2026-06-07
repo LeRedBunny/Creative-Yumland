@@ -11,9 +11,10 @@
         "status": "admin",
         "favorite_rock": "Am\u00e9thyste",
         "fidelity_points": 0,
+        "block": 0,
         "id": 0,
         "creation_date": 1775417124,
-        "last_login": 1780669059
+        "last_login": 1780859935
     },
     {
         "name": "Consommatrice",
@@ -26,10 +27,11 @@
         "code": "77270",
         "status": "client",
         "favorite_rock": "Saphir",
-        "fidelity_points": 0,
+        "fidelity_points": 25,
+        "block": 0,
         "id": 1,
         "creation_date": 1775417237,
-        "last_login": 1779035366
+        "last_login": 1780860223
     },
     {
         "name": "de la Garenne-Colombes",
@@ -43,9 +45,10 @@
         "status": "cuisinier",
         "favorite_rock": "Aucune",
         "fidelity_points": "0",
+        "block": 0,
         "id": 2,
         "creation_date": 1775417351,
-        "last_login": 1779035443
+        "last_login": 1780860032
     },
     {
         "name": "Raison",
@@ -59,9 +62,10 @@
         "status": "livreur",
         "favorite_rock": "\u00c9meraude",
         "fidelity_points": "0",
+        "block": 0,
         "id": 3,
         "creation_date": 1775417453,
-        "last_login": 1779035346
+        "last_login": 1780860055
     },
     {
         "name": "Strate",
@@ -75,6 +79,7 @@
         "status": "admin",
         "favorite_rock": "Aucune",
         "fidelity_points": 0,
+        "block": 0,
         "id": 4,
         "creation_date": 1775417558,
         "last_login": 1779035327
@@ -91,9 +96,10 @@
         "status": "bloque",
         "favorite_rock": "Aucune",
         "fidelity_points": 50,
+        "block": 1,
         "id": 5,
         "creation_date": 1778956885,
-        "last_login": 1779034997
+        "last_login": 1780860228
     },
     {
         "name": "Count",
@@ -107,6 +113,7 @@
         "status": "client",
         "favorite_rock": "Aucune",
         "fidelity_points": "0",
+        "block": 0,
         "id": 6,
         "creation_date": 1778957187,
         "last_login": 1778957187
@@ -118,13 +125,14 @@
         "password": "adefb4c282421e70a3c6f1f98ebd5c8705e31063785713f59d1989b6d26c81b5",
         "tel": "7659870543",
         "address": "1 impasse royale",
-        "city": "Town?",
+        "city": "Hometown",
         "code": "77270",
         "status": "client",
         "favorite_rock": "Aucune",
         "fidelity_points": 0,
+        "block": 0,
         "id": 7,
         "creation_date": 1780676545,
-        "last_login": 1780676545
+        "last_login": 1780860128
     }
 ]
