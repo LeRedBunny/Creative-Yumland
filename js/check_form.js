@@ -27,6 +27,10 @@ function checkForm (id) {
         
         if (tag.tagName == 'INPUT') {
 
+            if (tag.tagName != tag.id && tag.id != 'PASSWORD') {
+                return;
+            }
+
             switch (tag.id) {
             
                 case 'password' :
