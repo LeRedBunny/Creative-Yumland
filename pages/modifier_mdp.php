@@ -62,13 +62,11 @@
 
                         <div>
                             <input type="password" id="password" name="password" placeholder='Mot de passe actuel' required>
-                            <button type='button' onclick='seePassword("password");'> Voir </button>
                         </div>
                         <br>
 
                         <div>
                             <input type="password" id="new_password" name="new_password" placeholder='Nouveau Mot de passe' required>
-                            <button type='button' onclick='seePassword("new_password");'> Voir </button>
                         </div>
                         <br>
                         
